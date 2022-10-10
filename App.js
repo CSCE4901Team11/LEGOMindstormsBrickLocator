@@ -1,18 +1,24 @@
 import { StatusBar } from "expo-status-bar";
 import { Text, View, Pressable, TouchableOpacity } from "react-native";
 import styles from "./App.style.js";
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React, { Component } from "react";
+import { ProcessingView } from "expo-processing";
 import { Camera } from "expo-camera";
 
-function ObjectDetection() {
-  return (
-    <Camera
-      style={{ flex: 1, width: "100%" }}
-    >
-      
-    </Camera>
-  );
+class ObjectDetection extends React.Component {
+  render() {
+    return (<ProcessingView style={{ flex: 1 }} sketch={this.sketch} />);
+  }
+
+  _sketch = (p) => {
+    p.setup = () => {
+      p.strokeWeight(7);
+    };
+
+    p.draw = () => {
+      p.background(0,0,0,0);
+    };
+  };
 }
 
 export default function App() {
@@ -37,7 +43,11 @@ export default function App() {
       </Pressable>
 
       {startCamera ? (
-        <ObjectDetection />
+        <View style={{flex:1, width: '100%'}}>
+          <Camera style={{flex:1, width: '100%'}}>
+            <ObjectDetection style={{flex:1, width: '100%', backgroundColor: 'transparent'}}/>
+          </Camera>
+        </View>
       ) : (
         <TouchableOpacity
           onPress={__startCamera}
