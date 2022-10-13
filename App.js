@@ -3,65 +3,33 @@ import { Text, View, Pressable, TouchableOpacity } from 'react-native';
 import styles from './App.style.js';
 import React from 'react';
 import { Camera } from 'expo-camera';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ScannerScreen from './Scanner.js'
+import BrowseScreen from './Browse.js'
+import OptionsScreen from './Options.js'
 
-export default function App() {
-  const [startCamera,setStartCamera] = React.useState(false)
+const Stack = createNativeStackNavigator();
 
-  const __startCamera = async () => {
-    const {status} = await Camera.requestCameraPermissionsAsync()
-    if (status === 'granted') {
-      // start the camera
-      setStartCamera(true)
-    } else {
-      Alert.alert('Access denied')
-    }
-  }
-
+function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Life is pain</Text>
-      <Pressable style={styles.button}>
-        {({ pressed }) => (
-          <Text style={styles.button}>
-            {pressed ? 'Bruh' : 'Press Me'}
-          </Text>
-        )}
-      </Pressable>
-      
-      {startCamera ? (
-        <Camera
-          style={{flex: 1,width:"100%"}}
-          ref={(r) => {
-            camera = r
-          }}
-        ></Camera>
-      ) : (
-
-          <TouchableOpacity
-            onPress={__startCamera}
-            style={{
-              width: 130,
-              borderRadius: 4,
-              backgroundColor: '#14274e',
-              flexDirection: 'row',
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: 40
-            }}
-          >
-            <Text
-              style={{
-                color: '#fff',
-                fontWeight: 'bold',
-                textAlign: 'center'
-              }}
-            >
-              Camera
-            </Text>
-          </TouchableOpacity>
-      )}
-
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Scanner">
+        <Stack.Screen
+          name = "Scanner"
+          component = {ScannerScreen}
+        />
+        <Stack.Screen
+          name = "Browse"
+          component = {BrowseScreen}
+        />
+        <Stack.Screen
+          name = "Options"
+          component = {OptionsScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
+export default App;
