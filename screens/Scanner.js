@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, Pressable, TouchableOpacity } from 'react-native';
-import styles from './App.style.js';
+import styles from './Scanner.styles.js';
 import React from 'react';
 import { Camera } from 'expo-camera';
 
