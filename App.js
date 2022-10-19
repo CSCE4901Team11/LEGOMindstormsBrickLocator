@@ -1,67 +1,64 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, Pressable, TouchableOpacity } from 'react-native';
-import styles from './App.style.js';
 import React from 'react';
-import { Camera } from 'expo-camera';
+import { useColorScheme } from 'react-native';
+import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import ScannerScreen from './screens/Scanner.js'
+import BrowseScreen from './screens/Browse.js'
+import OptionsScreen from './screens/Options.js'
+import SideMenu from './components/Sidemenu.js';
+import { FontAwesome5 } from '@expo/vector-icons'; 
 
-export default function App() {
-  const [startCamera,setStartCamera] = React.useState(false)
+const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
-  const __startCamera = async () => {
-    const {status} = await Camera.requestCameraPermissionsAsync()
-    if (status === 'granted') {
-      // start the camera
-      setStartCamera(true)
-    } else {
-      Alert.alert('Access denied')
-    }
-  }
+
+function App() {
+  const scheme = useColorScheme();
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Life is pain</Text>
-      <Pressable style={styles.button}>
-        {({ pressed }) => (
-          <Text style={styles.button}>
-            {pressed ? 'Bruh' : 'Press Me'}
-          </Text>
-        )}
-      </Pressable>
-      
-      {startCamera ? (
-        <Camera
-          style={{flex: 1,width:"100%"}}
-          ref={(r) => {
-            camera = r
+    <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <Drawer.Navigator drawerContent={props => <SideMenu {...props} />}
+        initialRouteName = "Scanner" 
+        screenOptions = {{
+          headerTransparent: true,
+          headerTitleStyle: {opacity: 0},
+          drawerLabelStyle: {marginLeft: -15},
+          drawerActiveBackgroundColor: '#b7c6fb',
+          drawerActiveTintColor: '#000',
+          //drawerInactiveBackgroundColor: 
+        }}
+      >
+        <Drawer.Screen
+          name = "Scanner"
+          component = {ScannerScreen}
+          options = {{
+            drawerIcon: (color) => (
+              <FontAwesome5 name="camera" size={24} color={color} />
+            )
           }}
-        ></Camera>
-      ) : (
-
-          <TouchableOpacity
-            onPress={__startCamera}
-            style={{
-              width: 130,
-              borderRadius: 4,
-              backgroundColor: '#14274e',
-              flexDirection: 'row',
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: 40
-            }}
-          >
-            <Text
-              style={{
-                color: '#fff',
-                fontWeight: 'bold',
-                textAlign: 'center'
-              }}
-            >
-              Camera
-            </Text>
-          </TouchableOpacity>
-      )}
-
-      <StatusBar style="auto" />
-    </View>
+        />
+        <Drawer.Screen
+          name = "Browse"
+          component = {BrowseScreen}
+          options = {{
+            drawerIcon: (color) => (
+              <FontAwesome5 name="search" size={24} color={color} />
+            )
+          }}
+        />
+        <Drawer.Screen
+          name = "Options"
+          component = {OptionsScreen}
+          options = {{
+            drawerIcon: (color) => (
+              <FontAwesome5 name="cog" size={24} color={color}/>
+            )
+          }}
+        />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
+
+export default App;
