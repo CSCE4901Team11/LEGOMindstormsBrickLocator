@@ -5,13 +5,8 @@ import styles from './Browse.styles';
 
 function BrowseScreen () {
 
-    const {theme, setTheme} = useContext(ThemeContext);
-
-    const handleThemeChange = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light'); // sets theme 
-        
-    }
-    console.log(theme)
+    const currentTheme = useContext (ThemeContext);
+    const theme = currentTheme.state.theme;
 
     return (
         <View style={ theme == 'light' ? styles.container_light : styles.container_dark }>

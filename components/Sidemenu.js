@@ -1,5 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react'
-import { View, Text, Switch, Button, StyleSheet } from 'react-native'
+import React, { useState, useContext } from 'react'
+import { View, Text, Switch } from 'react-native'
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer'
 import { FontAwesome5 } from '@expo/vector-icons';
 import { ThemeContext } from '../constants/context';
@@ -7,18 +7,29 @@ import  styles  from './Sidemenu.styles';
 
 const SideMenu = (props) => {
     const [isEnabled, setIsEnabled] = useState(false);
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
-    const {theme, setTheme} = useContext(ThemeContext);
-
-    const handleThemeChange = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light'); // sets theme 
-        
+    //const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+    const toggleSwitch = () => {
+        if (theme == 'dark')
+            setIsEnabled(false);
+        else
+            setIsEnabled(true)
     }
-   
+
+    const currentTheme = useContext (ThemeContext);
+    const theme = currentTheme.state.theme;
+
+    const handleThemeChange = ()  => {
+        if (theme == 'dark')
+            currentTheme.dispatch({ type: "LIGHTMODE" })
+        else
+            currentTheme.dispatch({ type: "DARKMODE" })
+    };
+    console.log(currentTheme)
+
 
     return (
-        <View style = {theme == 'light' ? styles.container_light : styles.container_dark }>
+        <View style = {theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue}>
             <DrawerContentScrollView {...props} >
                 <Text style={theme == 'light' ? styles.title_light : styles.title_dark}>
                     LEGO Mindstorms Brick Locator

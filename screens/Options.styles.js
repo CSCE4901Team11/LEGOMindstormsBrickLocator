@@ -15,6 +15,14 @@ export default styles = StyleSheet.create({
         backgroundColor: "#121212"
     },
 
+    container_blue: {
+        flex: 1,
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: '#61caff'
+    },
+
+
     text_light: {
         color: "#000",
         fontSize: 20,

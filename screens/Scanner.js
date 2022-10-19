@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, Pressable, TouchableOpacity } from 'react-native';
-import styles from './Scanner.styles.js';
+import styles from './Scanner.styles';
 import React, { useContext } from 'react';
 import { Camera } from 'expo-camera';
 import { ThemeContext } from '../constants/context';
@@ -17,6 +17,9 @@ function ScannerScreen() {
       Alert.alert('Access denied')
     }
   }
+
+  const currentTheme = useContext (ThemeContext);
+  const theme = currentTheme.state.theme;
 
   return (
     <View style={styles.container}>
