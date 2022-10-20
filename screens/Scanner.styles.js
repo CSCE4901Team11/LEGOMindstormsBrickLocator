@@ -24,7 +24,7 @@ export default StyleSheet.create({
       justifyContent: 'center',
       
     },
-
+    
     text: {
         fontSize: 30,
         fontWeight: '420',
