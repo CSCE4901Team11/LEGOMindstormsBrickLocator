@@ -31,15 +31,15 @@ const SideMenu = (props) => {
     return (
         <View style = {theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue}>
             <DrawerContentScrollView {...props} >
-                <Text style={theme == 'light' ? styles.title_light : styles.title_dark}>
+                <Text style={theme == 'light' ? styles.title_light : theme == 'dark' ? styles.title_dark : styles.title_light}>
                     LEGO Mindstorms Brick Locator
                 </Text>
                 <DrawerItemList {...props} />
                 
             </DrawerContentScrollView>
             <View style = {styles.switch_container}>
-                <FontAwesome5 name="cat" size={24} color={theme == 'light' ? "black" : "white"} />
-                <Text style={theme == 'light' ? styles.switch_text_light : styles.switch_text_dark}>
+                <FontAwesome5 name="cat" size={24} color={theme == 'dark' ? "white" : "black"} />
+                <Text style={theme == 'light' ? styles.switch_text_light : theme == 'dark' ? styles.switch_text_dark : styles.switch_text_light}>
                     Dark Mode
                 </Text>
                 <Switch 

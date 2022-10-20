@@ -19,7 +19,7 @@ export default styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundColor: '#61caff'
+        backgroundColor: '#21abcd'
     },
 
 

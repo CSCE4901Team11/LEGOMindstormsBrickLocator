@@ -20,20 +20,39 @@ export default function Navigation () {
         <NavigationContainer>
             <Drawer.Navigator drawerContent={props => <SideMenu {...props} />}
                 initialRouteName = "Scanner" 
-                screenOptions = {{
+                screenOptions = {theme == 'light' ? {
                     headerTransparent: true,
                     headerTitleStyle: {opacity: 0},
+                    headerTintColor: '#000',
                     drawerLabelStyle: {marginLeft: -15},
                     drawerActiveBackgroundColor: '#b7c6fb',
                     drawerActiveTintColor: '#000',
-                    //drawerInactiveBackgroundColor: 
-                    }}
+                    drawerInactiveTintColor: '#636e72'
+                    }: theme == 'dark' ? {
+                    headerTransparent: true,
+                    headerTitleStyle: {opacity: 0},
+                    headerTintColor: '#fff',
+                    drawerLabelStyle: {marginLeft: -15},
+                    drawerActiveBackgroundColor: '#b7c6fb',
+                    drawerActiveTintColor: '#000',
+                    drawerInactiveTintColor: '#b2bec3'
+                    } : {
+                    headerTransparent: true,
+                    headerTitleStyle: {opacity: 0},
+                    headerTintColor: '#000',
+                    drawerLabelStyle: {marginLeft: -15},
+                    drawerActiveBackgroundColor: '#b7c6fb',
+                    drawerActiveTintColor: '#000',
+                    drawerInactiveTintColor: '#333349'
+                    }
+
+                }
                 >
                 <Drawer.Screen
                     name = "Scanner"
                     component = {ScannerScreen}
                     options = {{
-                    drawerIcon: (color) => (
+                    drawerIcon: ({color}) => (
                         <FontAwesome5 name="camera" size={24} color={color} />
                         )
                     }}
@@ -42,7 +61,7 @@ export default function Navigation () {
                     name = "Browse"
                     component = {BrowseScreen}
                     options = {{
-                    drawerIcon: (color) => (
+                    drawerIcon: ({color}) => (
                         <FontAwesome5 name="search" size={24} color={color} />
                     )
                     }}
@@ -51,7 +70,7 @@ export default function Navigation () {
                     name = "Options"
                     component = {OptionsScreen}
                     options = {{
-                    drawerIcon: (color) => (
+                    drawerIcon: ({color}) => (
                         <FontAwesome5 name="cog" size={24} color={color}/>
                     )
                     }}

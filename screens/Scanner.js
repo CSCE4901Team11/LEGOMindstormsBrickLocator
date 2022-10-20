@@ -22,7 +22,7 @@ function ScannerScreen() {
   const theme = currentTheme.state.theme;
 
   return (
-    <View style={styles.container}>
+    <View style={theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue}>
       <Text style={styles.text}>Life is pain</Text>
       <Pressable style={styles.button}>
         {({ pressed }) => (

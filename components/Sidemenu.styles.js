@@ -17,7 +17,7 @@ export default styles = StyleSheet.create({
 
     container_blue: {
         flex: 1,
-        backgroundColor: '#61caff'
+        backgroundColor: '#89cff0'
     },
 
     title_light: {
@@ -27,7 +27,7 @@ export default styles = StyleSheet.create({
         marginBottom: 2,
         color: "#000" 
     },
-    
+
     title_dark: {
         padding: 15,
         fontSize: 20,
