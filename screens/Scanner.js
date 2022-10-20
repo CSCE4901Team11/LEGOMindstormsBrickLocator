@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, Pressable, TouchableOpacity } from 'react-native';
-import styles from './Scanner.styles.js';
-import React from 'react';
+import styles from './Scanner.styles';
+import React, { useContext } from 'react';
 import { Camera } from 'expo-camera';
+import { ThemeContext } from '../constants/context';
 
 function ScannerScreen() {
   const [startCamera,setStartCamera] = React.useState(false)
@@ -17,8 +18,11 @@ function ScannerScreen() {
     }
   }
 
+  const currentTheme = useContext (ThemeContext);
+  const theme = currentTheme.state.theme;
+
   return (
-    <View style={styles.container}>
+    <View style={theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue}>
       <Text style={styles.text}>Life is pain</Text>
       <Pressable style={styles.button}>
         {({ pressed }) => (
