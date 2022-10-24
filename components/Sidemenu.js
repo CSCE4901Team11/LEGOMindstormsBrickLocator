@@ -8,7 +8,6 @@ import  styles  from './Sidemenu.styles';
 const SideMenu = (props) => {
     const [isEnabled, setIsEnabled] = useState(false);
 
-    //const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     const toggleSwitch = () => {
         if (theme == 'dark')
             setIsEnabled(false);
@@ -38,7 +37,7 @@ const SideMenu = (props) => {
                 
             </DrawerContentScrollView>
             <View style = {styles.switch_container}>
-                <FontAwesome5 name="cat" size={24} color={theme == 'dark' ? "white" : "black"} />
+                <FontAwesome5 name="cat" size={24} color={theme == 'dark' ? "white" : 'rgba(0,0,0,0.8)'} />
                 <Text style={theme == 'light' ? styles.switch_text_light : theme == 'dark' ? styles.switch_text_dark : styles.switch_text_light}>
                     Dark Mode
                 </Text>

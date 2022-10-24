@@ -25,7 +25,7 @@ export default styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 2,
-        color: "#000" 
+        color: 'rgba(0,0,0,0.8)',
     },
 
     title_dark: {
@@ -49,7 +49,7 @@ export default styles = StyleSheet.create({
         marginRight: 15,
         fontSize: 17,
         fontWeight: 'bold',
-        color: "#000",
+        color: 'rgba(0,0,0,0.8)',
     },
 
     switch_text_dark: {

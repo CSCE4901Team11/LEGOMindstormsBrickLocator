@@ -3,33 +3,49 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     container_light: {
       flex: 1,
-      backgroundColor: '#14A0DB',
+     // backgroundColor: '#14A0DB',
       alignItems: 'center',
-      justifyContent: 'center',
-      
+      justifyContent: 'flex-start',
+      paddingTop: 150,
     },
 
     container_dark: {
       flex: 1,
       backgroundColor: '#121212',
       alignItems: 'center',
-      justifyContent: 'center',
-      
+      justifyContent: 'flex-start',
+      paddingTop: 150,
     },
 
     container_blue: {
       flex: 1,
-      backgroundColor: '#00368c',
+      backgroundColor: '#00368c', //'#14A0DB'
       alignItems: 'center',
-      justifyContent: 'center',
-      
+      justifyContent: 'flex-start',
+      paddingTop: 150,
     },
     
-    text: {
-        fontSize: 30,
+    text_light: {
+        fontSize: 40,
         fontWeight: '420',
-        color: 'white',
+       // color: 'white',
+        textAlign: 'center',
     },
+
+    text_dark: {
+      fontSize: 40,
+      fontWeight: '420',
+      color: 'white',
+      textAlign: 'center',
+    },
+
+    text_blue: {
+      fontSize: 40,
+      fontWeight: '420',
+      color: 'rgba(255,255,255,1)',
+      textAlign: 'center',
+    },
+    
     button: {
         fontSize: 25,
         textAlign: 'center',
@@ -37,6 +53,13 @@ export default StyleSheet.create({
         color: 'white',
         backgroundColor: "#491FBD",
         borderRadius: 5,
+    },
+
+    camera_window: {
+      flex: 1,
+      width: "85%",
+      marginBottom: 90,
+      marginTop: 30
     },
 });
   
