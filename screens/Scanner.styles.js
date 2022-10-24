@@ -35,7 +35,7 @@ export default StyleSheet.create({
     text_dark: {
       fontSize: 40,
       fontWeight: '420',
-      color: 'white',
+      color: 'rgba(255, 255, 255, .9)',
       textAlign: 'center',
     },
 
@@ -50,7 +50,7 @@ export default StyleSheet.create({
         fontSize: 25,
         textAlign: 'center',
         margin: 7,
-        color: 'white',
+        color: 'rgba(255, 255, 255, .9)',
         backgroundColor: "#491FBD",
         borderRadius: 5,
     },

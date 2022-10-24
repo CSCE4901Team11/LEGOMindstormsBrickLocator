@@ -37,7 +37,7 @@ const SideMenu = (props) => {
                 
             </DrawerContentScrollView>
             <View style = {styles.switch_container}>
-                <FontAwesome5 name="cat" size={24} color={theme == 'dark' ? "white" : 'rgba(0,0,0,0.8)'} />
+                <FontAwesome5 name="cat" size={24} color={theme == 'dark' ? 'rgba(255, 255, 255, .9)' : 'rgba(0,0,0,0.8)'} />
                 <Text style={theme == 'light' ? styles.switch_text_light : theme == 'dark' ? styles.switch_text_dark : styles.switch_text_light}>
                     Dark Mode
                 </Text>

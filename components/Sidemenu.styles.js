@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export default styles = StyleSheet.create({
     container_light: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: 'rgba(255, 255, 255, .9)',
         // alignItems: 'center',
         // justifyContent: 'center',
     },
@@ -33,7 +33,7 @@ export default styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 2,
-        color: '#fff',
+        color: 'rgba(255, 255, 255, .9)',
     },
 
     switch_container: {
@@ -57,7 +57,7 @@ export default styles = StyleSheet.create({
         marginRight: 15,
         fontSize: 17,
         fontWeight: 'bold',
-        color: "#fff",
+        color: 'rgba(255, 255, 255, .9)',
     },
 });
 
