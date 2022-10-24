@@ -23,7 +23,7 @@ export default styles = StyleSheet.create({
     },
 
     text_light: {
-        color: "#000",
+        color: 'rgba(0,0,0,0.8)',
         fontSize: 20,
     },
 
