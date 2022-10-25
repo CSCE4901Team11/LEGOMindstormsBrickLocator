@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { View, Text, Pressable, TouchableOpacity  } from 'react-native';
+import { View, Text, Pressable, TouchableOpacity , TextInput } from 'react-native';
 import { ThemeContext } from '../constants/context';
 import styles from './Browse.styles';
 
@@ -13,11 +13,14 @@ function BrowseScreen () {
            <Text style = {theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }>
             Browse Screen
            </Text>
-
-           <tempSearchBar style={ theme == 'light' ? styles.tempSearchBar_light : theme == 'dark' ? styles.tempSearchBar_dark : styles.tempSearchBar_blue }>
-            placeholder= "Browse Placeholder",
-           </tempSearchBar>
-
+          /*
+            <TextInput style={ theme == 'light' ? styles.tempSearchBar_light : theme == 'dark' ? styles.tempSearchBar_dark : styles.tempSearchBar_blue }>
+              placeholder= "Search Bar"
+              onChangeText = {onChangeText}
+              value = {text}
+            </TextInput>
+          */
+          
             <Pressable
               title = "Browse Pieces"
               //accessibilityLabel= "Browse Pieces"
