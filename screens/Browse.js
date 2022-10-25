@@ -13,14 +13,7 @@ function BrowseScreen () {
            <Text style = {theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }>
             Browse Screen
            </Text>
-          /*
-            <TextInput style={ theme == 'light' ? styles.tempSearchBar_light : theme == 'dark' ? styles.tempSearchBar_dark : styles.tempSearchBar_blue }>
-              placeholder= "Search Bar"
-              onChangeText = {onChangeText}
-              value = {text}
-            </TextInput>
-          */
-          
+           
             <Pressable
               title = "Browse Pieces"
               //accessibilityLabel= "Browse Pieces"
