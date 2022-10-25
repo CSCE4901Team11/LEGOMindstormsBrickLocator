@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Pressable, TouchableOpacity  } from 'react-native';
 import { ThemeContext } from '../constants/context';
 import styles from './Browse.styles';
 
@@ -10,31 +10,32 @@ function BrowseScreen () {
 
     return (
         <View style={ theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue }>
-         <Text style = {theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }>
+           <Text style = {theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }>
             Browse Screen
-         </Text>
+           </Text>
 
-         <tempSearchBar style={ theme == 'light' ? styles.tempSearchBar_light : theme == 'dark' ? styles.tempSearchBar_dark : styles.tempSearchBar_blue }>
+           <tempSearchBar style={ theme == 'light' ? styles.tempSearchBar_light : theme == 'dark' ? styles.tempSearchBar_dark : styles.tempSearchBar_blue }>
             placeholder= "Browse Placeholder",
-         </tempSearchBar>
+           </tempSearchBar>
 
-         <Pressable
-            title = "Browse Pieces"
-            //accessibilityLabel= "Browse Pieces"
-            style= {styles.button_light}
-         />
+            <Pressable
+              title = "Browse Pieces"
+              //accessibilityLabel= "Browse Pieces"
+              style= {styles.button_light}
+            />
 
-         <Pressable
-            title = "Browse Models"
-            //accessibilityLabel= "Browse Models"
-            style= {styles.button_light}
-         />
-         
-         <Pressable
-            title = "Browse Guides"
-            //accessibilityLabel= "Browse Guides"
-            style= {styles.button_light}
-         />
+            <Pressable
+              title = "Browse Models"
+              //accessibilityLabel= "Browse Models"
+              style= {styles.button_light}
+            />
+
+           <Pressable
+              title = "Browse Guides"
+              //accessibilityLabel= "Browse Guides"
+              style= {styles.button_light}
+            />
+
 
         </View>
     );
