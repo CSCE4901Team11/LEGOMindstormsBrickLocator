@@ -10,7 +10,32 @@ function BrowseScreen () {
 
     return (
         <View style={ theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue }>
-         <Text style = {theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }>Browse Screen</Text>
+         <Text style = {theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }>
+            Browse Screen
+         </Text>
+
+         <tempSearchBar style={ theme == 'light' ? styles.tempSearchBar_light : theme == 'dark' ? styles.tempSearchBar_dark : styles.tempSearchBar_blue }>
+            placeholder= "Browse Placeholder",
+         </tempSearchBar>
+
+         <Pressable
+            title = "Browse Pieces"
+            //accessibilityLabel= "Browse Pieces"
+            style= {styles.button_light}
+         />
+
+         <Pressable
+            title = "Browse Models"
+            //accessibilityLabel= "Browse Models"
+            style= {styles.button_light}
+         />
+         
+         <Pressable
+            title = "Browse Guides"
+            //accessibilityLabel= "Browse Guides"
+            style= {styles.button_light}
+         />
+
         </View>
     );
     
