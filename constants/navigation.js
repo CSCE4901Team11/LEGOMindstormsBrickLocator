@@ -23,10 +23,10 @@ export default function Navigation () {
                 screenOptions = {theme == 'light' ? {
                     headerTransparent: true,
                     headerTitleStyle: {opacity: 0},
-                    headerTintColor: '#000',
+                    headerTintColor: 'rgba(0,0,0,0.8)',
                     drawerLabelStyle: {marginLeft: -15},
                     drawerActiveBackgroundColor: '#b7c6fb',
-                    drawerActiveTintColor: '#000',
+                    drawerActiveTintColor: 'rgba(0,0,0,0.8)',
                     drawerInactiveTintColor: '#636e72'
                     }: theme == 'dark' ? {
                     headerTransparent: true,
@@ -34,15 +34,15 @@ export default function Navigation () {
                     headerTintColor: '#fff',
                     drawerLabelStyle: {marginLeft: -15},
                     drawerActiveBackgroundColor: '#b7c6fb',
-                    drawerActiveTintColor: '#000',
+                    drawerActiveTintColor: 'rgba(0,0,0,0.8)',
                     drawerInactiveTintColor: '#b2bec3'
                     } : {
                     headerTransparent: true,
                     headerTitleStyle: {opacity: 0},
-                    headerTintColor: '#000',
+                    headerTintColor: 'rgba(0,0,0,0.8)',
                     drawerLabelStyle: {marginLeft: -15},
                     drawerActiveBackgroundColor: '#b7c6fb',
-                    drawerActiveTintColor: '#000',
+                    drawerActiveTintColor: 'rgba(0,0,0,0.8)',
                     drawerInactiveTintColor: '#333349'
                     }
 
