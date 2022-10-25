@@ -18,23 +18,23 @@ function BrowseScreen () {
             placeholder= "Browse Placeholder",
          </tempSearchBar>
 
-         <TouchableOpacity
-            style={styles.button_light}
-        >
-          <Text style={styles.button}>Browse Pieces</Text>
-        </TouchableOpacity>
+         <Pressable
+            title = "Browse Pieces"
+            //accessibilityLabel= "Browse Pieces"
+            style= {styles.button_light}
+         />
 
-        <TouchableOpacity
-            style={styles.button_light}
-        >
-          <Text style={styles.button}>Browse Models</Text>
-        </TouchableOpacity>
+         <Pressable
+            title = "Browse Models"
+            //accessibilityLabel= "Browse Models"
+            style= {styles.button_light}
+         />
          
-        <TouchableOpacity
-            style={styles.button_light}
-        >
-          <Text style={styles.button}>Browse Guides</Text>
-        </TouchableOpacity>
+         <Pressable
+            title = "Browse Guides"
+            //accessibilityLabel= "Browse Guides"
+            style= {styles.button_light}
+         />
 
         </View>
     );
