@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import { View, Text, Pressable, TouchableOpacity , TextInput } from 'react-native';
+import React, { useContext } from 'react';
+import { View, Text, Pressable, TouchableOpacity , TextInput, Button } from 'react-native';
 import { ThemeContext } from '../constants/context';
 import styles from './Browse.styles';
 
@@ -11,27 +11,13 @@ function BrowseScreen () {
     return (
         <View style={ theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue }>
            <Text style = {theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }>
-            Browse Screen
+            Browse !!!!
            </Text>
-           
-            <Pressable
-              title = "Browse Pieces"
-              //accessibilityLabel= "Browse Pieces"
-              style= {styles.button_light}
-            />
 
-            <Pressable
-              title = "Browse Models"
-              //accessibilityLabel= "Browse Models"
+            <Button 
               style= {styles.button_light}
+              title="Browse Pieces"
             />
-
-           <Pressable
-              title = "Browse Guides"
-              //accessibilityLabel= "Browse Guides"
-              style= {styles.button_light}
-            />
-
 
         </View>
     );
