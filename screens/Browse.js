@@ -18,7 +18,8 @@ function BrowseScreen () {
               style= {styles.button_light}
               title="Browse Pieces"
             />
-
+            
+            <View style={ theme == 'light' ? styles.sub_container_light : theme == 'dark' ? styles.sub_container_light : styles.sub_container_light }>
             <TouchableOpacity 
               style= {styles.button_light}>
               <Text> 
@@ -39,6 +40,7 @@ function BrowseScreen () {
                   Browse Guides 
               </Text>
             </TouchableOpacity>
+        </View>
 
         </View>
     );
