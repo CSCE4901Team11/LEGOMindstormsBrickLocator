@@ -19,6 +19,27 @@ function BrowseScreen () {
               title="Browse Pieces"
             />
 
+            <TouchableOpacity 
+              style= {styles.button_light}>
+              <Text> 
+                  Browse Pieces 
+              </Text>
+            </TouchableOpacity>
+                  
+            <TouchableOpacity 
+              style= {styles.button_light}>
+              <Text> 
+                  Browse Models 
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+              style= {styles.button_light}>
+              <Text> 
+                  Browse Guides 
+              </Text>
+            </TouchableOpacity>
+
         </View>
     );
     
