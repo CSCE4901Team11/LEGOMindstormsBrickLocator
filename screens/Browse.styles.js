@@ -5,21 +5,28 @@ export default styles = StyleSheet.create({
     container_light: {
         flex: 1, 
         alignItems: 'center', 
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
     },
 
     container_dark: {
         flex: 1, 
         alignItems: 'center', 
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         backgroundColor: "#121212"
     },
 
     container_blue: {
         flex: 1,
         alignItems: 'center', 
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         backgroundColor: "#21abcd",
+    },
+    
+    sub_container_light: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'flex-start',
+        flexDirection: "row",
     },
 
     text_light: {
