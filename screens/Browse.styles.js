@@ -111,7 +111,7 @@ export default styles = StyleSheet.create({
         padding: 10,
         color: 'rgba(0,0,0,0.8)',
         backgroundColor: 'rgba(215,222,226, .9)',
-        width: '100%',
+        width: '95%',
     },
 
     tempSearchBar_dark: {
