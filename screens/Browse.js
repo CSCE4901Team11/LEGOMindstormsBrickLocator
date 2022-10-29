@@ -16,7 +16,7 @@ function BrowseScreen () {
            </Text>
 
            <TouchableOpacity 
-              style= {styles.button_light}>
+              style= {styles.tempSearchBar_light}>
               <Text  style = { theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }> 
                   Search Bar 
               </Text>

@@ -71,9 +71,9 @@ export default styles = StyleSheet.create({
     },
 
     button_light: {
-        fontSize: 10,
+        fontSize: 9,
         textAlign: 'center',
-        margin: 7,
+        margin: 3,
         color: 'rgba(0,0,0,0.8)',
         backgroundColor: 'rgba(189,195,199, .9)',
         borderRadius: 5,
@@ -100,11 +100,14 @@ export default styles = StyleSheet.create({
     },*/
 
     tempSearchBar_light: {
+        textAlign: 'left',
         height: 40,
         margin: 7,
         borderWidth: 2,
         borderRadius: 5,
         padding: 10,
+        color: 'rgba(0,0,0,0.8)',
+        backgroundColor: 'rgba(215,222,226, .9)',
     },
 
     tempSearchBar_dark: {
