@@ -26,21 +26,21 @@ function BrowseScreen () {
             <TouchableOpacity 
               style= {styles.button_light}>
               <Text> 
-                  Browse Pieces 
+                  View Pieces 
               </Text>
             </TouchableOpacity>
                   
             <TouchableOpacity 
               style= {styles.button_light}>
               <Text> 
-                  Browse Models 
+                  View Models 
               </Text>
             </TouchableOpacity>
 
             <TouchableOpacity 
               style= {styles.button_light}>
               <Text> 
-                  Browse Guides 
+                  View Guides 
               </Text>
 
             </TouchableOpacity>

@@ -74,7 +74,7 @@ export default styles = StyleSheet.create({
     },
 
     button_light: {
-        fontSize: 8,
+        fontSize: 6,
         textAlign: 'center',
         margin: 3,
         color: 'rgba(0,0,0,0.8)',
@@ -109,7 +109,7 @@ export default styles = StyleSheet.create({
         //borderWidth: 2,
         borderRadius: 5,
         padding: 10,
-        color: 'rgba(0,0,0,0.8)',
+        //color: 'rgba(0,0,0,0.8)',
         backgroundColor: 'rgba(215,222,226, .9)',
         width: '95%',
     },
