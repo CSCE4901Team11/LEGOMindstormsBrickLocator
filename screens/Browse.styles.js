@@ -3,14 +3,14 @@ import { StyleSheet } from "react-native";
 
 export default styles = StyleSheet.create({
     container_light: {
-        marginTop: 60,
+        marginTop: 50,
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'flex-start',
     },
 
     container_dark: {
-        marginTop: 80,
+        marginTop: 50,
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'flex-start',
@@ -18,7 +18,7 @@ export default styles = StyleSheet.create({
     },
 
     container_blue: {
-        marginTop: 20,
+        marginTop: 50,
         flex: 1,
         alignItems: 'center', 
         justifyContent: 'flex-start',
@@ -34,15 +34,33 @@ export default styles = StyleSheet.create({
         //flexWrap: 'wrap',
     },
 
+    title_light:{
+        color: 'rgba(0,0,0,0.8)',
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
+
+    title_dark:{
+        color: 'rgba(255, 255, 255, .9)',
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
+    
+    title_blue:{
+        color: 'rgba(255,255,255,1)',
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
+
     text_light: {
         color: 'rgba(0,0,0,0.8)',
-        fontSize: 30,
+        fontSize: 15,
         fontWeight: 'bold',
     },
 
     text_dark: {
         color: 'rgba(255, 255, 255, .9)',
-        fontSize: 40,
+        fontSize: 15,
         fontWeight: 'bold',
     },
 

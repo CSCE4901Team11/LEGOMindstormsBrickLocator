@@ -11,8 +11,12 @@ function BrowseScreen () {
     return (
         <View style={ theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue }>
            
-           <Text style = {theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }>
-            Browse !!!!
+           <Text style = {theme == 'light' ? styles.title_light : theme == 'dark' ? styles.title_dark : styles.title_blue }>
+            Browse Screen
+           </Text>
+
+           <Text style = { theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }>
+            Search Bar
            </Text>
             
             <View style={ theme == 'light' ? styles.sub_container_light : theme == 'dark' ? styles.sub_container_light : styles.sub_container_light }>
@@ -35,6 +39,7 @@ function BrowseScreen () {
               <Text style = { theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }> 
                   Browse Guides 
               </Text>
+
             </TouchableOpacity>
         </View>
 
