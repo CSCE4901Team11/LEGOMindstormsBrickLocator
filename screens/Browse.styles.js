@@ -27,9 +27,11 @@ export default styles = StyleSheet.create({
     
     sub_container_light: {
         flex: 1, 
-        alignItems: 'center', 
+        alignItems: 'flex-start', 
         justifyContent: 'flex-start',
         flexDirection: "row",
+        paddingTop: 50,
+        //flexWrap: 'wrap',
     },
 
     text_light: {
