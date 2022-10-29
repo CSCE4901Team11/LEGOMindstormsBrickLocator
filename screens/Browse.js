@@ -11,7 +11,7 @@ function BrowseScreen () {
     return (
         <View style={ theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue }>
            
-           <Text style = {theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue } marginTop = {30}>
+           <Text style = {theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }>
             Browse !!!!
            </Text>
             

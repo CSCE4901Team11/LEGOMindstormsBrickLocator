@@ -58,7 +58,7 @@ export default styles = StyleSheet.create({
         backgroundColor: 'rgba(189,195,199, .9)',
         borderRadius: 5,
         padding: 10,
-        width: '50%',
+        //width: '50%',
     },
 
     /*button_dark: {
