@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 
 export default styles = StyleSheet.create({
     container_light: {
+        marginBottom: 0,
         marginTop: 50,
         flex: 1, 
         alignItems: 'center', 
@@ -10,6 +11,7 @@ export default styles = StyleSheet.create({
     },
 
     container_dark: {
+        marginBottom: 0,
         marginTop: 50,
         flex: 1, 
         alignItems: 'center', 
@@ -18,6 +20,7 @@ export default styles = StyleSheet.create({
     },
 
     container_blue: {
+        marginBottom: 0,
         marginTop: 50,
         flex: 1,
         alignItems: 'center', 
@@ -71,7 +74,7 @@ export default styles = StyleSheet.create({
     },
 
     button_light: {
-        fontSize: 9,
+        fontSize: 7,
         textAlign: 'center',
         margin: 3,
         color: 'rgba(0,0,0,0.8)',
@@ -103,11 +106,12 @@ export default styles = StyleSheet.create({
         textAlign: 'left',
         height: 40,
         margin: 7,
-        borderWidth: 2,
+        //borderWidth: 2,
         borderRadius: 5,
         padding: 10,
         color: 'rgba(0,0,0,0.8)',
         backgroundColor: 'rgba(215,222,226, .9)',
+        width: '50%',
     },
 
     tempSearchBar_dark: {
