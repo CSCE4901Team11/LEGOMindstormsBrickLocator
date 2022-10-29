@@ -19,7 +19,7 @@ function BrowseScreen () {
             Search Bar
            </Text>
             
-            <View style={ theme == 'light' ? styles.sub_container_light : theme == 'dark' ? styles.sub_container_light : styles.sub_container_light }>
+            <View style={ styles.sub_container}>
             <TouchableOpacity 
               style= {styles.button_light}>
               <Text style = { theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }> 

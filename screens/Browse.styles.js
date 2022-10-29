@@ -25,7 +25,7 @@ export default styles = StyleSheet.create({
         backgroundColor: "#21abcd",
     },
     
-    sub_container_light: {
+    sub_container: {
         flex: 1, 
         alignItems: 'flex-start', 
         justifyContent: 'flex-start',
