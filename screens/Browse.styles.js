@@ -51,10 +51,11 @@ export default styles = StyleSheet.create({
         fontSize: 10,
         textAlign: 'center',
         margin: 7,
-        color: 'rgba(255, 255, 255, .9)',
-        backgroundColor: "#491FBD",
+        color: 'rgba(0,0,0,0.8)',
+        backgroundColor: 'rgba(189,195,199, .9)',
         borderRadius: 5,
-        paddingHorizontal: 5,
+        padding: 10,
+        width: '50%',
     },
 
     /*button_dark: {
@@ -62,7 +63,7 @@ export default styles = StyleSheet.create({
         textAlign: 'center',
         margin: 7,
         color: 'rgba(255, 255, 255, .9)',
-        backgroundColor: "#491FBD",
+        backgroundColor: 'rgba(75,79, 82, .9)',
         borderRadius: 5,
     },
 
