@@ -15,9 +15,12 @@ function BrowseScreen () {
             Browse Screen
            </Text>
 
-           <Text style = { theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }>
-            Search Bar
-           </Text>
+           <TouchableOpacity 
+              style= {styles.button_light}>
+              <Text> 
+                  Search Bar 
+              </Text>
+            </TouchableOpacity>
             
             <View style={ styles.sub_container}>
             <TouchableOpacity 
