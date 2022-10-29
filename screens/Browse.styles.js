@@ -34,7 +34,7 @@ export default styles = StyleSheet.create({
         justifyContent: 'flex-start',
         flexDirection: "row",
         paddingTop: 50,
-        //flexWrap: 'wrap',
+        flexWrap: 'wrap',
     },
 
     title_light:{
@@ -74,7 +74,7 @@ export default styles = StyleSheet.create({
     },
 
     button_light: {
-        fontSize: 5,
+        fontSize: 8,
         textAlign: 'center',
         margin: 3,
         color: 'rgba(0,0,0,0.8)',
