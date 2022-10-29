@@ -17,7 +17,7 @@ function BrowseScreen () {
 
            <TouchableOpacity 
               style= {styles.button_light}>
-              <Text> 
+              <Text  style = { theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }> 
                   Search Bar 
               </Text>
             </TouchableOpacity>
@@ -25,21 +25,21 @@ function BrowseScreen () {
             <View style={ styles.sub_container}>
             <TouchableOpacity 
               style= {styles.button_light}>
-              <Text style = { theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }> 
+              <Text> 
                   Browse Pieces 
               </Text>
             </TouchableOpacity>
                   
             <TouchableOpacity 
               style= {styles.button_light}>
-              <Text style = { theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }> 
+              <Text> 
                   Browse Models 
               </Text>
             </TouchableOpacity>
 
             <TouchableOpacity 
               style= {styles.button_light}>
-              <Text style = { theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }> 
+              <Text> 
                   Browse Guides 
               </Text>
 
