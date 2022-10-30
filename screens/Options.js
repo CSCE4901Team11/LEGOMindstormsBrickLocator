@@ -14,17 +14,17 @@ const OptionsScreen = ({ navigation }) => {
 
     return (
       <View style={ theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue }>
-        <View style={OptionStyles.container}>
-          <View style={OptionStyles.headerRow}>
-          <Text style={OptionStyles.headerText}>Options</Text>  
+        <View style={styles.container}>
+          <View style={styles.headerRow}>
+          <Text style={styles.headerText}>Options</Text>  
           </View>
-          <View style={OptionStyles.button}>
+          <View style={styles.button}>
           <Button
             color="#01050d"
             title='Clear User Data'
           />
           </View>
-           <View style={OptionStyles.button}>
+           <View style={styles.button}>
           <Button
             color="#01050d"
             title='Blue Mode'
@@ -32,8 +32,8 @@ const OptionsScreen = ({ navigation }) => {
           />
           </View>
         </View>
-        <View style={OptionStyles.container}>
-           <Text style={OptionStyles.headerTwoText}>More</Text> 
+        <View style={styles.container}>
+           <Text style={styles.headerTwoText}>More</Text> 
            <Button
             title='About us'
           />
