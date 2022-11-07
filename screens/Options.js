@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, Alert, Modal, Pressable} from 'react-native';
 import { ThemeContext } from '../constants/context';
 import styles from './Options.styles';
 
 const OptionsScreen = ({ navigation }) => {
-
+  const [modalVisible, setModalVisible] = useState(false);
   const currentTheme = useContext (ThemeContext);
   const theme = currentTheme.state.theme;
 
@@ -32,66 +32,21 @@ const OptionsScreen = ({ navigation }) => {
           />
           </View>
         </View>
-        <View style={styles.container}>
-           <Text style={styles.headerTwoText}>More</Text> 
+        <View style={styles.space}>
+        <View style={styles.headerTwoText}>
            <Button
             title='About us'
           />
+        </View>
+        <View style={styles.headerTwoText}>
           <Button
             title='Privacy policy'
           />
-           </View>
-       
-      </View>
+          </View>
+          </View>
+         </View>
     );
   }
 
-  const OptionStyles = StyleSheet.create({
-    container: {
-    flex: 1,
-    padding: 10,
-    //backgroundColor: "#eaeaea"
-  },
-
-  headerText: {
-    fontWeight: 'bold',
-    fontSize: 35,
-    marginTop: 30,
-    paddingVertical: 13,
-    textAlign: "center",
-    padding: 4,
-    //flex: 1,
-    //padding: 10,
-    //borderBottomWidth: StyleSheet.hairlineWidth
-  },
-  headerTwoText: {
-    fontWeight: 'bold',
-    marginTop: 300,
-    paddingVertical: 10,
-    textAlign: 'center',
-    fontSize: 20,
-    color: 'black'
-  },
-
-  headerRow: {
-    //padding: 10,
-    borderBottomColor: "black",
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  },
-
-  button: {
-    marginTop: 10,
- //   paddingVertical: 8,
-    borderWidth: 1,
-    borderColor: "#20232a",
-    borderRadius: 6,
-    backgroundColor: "#d2d4d9",
-  //  color: "#20232a",
-    textAlign: "center",
-    fontSize: 30,
-    fontWeight: "bold"
-  },
-
-});
 
 export default OptionsScreen;

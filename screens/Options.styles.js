@@ -51,31 +51,46 @@ export default styles = StyleSheet.create({
     //borderBottomWidth: StyleSheet.hairlineWidth
   },
   headerTwoText: {
-    fontWeight: 'bold',
-    marginTop: 300,
+   // fontWeight: 'bold',
+   // marginTop: 300,
     paddingVertical: 10,
     textAlign: 'center',
     fontSize: 20,
-    color: 'black'
+   // margin: 10,
+   // padding: 15,
+    //color: 'black'
+  },
+
+  space: {
+    padding: 45,
   },
 
   headerRow: {
+    //borderBottomColor: "black",
+    //borderBottomWidth: StyleSheet.hairlineWidth,
     //padding: 10,
-    borderBottomColor: "black",
-    borderBottomWidth: StyleSheet.hairlineWidth,
   },
 
   button: {
+    fontSize: 6,
+    textAlign: 'center',
+    margin: 12,
+    color: 'rgba(0,0,0,0.8)',
+    backgroundColor: 'rgba(189,195,199, .9)',
+    borderRadius: 5,
+    padding: 10,
+    /*
     marginTop: 10,
- //   paddingVertical: 8,
     borderWidth: 1,
     borderColor: "#20232a",
     borderRadius: 6,
     backgroundColor: "#d2d4d9",
-  //  color: "#20232a",
     textAlign: "center",
     fontSize: 30,
     fontWeight: "bold"
+    paddingVertical: 8,
+    color: "#20232a",
+    */
   },
 
 });
