@@ -4,7 +4,7 @@ import { ThemeContext } from '../constants/context';
 import styles from './Options.styles';
 
 const OptionsScreen = ({ navigation }) => {
-  const [modalVisible, setModalVisible] = useState(false);
+  
   const currentTheme = useContext (ThemeContext);
   const theme = currentTheme.state.theme;
 
