@@ -5,6 +5,7 @@ import React, { useContext } from 'react';
 import { Camera } from 'expo-camera';
 import { ThemeContext } from '../constants/context';
 import { useNavigation } from '@react-navigation/native';
+import * as tf from '@tensorflow/tfjs';
 
 function ScannerScreen() {
   const [startCamera,setStartCamera] = React.useState(false)
@@ -43,6 +44,8 @@ const navigation = useNavigation();
           <Text style={styles.button}>Select Piece</Text>
         </TouchableOpacity>
       
+        <Tensor />
+
       {startCamera ? (
         <Camera
           style={styles.camera_window}
@@ -82,3 +85,29 @@ const navigation = useNavigation();
 }
 
 export default ScannerScreen;
+
+class Tensor extends React.Component {
+  state = {
+    isTfReady: false
+  }
+
+  async componentDidMount() {
+    await tf.ready()
+    this.setState({ isTfReady: true })
+    console.log(this.state.isTfReady)
+  }
+
+  render() {
+    return (
+      <View style={{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+      }}>
+        <Text>
+      {this.state.isTfReady ? "Ready" : "Waiting"}
+    </Text>
+      </View>
+    )
+  }
+}
