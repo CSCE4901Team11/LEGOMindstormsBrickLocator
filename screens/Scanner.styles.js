@@ -57,9 +57,7 @@ export default StyleSheet.create({
 
     camera_window: {
       flex: 1,
-      width: "85%",
-      marginBottom: 90,
-      marginTop: 30
+      width: "100%"
     },
 });
   
