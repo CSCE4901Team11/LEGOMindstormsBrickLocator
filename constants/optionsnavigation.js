@@ -3,7 +3,7 @@ import React from "react";
 import PrivacyPolicy from "../screens/PrivacyPolicy";
 import AboutUs from "../screens/AboutUs";
 import OptionsScreen from "../screens/Options";
-import Themes from "../screens/Themes";
+import ThemesScreen from "../screens/Themes";
 
 
 const Stack = createNativeStackNavigator();
@@ -11,14 +11,14 @@ const Stack = createNativeStackNavigator();
 export default function OptionsNav () {
 
     return (
-        <Stack.Navigator initialRouteName="Options">
+        <Stack.Navigator initialRouteName="OptionScreen" screenOptions={{headerShown: false}}>
             <Stack.Screen
              name = "OptionsScreen"
              component = {OptionsScreen}
             />
             <Stack.Screen
              name = "Themes"
-             component = {Themes}
+             component = {ThemesScreen}
             />
             <Stack.Screen
              name = "AboutUs"
