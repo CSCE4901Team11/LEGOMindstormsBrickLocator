@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { View, Text } from 'react-native';
 import { ThemeContext } from '../constants/context';
-import styles from './AboutUs.styles'; // update this later
+import styles from './PrivacyPolicy.styles'; 
 
 function PrivacyPolicy () {
 
