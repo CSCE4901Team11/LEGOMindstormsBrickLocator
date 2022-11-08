@@ -3,8 +3,9 @@ import { useContext } from 'react';
 import { View, Text, Button, } from 'react-native';
 import { ThemeContext } from '../constants/context';
 import styles from './Options.styles';
+import OptionsNav from '../constants/optionsnavigation';
 
-const OptionsScreen = () => {
+function OptionsScreen() {
 
   const currentTheme = useContext (ThemeContext);
   const theme = currentTheme.state.theme;
@@ -39,7 +40,7 @@ const OptionsScreen = () => {
            <Text style={styles.headerTwoText}>More</Text> 
            <Button
             title='About us'
-            // onPress={() => navigation.navigate('OptionsNav', {screen: 'About'} )}
+             onPress={() => navigation.navigate('OptionsNav', {screen: 'AboutUs'} )}
             />
             <Button
             title='Privacy policy'
