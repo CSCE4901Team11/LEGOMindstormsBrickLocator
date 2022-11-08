@@ -39,7 +39,7 @@ const OptionsScreen = () => {
            <Text style={styles.headerTwoText}>More</Text> 
            <Button
             title='About us'
-            onPress={() => navigation.navigate('OptionsNav', {screen: 'About'} )}
+            // onPress={() => navigation.navigate('OptionsNav', {screen: 'About'} )}
             />
             <Button
             title='Privacy policy'
