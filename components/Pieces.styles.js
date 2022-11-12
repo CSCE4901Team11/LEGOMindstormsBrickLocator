@@ -1,0 +1,60 @@
+import { StyleSheet } from "react-native";
+
+    export default styles = StyleSheet.create({
+        container: { //for the button
+          flex: 1,
+          //marginTop: 70,
+          alignItems: 'center',
+          justifyContent: 'center',
+          
+        },
+        title: {
+          fontSize: 35,
+         
+        },
+        button: {
+          padding: 10,
+          marginVertical: 15,
+          backgroundColor: '#0645AD',
+          //width: 100,
+          alignItems: 'center'
+        },
+        buttonText: {
+          color: '#fff'
+        },
+        itemContainer: {
+            //padding: 10,
+            flex: 1,
+            alignItems: 'flex-start',
+            display: 'flex',
+            //flexDirection: 'row',
+           // dimension: 100,
+            
+        },
+        itemTitle: {
+            fontSize: 20,
+            fontWeight: 'bold',
+        },
+        text: {
+            fontSize: 18,
+            flexWrap: 'wrap',
+        },
+        listSeparator: { 
+            height: 1, 
+            backgroundColor: "grey",
+            marginHorizontal:10
+        },
+        image: {
+            width: 80,
+            height: 80,
+            margin: 5,
+        },
+        itemInfoContainer: {
+            flex: 1,
+            flexWrap: 'wrap',
+            flexDirection: 'column',
+        },
+        list: {
+            flex: 1,
+        }
+    });

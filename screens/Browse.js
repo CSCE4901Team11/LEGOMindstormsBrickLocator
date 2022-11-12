@@ -2,50 +2,24 @@ import React, { useContext } from 'react';
 import { View, Text, Pressable, TouchableOpacity , TextInput, Button } from 'react-native';
 import { ThemeContext } from '../constants/context';
 import styles from './Browse.styles';
+import SearchBar from 'react-native-dynamic-search-bar';
+import GetPieces from '../components/Pieces';
 
 function BrowseScreen () {
 
     const currentTheme = useContext (ThemeContext);
     const theme = currentTheme.state.theme;
 
+
     return (
         <View style={ theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue }>
-           
-           <Text style = {theme == 'light' ? styles.title_light : theme == 'dark' ? styles.title_dark : styles.title_blue }>
-            Browse Screen
-           </Text>
-
-           <TouchableOpacity 
-              style= {styles.tempSearchBar_light}>
-              <Text  style = { theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }> 
-                  Search Bar 
-              </Text>
-            </TouchableOpacity>
-            
-            <View style={ styles.sub_container}>
-            <TouchableOpacity 
-              style= {styles.button_light}>
-              <Text> 
-                  View Pieces 
-              </Text>
-            </TouchableOpacity>
-                  
-            <TouchableOpacity 
-              style= {styles.button_light}>
-              <Text> 
-                  View Models 
-              </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-              style= {styles.button_light}>
-              <Text> 
-                  View Guides 
-              </Text>
-
-            </TouchableOpacity>
-        </View>
-
+         {/* <Text style = {theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }>Browse Screen</Text> */}
+         <SearchBar
+            placeholder="Search here"
+            onPress={() => alert("onPress")}
+            onChangeText={(text) => console.log(text)}
+         />
+         <GetPieces />
         </View>
     );
     

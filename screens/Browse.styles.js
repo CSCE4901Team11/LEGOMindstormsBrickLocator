@@ -7,7 +7,8 @@ export default styles = StyleSheet.create({
         marginTop: 50,
         flex: 1, 
         alignItems: 'center', 
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
+        marginTop: 100,
     },
 
     container_dark: {
@@ -15,8 +16,9 @@ export default styles = StyleSheet.create({
         marginTop: 50,
         flex: 1, 
         alignItems: 'center', 
-        justifyContent: 'flex-start',
-        backgroundColor: "#121212"
+        justifyContent: 'center',
+        backgroundColor: "#121212",
+        marginTop: 100,
     },
 
     container_blue: {
@@ -26,6 +28,7 @@ export default styles = StyleSheet.create({
         alignItems: 'center', 
         justifyContent: 'flex-start',
         backgroundColor: "#21abcd",
+        marginTop: 100,
     },
     
     sub_container: {
