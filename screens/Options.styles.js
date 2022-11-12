@@ -103,10 +103,10 @@ export default styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 20,
     padding: 35,
- //   alignItems: "center",
+    alignItems: "center",
     shadowColor: "#000",
-  //  flex: 1, 
-    //alignItems: 'center', 
+    flex: 1, 
+    alignItems: 'center', 
     justifyContent: 'space-evenly',
     shadowOffset: {
       width: 0,
@@ -144,8 +144,9 @@ export default styles = StyleSheet.create({
     textAlign: "center"
   },
   modalText: {
-    marginBottom: 15,
-    textAlign: "center"
+   // marginBottom: 15,
+    textAlign: "center",
+    margin: 0,
   }
   },
 
