@@ -20,14 +20,15 @@ function ScannerScreen() {
   }
 
 
-const navigation = useNavigation();
+  const navigation = useNavigation();
 
   const currentTheme = useContext (ThemeContext);
   const theme = currentTheme.state.theme;
 
   return (
-    <View style={theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue}>
-      <Text style={theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue}>LEGO Mindstorms Brick Locator</Text>
+    <View style={styles.container}>
+     {/* <View style={theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue}> */}
+      <Text style={styles.text}>LEGO Mindstorms Brick Locator</Text>
       {/* <Pressable style={styles.button}>
         {({ pressed }) => (
           <Text style={styles.button}>

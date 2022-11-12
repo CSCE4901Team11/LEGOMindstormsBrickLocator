@@ -2,6 +2,10 @@ import { StyleSheet } from "react-native";
 
 
 export default styles = StyleSheet.create({
+   
+    
+    
+
     container_light: {
         flex: 1, 
         alignItems: 'center', 
