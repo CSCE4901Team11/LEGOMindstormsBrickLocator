@@ -7,7 +7,6 @@ import SideMenu from '../components/Sidemenu';
 import { FontAwesome5 } from '@expo/vector-icons'; 
 import { ThemeContext } from '../constants/context';
 import OptionsNav from './optionsnavigation';
-
 const Drawer = createDrawerNavigator();
 
 export default function Navigation () {

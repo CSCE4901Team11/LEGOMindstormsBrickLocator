@@ -6,13 +6,15 @@ export default styles = StyleSheet.create({
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
+        marginTop: 100,
     },
 
     container_dark: {
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundColor: "#121212"
+        backgroundColor: "#121212",
+        marginTop: 100,
     },
 
     container_blue: {
@@ -20,6 +22,7 @@ export default styles = StyleSheet.create({
         alignItems: 'center', 
         justifyContent: 'center',
         backgroundColor: "#21abcd",
+        marginTop: 100,
     },
 
     text_light: {
