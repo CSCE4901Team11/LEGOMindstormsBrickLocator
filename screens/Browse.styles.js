@@ -17,7 +17,7 @@ export default styles = StyleSheet.create({
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundColor: "#121212",
+        backgroundColor: 'rbga(18,18,18,1)',
         marginTop: 100,
     },
 
@@ -27,7 +27,7 @@ export default styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center', 
         justifyContent: 'flex-start',
-        backgroundColor: "#21abcd",
+        backgroundColor: 'rbga(33, 171, 205, 1)',
         marginTop: 100,
     },
     
@@ -101,7 +101,7 @@ export default styles = StyleSheet.create({
         textAlign: 'center',
         margin: 7,
         color: 'rgba(255, 255, 255, 1)',
-        backgroundColor: "#491FBD",
+        backgroundColor: 'rgba(73, 31, 189, 1)',
         borderRadius: 5,
     },*/
 
@@ -124,7 +124,7 @@ export default styles = StyleSheet.create({
         borderRadius: 5,
         padding: 10,
         color: 'rgba(255, 255, 255, .9)',
-        //backgroundColor: '#121212',
+        //backgroundColor: 'rgba(18, 18, 18, 1)',
     },
 
     tempSearchBar_blue: {
@@ -134,7 +134,7 @@ export default styles = StyleSheet.create({
         borderRadius: 5,
         padding: 10,
         color: 'rgba(255,255,255,1)',
-        //backgroundColor: '#00368c',
+        //backgroundColor: 'rgba(0, 54, 140, 1)',
     },
 
 });
