@@ -40,33 +40,68 @@ const OptionsScreen = ({ navigation }) => {
           />
           </View>
         </View>
-        <View style={styles.space}>
-        <View>
-      <Button title="About Us" onPress={toggleModal} color="black" />
-
-      <Modal isVisible={isModalVisible}>
-        <View style={{ margin: 0 }}>
-          <Text style={{backgroundColor: "white", borderRadius: 20, padding: 35, alignItems: "center", justifyContent: 'space-evenly', shadowOffset: { width: 0, height: 2}, shadowOpacity: 0.25, shadowRadius: 4,elevation: 5}}>The LEGO® Mindstorms® kits are LEGO® kits that help users ages 10 
-          and up learn how to build and program robots. These kits come with come with many different pieces and it can be hard 
-          for users to differentiate these pieces. The purpose of this project is to create an application that can help users 
-          identify and locate any piece in the LEGO® Education Spike™ kits when using the provided organization tray. Creating this 
-          application will allow for easier completion of Spike™ robots as well as improve the accessibility of the LEGO® Education 
-          Spike™ kits for users who are visually impaired.</Text>
-          <Button title="Close" onPress={toggleModal} color="white"/>
-        </View>
-      </Modal>
-    </View>
-        <View style={styles.headerTwoText}>
-          <Pressable style={[styles.button2, styles.buttonOpen]}>
-            <Text style={styles.headerTwoText}>Privacy Policy</Text>
-          </Pressable>
-          </View>
-          </View>
-         </View>
+        <View style={styles.container}>
+           <Text style={styles.headerTwoText}>More</Text> 
+           <Button
+            title='About us'
+          />
+          <Button
+            title='Privacy policy'
+          />
+           </View>
+       
+      </View>
     );
 
 
   }
 
+  const OptionStyles = StyleSheet.create({
+    container: {
+    flex: 1,
+    padding: 10,
+    //backgroundColor: "#eaeaea"
+  },
+
+  headerText: {
+    fontWeight: 'bold',
+    fontSize: 35,
+    marginTop: 30,
+    paddingVertical: 13,
+    textAlign: "center",
+    padding: 4,
+    //flex: 1,
+    //padding: 10,
+    //borderBottomWidth: StyleSheet.hairlineWidth
+  },
+  headerTwoText: {
+    fontWeight: 'bold',
+    marginTop: 300,
+    paddingVertical: 10,
+    textAlign: 'center',
+    fontSize: 20,
+    color: 'black'
+  },
+
+  headerRow: {
+    //padding: 10,
+    borderBottomColor: "black",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+
+  button: {
+    marginTop: 10,
+ //   paddingVertical: 8,
+    borderWidth: 1,
+    borderColor: "#20232a",
+    borderRadius: 6,
+    backgroundColor: "#d2d4d9",
+  //  color: "#20232a",
+    textAlign: "center",
+    fontSize: 30,
+    fontWeight: "bold"
+  },
+
+});
 
 export default OptionsScreen;
