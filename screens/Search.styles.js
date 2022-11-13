@@ -4,7 +4,7 @@ export default styles = StyleSheet.create({
     container_light: {
         flex: 1, 
         alignItems: 'center', 
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
 
     container_dark: {

@@ -14,6 +14,19 @@ const Themes = {
       background: '#00368c',
       textColor: 'rgba(255,255,255,1)',
     },
+    /*red: {
+      background: '',
+      textColor: 'rgba(255,255,255,1)',
+    },
+    purple: {
+      background: '',
+      textColor: 'rgba(255,255,255,1)',
+    },
+    yellow: {
+      background: '#C6A632', //198, 166, 50
+      textColor: 'rgba(29, 29, 29, 0.8)',
+    },*/
+
 }
 
 const useThemeColors = () => {

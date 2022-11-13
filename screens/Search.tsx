@@ -58,7 +58,6 @@ export default class Search extends Component<IProps, IState> {
         title={item.name}
         imageSource={item.image}
         subtitle={item.color}
-        //shadowStyle={styles.cardShadowStyle}
       </View>
     );
   };
