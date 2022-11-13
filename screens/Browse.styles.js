@@ -2,6 +2,10 @@ import { StyleSheet } from "react-native";
 
 
 export default styles = StyleSheet.create({
+   
+    
+    
+
     container_light: {
         marginBottom: 0,
         marginTop: 50,

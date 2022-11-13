@@ -1,6 +1,18 @@
 import { StyleSheet } from "react-native";
+import useThemeColors from "../constants/ThemeColors";
+
+const colors = useThemeColors();
 
 export default StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: colors.background, // all color/theme dependent variables would be like this
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      paddingTop: 150,
+    },
+
+    // all the styles with the _themename would be removed. keeping them for now so the app still works until everything is changed
     container_light: {
       flex: 1,
      // backgroundColor: '#14A0DB',
@@ -11,7 +23,7 @@ export default StyleSheet.create({
 
     container_dark: {
       flex: 1,
-      backgroundColor: '#121212',
+      backgroundColor: '#121212',  // colors.background
       alignItems: 'center',
       justifyContent: 'flex-start',
       paddingTop: 150,
@@ -25,6 +37,13 @@ export default StyleSheet.create({
       paddingTop: 150,
     },
     
+    text: {
+      fontSize: 40,
+      fontWeight: '420',
+      color: colors.textColor,
+      textAlign: 'center',
+    },
+
     text_light: {
         fontSize: 40,
         fontWeight: '420',
