@@ -16,8 +16,11 @@ function BrowseScreen () {
          {/* <Text style = {theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue }>Browse Screen</Text> */}
          <SearchBar
             placeholder="Search here"
+            //onPress={() => alert("onPress")}
+            onChangeText={(text) => this.filterList(text)}
+            onSearchPress={() => console.log("Search Icon is pressed")}
+            onClearPress={() => this.filterList("")}
             onPress={() => alert("onPress")}
-            onChangeText={(text) => console.log(text)}
          />
          <GetPieces />
         </View>
