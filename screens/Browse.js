@@ -6,7 +6,7 @@ import SearchBar from 'react-native-dynamic-search-bar';
 import GetPieces from '../components/Pieces';
 import staticData from './staticData';
 
-export default class Search extends React.Component{
+ class Search extends React.Component{
     constructor() {
         super();
         this.state = {
@@ -34,7 +34,7 @@ export default class Search extends React.Component{
             <View style={ theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue }> //make background style for results
                 key={item.name}
                 title={item.name}
-                imageSource={item.image}
+                imageSource={item.image }
                 subtitle={item.color}
             </View>
         );
@@ -46,6 +46,7 @@ function BrowseScreen () {
 
     const currentTheme = useContext (ThemeContext);
     const theme = currentTheme.state.theme;
+    const legoSearch = new Search();
 
 
     return (
@@ -54,9 +55,9 @@ function BrowseScreen () {
          <SearchBar
             placeholder="Search here"
             //onPress={() => alert("onPress")}
-            onChangeText={(text) => this.filterList(text)}
+            onChangeText={(text) => legoSearch.filterList(text)}
             onSearchPress={() => console.log("Search Icon is pressed")}
-            onClearPress={() => this.filterList("")}
+            onClearPress={() => legoSearch.filterList("")}
             onPress={() => alert("onPress")}
          />
          <GetPieces />
