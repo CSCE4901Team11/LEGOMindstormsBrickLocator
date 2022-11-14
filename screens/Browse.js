@@ -4,7 +4,7 @@ import { ThemeContext } from '../constants/context';
 import styles from './Browse.styles';
 import SearchBar from 'react-native-dynamic-search-bar';
 import GetPieces from '../components/Pieces';
-import staticData from './staticData';
+import staticData from './staticData.js';
 
  class Search extends React.Component{
     constructor() {
