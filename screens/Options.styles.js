@@ -21,6 +21,30 @@ export default styles = StyleSheet.create({
         backgroundColor: '#21abcd'
     },
 
+    container_red: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rbga(200, 45, 56, 1)',
+        marginTop: 100,
+    },
+
+    container_purple: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rbga(130, 7, 197, 1)',
+        marginTop: 100,
+    },
+
+    container_yellow: {
+        flex: 1,
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rbga(222, 189, 69, 1)',
+        marginTop: 100,
+    },
+
     text_light: {
         color: '#fff',
         fontSize: 20,
@@ -28,6 +52,29 @@ export default styles = StyleSheet.create({
 
     text_dark: {
         color: "#f76a6a",
+        fontSize: 15,
+        fontWeight: 'bold',
+    },
+
+    text_blue: {
+        color: "#141466",
+        fontSize: 15,
+        fontWeight: 'bold',
+    },
+
+    text_red: {
+        color: 'rgba(255, 255, 255, .9)',
+        fontSize: 20,
+    },
+
+    text_purple: {
+        color: 'rgba(255, 255, 255, .9)',
+        fontSize: 15,
+        fontWeight: 'bold',
+    },
+
+    text_yellow: {
+        color: 'rgba(29, 29, 29, 0.8)',
         fontSize: 15,
         fontWeight: 'bold',
     },

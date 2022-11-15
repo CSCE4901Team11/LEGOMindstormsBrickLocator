@@ -14,6 +14,18 @@ const Themes = {
       background: '#00368c',
       textColor: 'rgba(255,255,255,1)',
     },
+    red: {
+      background: 'rbga(161, 7, 2, 1)',
+      textColor: 'rgba(255, 255, 255, .9)',
+    },
+    purple: {
+      background: 'rbga(91, 5, 138, 1)',
+      textColor: 'rgba(255, 255, 255, .9)',
+    },
+    yellow: {
+      background: 'rbga(198, 166, 50, 1)',
+      textColor: 'rgba(29, 29, 29, 0.8)',
+    },
 }
 
 // const UseThemeColors = () => {

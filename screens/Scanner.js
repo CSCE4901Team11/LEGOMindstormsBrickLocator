@@ -45,7 +45,7 @@ function ScannerScreen() {
   
   return (
     <View style={[styles.container, {backgroundColor: colors.background}] }>
-     {/* <View style={theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue}> */}
+     {/* <View style={theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : theme == 'blue' ? styles.container_blue : theme == 'red' ? styles.container_red : theme == 'purple' ? styles.container_purple : theme == 'yellow' ? styles.container_yellow : styles.container_light}> */}
       <Text style={[styles.text, {color: colors.textColor}]}>LEGO Mindstorms Brick Locator</Text>
       {/* <Pressable style={styles.button}>
         {({ pressed }) => (
