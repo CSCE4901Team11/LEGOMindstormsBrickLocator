@@ -1,6 +1,5 @@
 import { StyleSheet } from "react-native";
 
-
 export default styles = StyleSheet.create({
     container_light: {
         flex: 1, 
@@ -22,9 +21,8 @@ export default styles = StyleSheet.create({
         backgroundColor: '#21abcd'
     },
 
-
     text_light: {
-        color: 'rgba(0,0,0,0.8)',
+        color: '#fff',
         fontSize: 20,
     },
 
@@ -33,11 +31,12 @@ export default styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
     },
-     container: {
-    flex: 1,
-    padding: 10,
-    //backgroundColor: "#eaeaea"
-  },
+
+    container: {
+      flex: 1,
+      padding: 10,
+      //backgroundColor: "#eaeaea"
+    },
 
   headerText: {
     fontWeight: 'bold',

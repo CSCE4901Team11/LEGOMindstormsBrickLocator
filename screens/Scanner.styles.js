@@ -1,51 +1,22 @@
 import { StyleSheet } from "react-native";
 
+
 export default StyleSheet.create({
-    container_light: {
+    container: {
       flex: 1,
-     // backgroundColor: '#14A0DB',
+      //backgroundColor: colors.background,
       alignItems: 'center',
       justifyContent: 'flex-start',
       paddingTop: 150,
     },
 
-    container_dark: {
-      flex: 1,
-      backgroundColor: '#121212',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      paddingTop: 150,
-    },
-
-    container_blue: {
-      flex: 1,
-      backgroundColor: '#00368c', //'#14A0DB'
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      paddingTop: 150,
-    },
-    
-    text_light: {
-        fontSize: 40,
-        fontWeight: '420',
-       // color: 'white',
-        textAlign: 'center',
-    },
-
-    text_dark: {
+    text: {
       fontSize: 40,
       fontWeight: '420',
-      color: 'rgba(255, 255, 255, .9)',
+     // color: colors.textColor,
       textAlign: 'center',
     },
 
-    text_blue: {
-      fontSize: 40,
-      fontWeight: '420',
-      color: 'rgba(255,255,255,1)',
-      textAlign: 'center',
-    },
-    
     button: {
         fontSize: 25,
         textAlign: 'center',
