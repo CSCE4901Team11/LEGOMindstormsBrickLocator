@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useContext, useState } from 'react';
 import { View, Text, Button, StyleSheet, Alert, Pressable} from 'react-native';
 import Modal from "react-native-modal";
@@ -20,6 +21,18 @@ const OptionsScreen = ({ navigation }) => {
           currentTheme.dispatch({ type: "BLUEMODE" })
   };
 
+  const clearUserData = async () => {
+    let keys = []
+    try {
+      keys = await AsyncStorage.getAllKeys()
+      await AsyncStorage.multiRemove(keys)
+    }
+    catch(error) {
+      console.log(error)
+    }
+    console.log('user data cleared')
+  }
+
     return (
       <View style={ theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue }>
         <View style={styles.container}>
@@ -30,6 +43,7 @@ const OptionsScreen = ({ navigation }) => {
           <Button
             color="#01050d"
             title='Clear User Data'
+            onPress={clearUserData}
           />
           </View>
            <View style={styles.button}>
@@ -69,4 +83,4 @@ const OptionsScreen = ({ navigation }) => {
 
   }
 
-
+export default OptionsScreen;
