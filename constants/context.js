@@ -11,6 +11,12 @@ const themeReducer = (state, action) => {
             return { theme: 'dark' };
         case "BLUEMODE":
             return { theme: 'blue' };
+        case "REDMODE":
+            return { theme: 'red' };
+        case "PURPLEMODE":
+            return { theme: 'purple' };
+        case "YELLOWMODE":
+            return { theme: 'yellow' };
         default:
             return state;
     }

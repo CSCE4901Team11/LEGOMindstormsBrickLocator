@@ -22,7 +22,7 @@ export default StyleSheet.create({
         textAlign: 'center',
         margin: 7,
         color: 'rgba(255, 255, 255, .9)',
-        backgroundColor: "#491FBD",
+        backgroundColor: 'rgba(73, 31, 189, .9)',
         borderRadius: 5,
     },
 

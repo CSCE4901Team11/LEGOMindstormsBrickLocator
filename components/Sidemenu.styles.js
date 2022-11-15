@@ -10,14 +10,29 @@ export default styles = StyleSheet.create({
 
     container_dark: {
         flex: 1,
-        backgroundColor: '#121212',
+        backgroundColor: 'rgba(18, 18, 18, .9)',
         // alignItems: 'center',
         // justifyContent: 'center',
     },
 
     container_blue: {
         flex: 1,
-        backgroundColor: '#89cff0'
+        backgroundColor: 'rgba(137, 207, 240, .9)'
+    },
+
+    container_red: {
+        flex: 1, 
+        backgroundColor: 'rgba(200, 45, 56, .9)',
+    },
+
+    container_purple: {
+        flex: 1, 
+        backgroundColor: 'rgba(130, 7, 197, .9)',
+    },
+
+    container_yellow: {
+        flex: 1,
+        backgroundColor: 'rgba(222, 189, 69, .9)',
     },
 
     title_light: {

@@ -12,14 +12,35 @@ export default styles = StyleSheet.create({
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundColor: "#121212"
+        backgroundColor: 'rgba(18, 18, 18, .9)',
     },
 
     container_blue: {
         flex: 1,
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundColor: "#21abcd",
+        backgroundColor: 'rgba(33, 171, 205, .9)',
+    },
+
+    container_red: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rgba(200, 45, 56, .9)',
+    },
+
+    container_purple: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rgba(130, 7, 197, .9)',
+    },
+
+    container_yellow: {
+        flex: 1,
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rgba(222, 189, 69, .9)',
     },
 
     text_light: {
@@ -28,14 +49,32 @@ export default styles = StyleSheet.create({
     },
 
     text_dark: {
-        color: "#f76a6a",
+        color: 'rgba(255, 255, 255, .9)',
         fontSize: 15,
         fontWeight: 'bold',
     },
 
     text_blue: {
-        color: "#141466",
+        color: 'rgba(20, 20, 102, .9)',
         fontSize: 15,
         fontWeight: 'bold',
-    }
+    },
+
+    text_red: {
+        color: 'rgba(255, 255, 255, .9)',
+        fontSize: 15,
+        fontWeight: 'bold',
+    },
+
+    text_purple: {
+        color: 'rgba(255, 255, 255, .9)',
+        fontSize: 15,
+        fontWeight: 'bold',
+    },
+
+    text_yellow: {
+        color: 'rgba(29, 29, 29, .9)',
+        fontSize: 15,
+        fontWeight: 'bold',
+    },
 });
