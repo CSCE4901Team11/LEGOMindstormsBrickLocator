@@ -13,7 +13,7 @@ export default function GetPieces() {
             "method": "GET",
             "headers": {
                 "Accept": "application/json",
-                "Authorization": "apikey" // change value to actual api key
+                "Authorization": "apikey", // change value to actual api key
                 "Rebrickableapi-host": "https://rebrickable.com"
             }
         })

@@ -132,11 +132,23 @@ function PrivacyPolicy () {
   const theme = currentTheme.state.theme;
 
   const blueThemeChange = ()  => {
-          currentTheme.dispatch({ type: "BLUEMODE" })
+    currentTheme.dispatch({ type: "BLUEMODE" })
+  };
+
+  const redThemeChange = ()  => {
+    currentTheme.dispatch({ type: "REDMODE" })
+  };
+
+  const purpleThemeChange = ()  => {
+    currentTheme.dispatch({ type: "PURPLEMODE" })
+  };
+
+  const yellowThemeChange = ()  => {
+    currentTheme.dispatch({ type: "YELLOWMODE" })
   };
 
     return (
-      <View style={ theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue }>
+      <View style={theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : theme == 'blue' ? styles.container_blue : theme == 'red' ? styles.container_red : theme == 'purple' ? styles.container_purple : theme == 'yellow' ? styles.container_yellow : styles.container_light}>
           <View style={{paddingVertical: 20, textAlign: 'center', fontSize: 20,}}>
           <Text style={{fontWeight: 'bold', fontSize: 27, marginTop: 130, paddingVertical: 10, textAlign: "center",padding: 4,}}>Privacy Policy</Text>  
           </View>

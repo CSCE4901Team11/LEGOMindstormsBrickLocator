@@ -18,7 +18,19 @@ const OptionsScreen = ({ navigation }) => {
   const theme = currentTheme.state.theme;
 
   const blueThemeChange = ()  => {
-          currentTheme.dispatch({ type: "BLUEMODE" })
+    currentTheme.dispatch({ type: "BLUEMODE" })
+  };
+
+  const redThemeChange = ()  => {
+    currentTheme.dispatch({ type: "REDMODE" })
+  };
+
+  const purpleThemeChange = ()  => {
+    currentTheme.dispatch({ type: "PURPLEMODE" })
+  };
+
+  const yellowThemeChange = ()  => {
+    currentTheme.dispatch({ type: "YELLOWMODE" })
   };
 
   const clearUserData = async () => {
@@ -34,7 +46,7 @@ const OptionsScreen = ({ navigation }) => {
   }
 
     return (
-      <View style={ theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue }>
+      <View style={ theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : theme == 'blue' ? styles.container_blue : theme == 'red' ? styles.container_red : theme == 'purple' ? styles.container_purple : theme == 'yellow' ? styles.container_yellow : styles.container_light }>
         <View style={styles.container}>
           <View style={styles.headerRow}>
           <Text style={styles.headerText}>Options</Text>  
@@ -46,6 +58,7 @@ const OptionsScreen = ({ navigation }) => {
             onPress={clearUserData}
           />
           </View>
+          
            <View style={styles.button}>
           <Button
             color="#01050d"
@@ -53,6 +66,31 @@ const OptionsScreen = ({ navigation }) => {
             onPress={ blueThemeChange }
           />
           </View>
+
+          <View style={styles.button}>
+          <Button
+            color="#01050d"
+            title='Red Mode'
+            onPress={ redThemeChange }
+          />
+          </View>
+
+          <View style={styles.button}>
+          <Button
+            color="#01050d"
+            title='Purple Mode'
+            onPress={ purpleThemeChange }
+          />
+          </View>
+
+          <View style={styles.button}>
+          <Button
+            color="#01050d"
+            title='Yellow Mode'
+            onPress={ yellowThemeChange }
+          />
+          </View>
+          
         </View>
         <View style={styles.space}>
         <View>
