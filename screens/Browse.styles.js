@@ -14,7 +14,7 @@ export default styles = StyleSheet.create({
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundColor: "#121212",
+        backgroundColor: 'rgba(18, 18, 18, .9)',
         marginTop: 100,
     },
 
@@ -22,7 +22,7 @@ export default styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundColor: "#21abcd",
+        backgroundColor: 'rgba(33, 171, 205, .9)',
         marginTop: 100,
     },
 
@@ -30,7 +30,7 @@ export default styles = StyleSheet.create({
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundColor: '#C82D38',
+        backgroundColor: 'rgba(200, 45, 56, .9)',
         marginTop: 100,
     },
 
@@ -38,7 +38,7 @@ export default styles = StyleSheet.create({
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundColor: '#8207C5',
+        backgroundColor: 'rgba(130, 7, 197, .9)',
         marginTop: 100,
     },
 
@@ -46,7 +46,7 @@ export default styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundColor: '#DEBD45',
+        backgroundColor: 'rgba(222, 189, 69, .9)',
         marginTop: 100,
     },
 
@@ -56,31 +56,31 @@ export default styles = StyleSheet.create({
     },
 
     text_dark: {
-        color: "#f76a6a",
+        color: 'rgba(255, 255, 255, .9)',
         fontSize: 15,
         fontWeight: 'bold',
     },
 
     text_blue: {
-        color: "#141466",
+        color: 'rgba(20, 20, 102, .9)',
         fontSize: 15,
         fontWeight: 'bold',
     },
 
     text_red: {
-        color: '#FFFFFF',
+        color: 'rgba(255, 255, 255, .9)',
         fontSize: 15,
         fontWeight: 'bold',
     },
 
     text_purple: {
-        color: '#FFFFFF',
+        color: 'rgba(255, 255, 255, .9)',
         fontSize: 15,
         fontWeight: 'bold',
     },
 
     text_yellow: {
-        color: '#1D1D1D',
+        color: 'rgba(29, 29, 29, .9)',
         fontSize: 15,
         fontWeight: 'bold',
     },

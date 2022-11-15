@@ -15,12 +15,12 @@ import { StyleSheet } from "react-native";
         button: {
           padding: 10,
           marginVertical: 15,
-          backgroundColor: '#0645AD',
+          backgroundColor: 'rgba(6, 69, 173, .9)',
           //width: 100,
           alignItems: 'center'
         },
         buttonText: {
-          color: '#fff'
+          color: 'rgba(255, 255, 255, .9)'
         },
         itemContainer: {
             //padding: 10,

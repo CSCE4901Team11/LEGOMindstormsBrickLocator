@@ -3,28 +3,28 @@ import { ThemeContext } from "./context";
 
 const Themes = {
     light: {
-      background: "#FDFFFC",
+      background: 'rgba(253, 255, 252, .9)',
       textColor: 'rgba(0, 0, 0, 0.8)',
     },
     dark: {
-      background: '#121212',
+      background: 'rgba(18, 18, 18, .9)',
       textColor: 'rgba(255, 255, 255, .9)',
     },
     blue: {
-      background: '#00368c',
+      background: 'rgba(0, 54, 140, .9)',
       textColor: 'rgba(255,255,255,1)',
     },
     red: {
-      background: '#A10702',
+      background: 'rgba(161, 7, 2, .9)',
       textColor: 'rgba(255, 255, 255, .9)',
     },
     purple: {
-      background: '#5B058A',
+      background: 'rgba(91, 5, 138, .9)',
       textColor: 'rgba(255, 255, 255, .9)',
     },
     yellow: {
-      background: '#C6A632',
-      textColor: 'rgba(29, 29, 29, 0.8)',
+      background: 'rgba(198, 166, 50, .9)',
+      textColor: 'rgba(29, 29, 29, .8)',
     },
 }
 
