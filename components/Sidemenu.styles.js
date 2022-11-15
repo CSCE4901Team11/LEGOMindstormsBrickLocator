@@ -10,7 +10,7 @@ export default styles = StyleSheet.create({
 
     container_dark: {
         flex: 1,
-        backgroundColor: 'rgba(18, 18, 18, 1, .9)',
+        backgroundColor: 'rgba(18, 18, 18, .9)',
         // alignItems: 'center',
         // justifyContent: 'center',
     },
