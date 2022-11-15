@@ -12,14 +12,14 @@ export default styles = StyleSheet.create({
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundColor: 'rbga(18,18,18, 0.9)'
+        backgroundColor: "#121212"
     },
 
     container_blue: {
         flex: 1,
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundColor: 'rgba(33, 171, 205, 0.9)',
+        backgroundColor: "#21abcd",
     },
 
     container_red: {
@@ -52,31 +52,31 @@ export default styles = StyleSheet.create({
     },
 
     text_dark: {
-        color: 'rgba(247, 106, 106, 0.9)',
+        color: "#f76a6a",
         fontSize: 15,
         fontWeight: 'bold',
     },
 
     text_blue: {
-        color: 'rgba(20, 20, 102, 0.9)',
+        color: "#141466",
         fontSize: 15,
         fontWeight: 'bold',
     },
 
     text_red: {
-        color: 'rgba(0, 0, 0, 0.8)',
+        color: '#FFFFFF',
         fontSize: 15,
         fontWeight: 'bold',
     },
 
     text_purple: {
-        color: 'rgba(0, 0, 0, 0.8)',
+        color: '#FFFFFF',
         fontSize: 15,
         fontWeight: 'bold',
     },
 
     text_yellow: {
-        color: 'rbga(29, 29, 29, 0.9)',
+        color: '#1D1D1D',
         fontSize: 15,
         fontWeight: 'bold',
     },
