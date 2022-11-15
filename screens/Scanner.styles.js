@@ -57,8 +57,15 @@ export default StyleSheet.create({
 
     camera_window: {
       flex: 1,
-      width: "100%",
+      width: "120%",
       height: "100%"
+    },
+
+    highlighter: {
+      flex: 1,
+      borderRadius: 5,
+      borderColor: 'rgba(0,255,0,1)',
+      backgroundColor: 'rgba(0,255,0,1)',
     },
 });
   
