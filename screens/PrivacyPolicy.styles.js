@@ -2,47 +2,12 @@ import { StyleSheet } from "react-native";
 
 
 export default styles = StyleSheet.create({
-    container_light: {
+    container: {
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
     },
-
-    container_dark: {
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center',
-        backgroundColor: 'rgba(18, 18, 18, .9)',
-    },
-
-    container_blue: {
-        flex: 1,
-        alignItems: 'center', 
-        justifyContent: 'center',
-        backgroundColor: 'rgba(33, 171, 205, .9)',
-    },
-
-    container_red: {
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center',
-        backgroundColor: 'rgba(200, 45, 56, .9)',
-    },
-
-    container_purple: {
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center',
-        backgroundColor: 'rgba(130, 7, 197, .9)',
-    },
-
-    container_yellow: {
-        flex: 1,
-        alignItems: 'center', 
-        justifyContent: 'center',
-        backgroundColor: 'rgba(222, 189, 69, .9)',
-    },
-
+    
     text_light: {
         color: 'rgba(0,0,0,0.8)',
         fontSize: 20,

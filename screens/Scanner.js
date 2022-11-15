@@ -5,6 +5,7 @@ import React, { useContext } from 'react';
 import { Camera } from 'expo-camera';
 import { ThemeContext } from '../constants/context';
 import { useNavigation } from '@react-navigation/native';
+import Themes from '../constants/ThemeColors';
 
 function ScannerScreen() {
   const [startCamera,setStartCamera] = React.useState(false)
@@ -24,10 +25,11 @@ const navigation = useNavigation();
 
   const currentTheme = useContext (ThemeContext);
   const theme = currentTheme.state.theme;
+  const colors = Themes[theme]
 
   return (
-    <View style={theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue}>
-      <Text style={theme == 'light' ? styles.text_light : theme == 'dark' ? styles.text_dark : styles.text_blue}>LEGO Mindstorms Brick Locator</Text>
+    <View style={[styles.container, {backgroundColor: colors.background}] }>
+     <Text style={[styles.text, {color: colors.textColor}]}>LEGO Mindstorms Brick Locator</Text>
       {/* <Pressable style={styles.button}>
         {({ pressed }) => (
           <Text style={styles.button}>
@@ -35,7 +37,6 @@ const navigation = useNavigation();
           </Text>
         )}
       </Pressable> */}
-
         <TouchableOpacity
             onPress={() => navigation.navigate('Browse')}
             style={styles.button}
@@ -75,10 +76,9 @@ const navigation = useNavigation();
             </Text>
           </TouchableOpacity>
       )}
-
       <StatusBar style="auto" />
     </View>
   );
 }
 
-export default ScannerScreen;
+export default ScannerScreen;1

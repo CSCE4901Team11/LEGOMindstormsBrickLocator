@@ -4,6 +4,7 @@ import { ThemeContext } from '../constants/context';
 import styles from './PrivacyPolicy.styles'; 
 import { useWindowDimensions } from 'react-native';
 import RenderHtml from 'react-native-render-html';
+import Themes from '../constants/ThemeColors';
 
 const source = {
   html: `
@@ -130,41 +131,24 @@ function PrivacyPolicy () {
 
   const currentTheme = useContext (ThemeContext);
   const theme = currentTheme.state.theme;
-
-  const blueThemeChange = ()  => {
-    currentTheme.dispatch({ type: "BLUEMODE" })
-  };
-
-  const redThemeChange = ()  => {
-    currentTheme.dispatch({ type: "REDMODE" })
-  };
-
-  const purpleThemeChange = ()  => {
-    currentTheme.dispatch({ type: "PURPLEMODE" })
-  };
-
-  const yellowThemeChange = ()  => {
-    currentTheme.dispatch({ type: "YELLOWMODE" })
-  };
+  const colors = Themes[theme]
 
     return (
-      <View style={theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : theme == 'blue' ? styles.container_blue : theme == 'red' ? styles.container_red : theme == 'purple' ? styles.container_purple : theme == 'yellow' ? styles.container_yellow : styles.container_light}>
+      <View style={[styles.container, {backgroundColor: colors.background}] }>
           <View style={{paddingVertical: 20, textAlign: 'center', fontSize: 20,}}>
           <Text style={{fontWeight: 'bold', fontSize: 27, marginTop: 130, paddingVertical: 10, textAlign: "center",padding: 4,}}>Privacy Policy</Text>  
           </View>
          
         <SafeAreaView>
           <ScrollView style={{marginHorizontal: 20,}} >
-        <RenderHtml
-      contentWidth={width}
-      source={source}
-    />
-    </ScrollView>
-    </SafeAreaView>
-      </View>
-      
+            <RenderHtml
+              contentWidth={width}
+              source={source}
+            />
+          </ScrollView>
+        </SafeAreaView>
+      </View> 
     );
-
   }
 
 export default PrivacyPolicy;
