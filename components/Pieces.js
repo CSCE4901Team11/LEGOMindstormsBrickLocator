@@ -1,6 +1,8 @@
+import { useNavigation } from '@react-navigation/native';
 import React, {useState} from 'react';
 import { Text, View, TouchableHighlight, FlatList, Image, TouchableOpacity } from 'react-native';
 import styles from './Pieces.styles';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function GetPieces() {
     const [pieces, setPieces] = useState([])
@@ -27,8 +29,16 @@ export default function GetPieces() {
         return <View style={styles.listSeparator} />;
     }
 
-    function SelectPiece() {
-
+    const navigation = useNavigation();
+    const SelectPiece = async (name) => {
+        try {
+            await AsyncStorage.setItem('@current_piece', name)
+            navigation.navigate('Scanner')
+            console.log("piece saved")
+        }
+        catch (error) {
+            console.log('piece not saved')
+        }
     }
     
     const renderItem = ({ item }) => {
@@ -43,7 +53,7 @@ export default function GetPieces() {
                     <Text style = {styles.text}>Element ID/Design ID: {item.element_id}/{item.part.part_num}</Text>
                     <Text style = {styles.text}>Color: {item.color.name} </Text>
                 </View>
-                <TouchableOpacity onPress={() => SelectPiece() }>
+                <TouchableOpacity onPress={() => SelectPiece(item.part.name) }>
                 <View style={styles.button}>
                     <Text style={styles.buttonText}>Select Piece</Text>
                 </View>
@@ -66,7 +76,7 @@ export default function GetPieces() {
                 keyExtractor={(item) => item.id}
                 ItemSeparatorComponent={listSeparator}
             />
-            {console.log(pieces.results)}
+            {/* {console.log(pieces.results)} */}
         </View>
     );
     }
