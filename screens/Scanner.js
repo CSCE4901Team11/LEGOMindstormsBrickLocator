@@ -6,8 +6,6 @@ import { Camera } from 'expo-camera';
 import { ThemeContext } from '../constants/context';
 import { useNavigation } from '@react-navigation/native';
 import Themes from '../constants/ThemeColors';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
 
 function ScannerScreen() {
   const [startCamera,setStartCamera] = React.useState(false)
@@ -23,30 +21,15 @@ function ScannerScreen() {
   }
 
 
-  const navigation = useNavigation();
+const navigation = useNavigation();
 
   const currentTheme = useContext (ThemeContext);
   const theme = currentTheme.state.theme;
-
   const colors = Themes[theme]
-  console.log (colors)
 
-  const getPieceName = async () => {
-    try {
-      const pieceName = await AsyncStorage.getItem('@current_piece')
-      if (pieceName !== null){
-        console.log(pieceName)
-      }
-    }
-    catch (error) {
-      console.log('cannot get piece name')
-    }
-  }
-  
   return (
     <View style={[styles.container, {backgroundColor: colors.background}] }>
-     {/* <View style={theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : theme == 'blue' ? styles.container_blue : theme == 'red' ? styles.container_red : theme == 'purple' ? styles.container_purple : theme == 'yellow' ? styles.container_yellow : styles.container_light}> */}
-      <Text style={[styles.text, {color: colors.textColor}]}>LEGO Mindstorms Brick Locator</Text>
+     <Text style={[styles.text, {color: colors.textColor}]}>LEGO Mindstorms Brick Locator</Text>
       {/* <Pressable style={styles.button}>
         {({ pressed }) => (
           <Text style={styles.button}>
@@ -54,7 +37,6 @@ function ScannerScreen() {
           </Text>
         )}
       </Pressable> */}
-      {/* <Text style = {styles.text}>{getPieceName}</Text> */}
         <TouchableOpacity
             onPress={() => navigation.navigate('Browse')}
             style={styles.button}
@@ -94,10 +76,9 @@ function ScannerScreen() {
             </Text>
           </TouchableOpacity>
       )}
-
       <StatusBar style="auto" />
     </View>
   );
 }
 
-export default ScannerScreen;
+export default ScannerScreen;1

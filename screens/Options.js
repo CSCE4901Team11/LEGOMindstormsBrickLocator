@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import { View, Text, Button, StyleSheet, Alert, Pressable} from 'react-native';
 import Modal from "react-native-modal";
 import { ThemeContext } from '../constants/context';
+import Themes from '../constants/ThemeColors';
 import styles from './Options.styles';
 
 const OptionsScreen = ({ navigation }) => {
@@ -16,6 +17,7 @@ const OptionsScreen = ({ navigation }) => {
 
   const currentTheme = useContext (ThemeContext);
   const theme = currentTheme.state.theme;
+  const colors = Themes[theme]
 
   const blueThemeChange = ()  => {
     currentTheme.dispatch({ type: "BLUEMODE" })
@@ -46,8 +48,8 @@ const OptionsScreen = ({ navigation }) => {
   }
 
     return (
-      <View style={ theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : theme == 'blue' ? styles.container_blue : theme == 'red' ? styles.container_red : theme == 'purple' ? styles.container_purple : theme == 'yellow' ? styles.container_yellow : styles.container_light }>
-        <View style={styles.container}>
+      <View style={[styles.container, {backgroundColor: colors.background}] }>
+        <View style={styles.insideContainer}>
           <View style={styles.headerRow}>
           <Text style={styles.headerText}>Options</Text>  
           </View>
