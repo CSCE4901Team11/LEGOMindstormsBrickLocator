@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, Pressable, TouchableOpacity } from 'react-native';
+import { Text, View, Pressable, TouchableOpacity, Alert } from 'react-native';
 import styles from './Scanner.styles';
 import React, { useContext, useEffect, useState } from 'react';
 import { Camera } from 'expo-camera';
@@ -9,6 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 import * as mobilenet from '@tensorflow-models/mobilenet';
 import * as tf from '@tensorflow/tfjs';
 import * as tfrn from '@tensorflow/tfjs-react-native'
+import { withRepeat } from 'react-native-reanimated';
 
 const TensorCamera = tfrn.cameraWithTensors(Camera);
 
@@ -28,8 +29,8 @@ function ScannerScreen() {
 
   let requestAnimationFrameId = 0;
 
-  const textureDims = Platform.OS === "ios"? { width: 1080, height: 1920 } : { width: 1600, height: 1200 };
-  const tensorDims = { width: 152, height: 200 }; 
+  const textureDims = { width: 1080, height: 1920 };
+  const tensorDims = { width: textureDims.width/4, height: textureDims.height/4 }; 
 
   /*
   const highlight = document.createElement('div');
@@ -66,15 +67,17 @@ function ScannerScreen() {
     };
   }, [requestAnimationFrameId]);
 
-  
+
   const DetectBrick = async (className) => { //To Implement
     setBrickDetected(true);
-    Alert.alert("Detected:","Alert: " + className + " detected.", [{text:"OK"}]);
-    loadNewBrick();
+    loadNewBrick()
+    return(
+      <Text className />
+    );
   }
-  
 
   const loadMobileNetModel = async () => {
+    console.log('Start loading model');
     const model = await mobilenet.load();
     console.log(`model loaded`);
     return model;
@@ -90,7 +93,7 @@ function ScannerScreen() {
     if(!prediction || prediction.length === 0) { return; }
     
     //only attempt detection when confidence is higher than 20%
-    if(prediction[0].probability > 0.2) {
+    if(prediction[0].probability > 0.5) {
 
       cancelAnimationFrame(requestAnimationFrameId);
       setPredictionFound(true);
@@ -99,8 +102,14 @@ function ScannerScreen() {
     }
   }
 
+  const delay = async () => {
+    if(!frameworkReady) delay();
+  return;
+  }
+
   const handleCameraStream = (imageAsTensors) => {
     const loop = async () => {
+      if(!frameworkReady) {await delay();}
       const nextImageTensor = await imageAsTensors.next().value;
       await getPrediction(nextImageTensor);
       requestAnimationFrameId = requestAnimationFrame(loop);
@@ -114,7 +123,7 @@ function ScannerScreen() {
     setBrickDetected(false);
   }
 
-  const renderCameraView = () => {
+  const renderCameraView = (frameworkReady) => {
     return <View flex={1}>
                 <TensorCamera
                   style={styles.camera_window}
@@ -133,9 +142,16 @@ function ScannerScreen() {
                   </TensorCamera>
             </View>;
   }
+
+  const awaitFrameworkReady = () => {
+    if(frameworkReady) {
+      return( brickDetected ? DetectBrick() : renderCameraView(frameworkReady) );
+    }
+  }
+
   return (
       <View style={theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue}>
-        {brickDetected ? DetectBrick() : renderCameraView() }
+        {awaitFrameworkReady()}
         <StatusBar style="auto" />
       </View>
   );

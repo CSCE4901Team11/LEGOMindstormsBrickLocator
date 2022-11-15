@@ -6,7 +6,7 @@ export default StyleSheet.create({
      // backgroundColor: '#14A0DB',
       alignItems: 'center',
       justifyContent: 'flex-start',
-      paddingTop: 150,
+      paddingTop: 0,
     },
 
     container_dark: {
@@ -14,7 +14,7 @@ export default StyleSheet.create({
       backgroundColor: '#121212',
       alignItems: 'center',
       justifyContent: 'flex-start',
-      paddingTop: 150,
+      paddingTop: 0,
     },
 
     container_blue: {
@@ -22,7 +22,7 @@ export default StyleSheet.create({
       backgroundColor: '#00368c', //'#14A0DB'
       alignItems: 'center',
       justifyContent: 'flex-start',
-      paddingTop: 150,
+      paddingTop: 0,
     },
     
     text_light: {
@@ -57,7 +57,8 @@ export default StyleSheet.create({
 
     camera_window: {
       flex: 1,
-      width: "100%"
+      width: "100%",
+      height: "100%"
     },
 });
   
