@@ -28,7 +28,7 @@ const SideMenu = (props) => {
 
 
     return (
-        <View style = {theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue}>
+        <View style = {theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : theme == 'blue' ? styles.container_blue : theme == 'red' ? styles.container_red : theme == 'purple' ? styles.container_purple : theme == 'yellow' ? styles.container_yellow : styles.container_light }>
             <DrawerContentScrollView {...props} >
                 <Text style={theme == 'light' ? styles.title_light : theme == 'dark' ? styles.title_dark : styles.title_light}>
                     LEGO Mindstorms Brick Locator

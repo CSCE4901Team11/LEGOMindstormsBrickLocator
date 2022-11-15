@@ -20,6 +20,30 @@ export default styles = StyleSheet.create({
         backgroundColor: '#89cff0'
     },
 
+    container_red: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rbga(200, 45, 56, 1)',
+        marginTop: 100,
+    },
+
+    container_purple: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rbga(130, 7, 197, 1)',
+        marginTop: 100,
+    },
+
+    container_yellow: {
+        flex: 1,
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rbga(222, 189, 69, 1)',
+        marginTop: 100,
+    },
+
     title_light: {
         padding: 15,
         fontSize: 20,
