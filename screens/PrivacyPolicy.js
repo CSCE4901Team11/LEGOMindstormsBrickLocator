@@ -132,7 +132,19 @@ function PrivacyPolicy () {
   const theme = currentTheme.state.theme;
 
   const blueThemeChange = ()  => {
-          currentTheme.dispatch({ type: "BLUEMODE" })
+    currentTheme.dispatch({ type: "BLUEMODE" })
+  };
+
+  const redThemeChange = ()  => {
+    currentTheme.dispatch({ type: "REDMODE" })
+  };
+
+  const purpleThemeChange = ()  => {
+    currentTheme.dispatch({ type: "PURPLEMODE" })
+  };
+
+  const yellowThemeChange = ()  => {
+    currentTheme.dispatch({ type: "YELLOWMODE" })
   };
 
     return (
