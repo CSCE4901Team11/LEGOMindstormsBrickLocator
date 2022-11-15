@@ -15,15 +15,15 @@ const Themes = {
       textColor: 'rgba(255,255,255,1)',
     },
     red: {
-      background: 'rbga(161, 7, 2, 1)',
+      background: '#A10702',
       textColor: 'rgba(255, 255, 255, .9)',
     },
     purple: {
-      background: 'rbga(91, 5, 138, 1)',
+      background: '#5B058A',
       textColor: 'rgba(255, 255, 255, .9)',
     },
     yellow: {
-      background: 'rbga(198, 166, 50, 1)',
+      background: '#C6A632',
       textColor: 'rgba(29, 29, 29, 0.8)',
     },
 }

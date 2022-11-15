@@ -22,26 +22,17 @@ export default styles = StyleSheet.create({
 
     container_red: {
         flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center',
-        backgroundColor: 'rbga(200, 45, 56, 1)',
-        marginTop: 100,
+        backgroundColor: '#C82D38',
     },
 
     container_purple: {
         flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center',
-        backgroundColor: 'rbga(130, 7, 197, 1)',
-        marginTop: 100,
+        backgroundColor: '#8207C5',
     },
 
     container_yellow: {
         flex: 1,
-        alignItems: 'center', 
-        justifyContent: 'center',
-        backgroundColor: 'rbga(222, 189, 69, 1)',
-        marginTop: 100,
+        backgroundColor: '#DEBD45',
     },
 
     title_light: {

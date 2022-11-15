@@ -64,18 +64,19 @@ export default styles = StyleSheet.create({
     },
 
     text_red: {
-        color: 'rgba(255, 255, 255, .9)',
-        fontSize: 20,
+        color: '#FFFFFF',
+        fontSize: 15,
+        fontWeight: 'bold',
     },
 
     text_purple: {
-        color: 'rgba(255, 255, 255, .9)',
+        color: '#FFFFFF',
         fontSize: 15,
         fontWeight: 'bold',
     },
 
     text_yellow: {
-        color: 'rgba(29, 29, 29, 0.8)',
+        color: '#1D1D1D',
         fontSize: 15,
         fontWeight: 'bold',
     },
