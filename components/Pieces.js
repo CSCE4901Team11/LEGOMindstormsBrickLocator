@@ -12,7 +12,7 @@ export default function GetPieces() {
             "headers": {
                 "Accept": "application/json",
                 "Authorization": "apikey", // change value to actual api key
-                "Rebrickableapi-host": "https://rebrickable.com"
+                "Rebrickableapi-host": "https://rebrickable.com"   
             }
         })
         const data = await resp.json()
