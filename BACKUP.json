@@ -12,9 +12,11 @@
         "@react-navigation/drawer": "^6.5.0",
         "@react-navigation/native": "^6.0.13",
         "@react-navigation/native-stack": "^6.9.1",
-        "@tensorflow-models/mobilenet": "^2.1.0",
+        "@tensorflow-models/coco-ssd": "^2.2.2",
         "@tensorflow/tfjs": "^4.0.0",
+        "@tensorflow/tfjs-converter": "^3.11.0",
         "@tensorflow/tfjs-react-native": "^0.8.0",
+        "@unimodules/core": "^7.1.2",
         "chokidar": "^2.1.8",
         "eas-cli": "^0.49.0",
         "expo": "~46.0.16",
@@ -24,11 +26,12 @@
         "expo-device": "~4.3.0",
         "expo-gl": "^11.4.0",
         "expo-gl-cpp": "^11.4.0",
+        "expo-modules": "^0.0.0",
         "expo-modules-autolinking": "^0.10.3",
-        "expo-modules-core": "~0.11.8",
+        "expo-modules-core": "~0.11.9",
         "expo-splash-screen": "~0.16.2",
         "expo-status-bar": "~1.4.0",
-        "expo-updates": "^0.14.6",
+        "expo-updates": "~0.14.7",
         "install-expo-modules": "^0.3.9",
         "npm": "^8.19.3",
         "pm2": "^5.2.2",
@@ -6442,13 +6445,13 @@
         "node": ">=10"
       }
     },
-    "node_modules/@tensorflow-models/mobilenet": {
-      "version": "2.1.0",
-      "resolved": "https://registry.npmjs.org/@tensorflow-models/mobilenet/-/mobilenet-2.1.0.tgz",
-      "integrity": "sha512-JjqT9ijHDFA2FEpUGWg7H2lQ0GrMuE2VmiCRBYmUew6b4JKht8LXDjG5HxZh95YH6c/25sZWTpGeHbquloH+hw==",
+    "node_modules/@tensorflow-models/coco-ssd": {
+      "version": "2.2.2",
+      "resolved": "https://registry.npmjs.org/@tensorflow-models/coco-ssd/-/coco-ssd-2.2.2.tgz",
+      "integrity": "sha512-Jey2JscmKEValcFZH2ZLz14s8KPRmVtfJ0d0M3dPhvBp9dJiGNanVXr/pJAY5OS7emKj9uSciGhdkHWXY9Hovw==",
       "peerDependencies": {
-        "@tensorflow/tfjs-converter": "^3.1.0",
-        "@tensorflow/tfjs-core": "^3.1.0"
+        "@tensorflow/tfjs-converter": "^3.3.0",
+        "@tensorflow/tfjs-core": "^3.3.0"
       }
     },
     "node_modules/@tensorflow/tfjs": {
@@ -6533,12 +6536,11 @@
       "peer": true
     },
     "node_modules/@tensorflow/tfjs-converter": {
-      "version": "3.21.0",
-      "resolved": "https://registry.npmjs.org/@tensorflow/tfjs-converter/-/tfjs-converter-3.21.0.tgz",
-      "integrity": "sha512-12Y4zVDq3yW+wSjSDpSv4HnpL2sDZrNiGSg8XNiDE4HQBdjdA+a+Q3sZF/8NV9y2yoBhL5L7V4mMLDdbZBd9/Q==",
-      "peer": true,
+      "version": "3.11.0",
+      "resolved": "https://registry.npmjs.org/@tensorflow/tfjs-converter/-/tfjs-converter-3.11.0.tgz",
+      "integrity": "sha512-rTRIKvBoqL0qdPYpm8UXauZycOiaBHZB2E2v3OoXoHnjvle/Xn/09uZJdrixgGhR+Kahs3Vz27BEEFz6RI5j2w==",
       "peerDependencies": {
-        "@tensorflow/tfjs-core": "3.21.0"
+        "@tensorflow/tfjs-core": "3.11.0"
       }
     },
     "node_modules/@tensorflow/tfjs-core": {
@@ -6586,9 +6588,9 @@
         "@tensorflow/tfjs-backend-webgl": "~3.11.0",
         "@tensorflow/tfjs-core": "~3.11.0",
         "expo-asset": "^7.0.0",
-        "expo-camera": "^7.0.0",
-        "expo-gl": "^7.0.0",
-        "react": "^16.12.0",
+        "expo-camera": "^12.0.0",
+        "expo-gl": "^11.0.0",
+        "react": "^16.12.0 || ^17.0.0 || ^18.0.0",
         "react-native": ">= 0.58.0",
         "react-native-fs": "^2.14.1"
       }
@@ -7046,6 +7048,15 @@
       "version": "21.0.0",
       "resolved": "https://registry.npmjs.org/@types/yargs-parser/-/yargs-parser-21.0.0.tgz",
       "integrity": "sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA=="
+    },
+    "node_modules/@unimodules/core": {
+      "version": "7.1.2",
+      "resolved": "https://registry.npmjs.org/@unimodules/core/-/core-7.1.2.tgz",
+      "integrity": "sha512-lY+e2TAFuebD3vshHMIRqru3X4+k7Xkba4Wa7QsDBd+ex4c4N2dHAO61E2SrGD9+TRBD8w/o7mzK6ljbqRnbyg==",
+      "deprecated": "replaced by the 'expo' package, learn more: https://blog.expo.dev/whats-new-in-expo-modules-infrastructure-7a7cdda81ebc",
+      "dependencies": {
+        "compare-versions": "^3.4.0"
+      }
     },
     "node_modules/@urql/core": {
       "version": "2.3.6",
@@ -13733,6 +13744,11 @@
         "expo-json-utils": "~0.3.0"
       }
     },
+    "node_modules/expo-modules": {
+      "version": "0.0.0",
+      "resolved": "https://registry.npmjs.org/expo-modules/-/expo-modules-0.0.0.tgz",
+      "integrity": "sha512-RsXPsVjxeLIr2AKE9YWIcVhuDvA446DaUP8J9yoQ2VA7DfcgNQdx2ZNpXfy3CI45AFJjtEqFKJ46Vnb3asM/OQ=="
+    },
     "node_modules/expo-modules-autolinking": {
       "version": "0.10.3",
       "resolved": "https://registry.npmjs.org/expo-modules-autolinking/-/expo-modules-autolinking-0.10.3.tgz",
@@ -13846,9 +13862,9 @@
       }
     },
     "node_modules/expo-modules-core": {
-      "version": "0.11.8",
-      "resolved": "https://registry.npmjs.org/expo-modules-core/-/expo-modules-core-0.11.8.tgz",
-      "integrity": "sha512-goC2ghZFVaV6nXEbk+kz9oKnQmqW8fHVUCSPxC0QXhV0ay1dA9Ki6qqMPagkBJUPAz89NsNqW3bYR6DFXq7lvA==",
+      "version": "0.11.9",
+      "resolved": "https://registry.npmjs.org/expo-modules-core/-/expo-modules-core-0.11.9.tgz",
+      "integrity": "sha512-6AlOE4KHN3/WWbY8hH7W6ceuIFj0qbk1N+UhmMhiCEUas3NvXA6wcH3xjO+8JZ+BRcIB9M4QEeX72j6vDDuExg==",
       "dependencies": {
         "compare-versions": "^3.4.0",
         "invariant": "^2.2.4"
@@ -14177,9 +14193,9 @@
       "integrity": "sha512-nY6GuvoS/U5XdhfBNmvXGRoGzIXywXpSZs2wdiP+FbS79P9UWyEqzgARrBTF+6pQxUVMs6/vdffxRpwhjwYPug=="
     },
     "node_modules/expo-updates": {
-      "version": "0.14.6",
-      "resolved": "https://registry.npmjs.org/expo-updates/-/expo-updates-0.14.6.tgz",
-      "integrity": "sha512-JmE3nsbL8cUAV2slhIqqNIG+jEYCJJvPzSYcUBd15s0sg0xxRbasNaEfnSIrYtZMjhl/YNwMgQzUkU6C2NtXyg==",
+      "version": "0.14.7",
+      "resolved": "https://registry.npmjs.org/expo-updates/-/expo-updates-0.14.7.tgz",
+      "integrity": "sha512-xzRvsv45TfIYJ4arTMiorAci4LvUQvpBJx0llJcdCFLWGcoj59roi48ldtDTwkgQAGjDP/Oyysd3zTyvpwxjYg==",
       "dependencies": {
         "@expo/code-signing-certificates": "0.0.2",
         "@expo/config": "~7.0.1",
@@ -14230,6 +14246,15 @@
         "md5-file": "^3.2.3",
         "path-browserify": "^1.0.0",
         "url-parse": "^1.5.9"
+      }
+    },
+    "node_modules/expo/node_modules/expo-modules-core": {
+      "version": "0.11.8",
+      "resolved": "https://registry.npmjs.org/expo-modules-core/-/expo-modules-core-0.11.8.tgz",
+      "integrity": "sha512-goC2ghZFVaV6nXEbk+kz9oKnQmqW8fHVUCSPxC0QXhV0ay1dA9Ki6qqMPagkBJUPAz89NsNqW3bYR6DFXq7lvA==",
+      "dependencies": {
+        "compare-versions": "^3.4.0",
+        "invariant": "^2.2.4"
       }
     },
     "node_modules/expo/node_modules/uuid": {
@@ -36890,10 +36915,10 @@
         "defer-to-connect": "^2.0.0"
       }
     },
-    "@tensorflow-models/mobilenet": {
-      "version": "2.1.0",
-      "resolved": "https://registry.npmjs.org/@tensorflow-models/mobilenet/-/mobilenet-2.1.0.tgz",
-      "integrity": "sha512-JjqT9ijHDFA2FEpUGWg7H2lQ0GrMuE2VmiCRBYmUew6b4JKht8LXDjG5HxZh95YH6c/25sZWTpGeHbquloH+hw==",
+    "@tensorflow-models/coco-ssd": {
+      "version": "2.2.2",
+      "resolved": "https://registry.npmjs.org/@tensorflow-models/coco-ssd/-/coco-ssd-2.2.2.tgz",
+      "integrity": "sha512-Jey2JscmKEValcFZH2ZLz14s8KPRmVtfJ0d0M3dPhvBp9dJiGNanVXr/pJAY5OS7emKj9uSciGhdkHWXY9Hovw==",
       "requires": {}
     },
     "@tensorflow/tfjs": {
@@ -37133,10 +37158,9 @@
       }
     },
     "@tensorflow/tfjs-converter": {
-      "version": "3.21.0",
-      "resolved": "https://registry.npmjs.org/@tensorflow/tfjs-converter/-/tfjs-converter-3.21.0.tgz",
-      "integrity": "sha512-12Y4zVDq3yW+wSjSDpSv4HnpL2sDZrNiGSg8XNiDE4HQBdjdA+a+Q3sZF/8NV9y2yoBhL5L7V4mMLDdbZBd9/Q==",
-      "peer": true,
+      "version": "3.11.0",
+      "resolved": "https://registry.npmjs.org/@tensorflow/tfjs-converter/-/tfjs-converter-3.11.0.tgz",
+      "integrity": "sha512-rTRIKvBoqL0qdPYpm8UXauZycOiaBHZB2E2v3OoXoHnjvle/Xn/09uZJdrixgGhR+Kahs3Vz27BEEFz6RI5j2w==",
       "requires": {}
     },
     "@tensorflow/tfjs-core": {
@@ -37394,6 +37418,14 @@
       "version": "21.0.0",
       "resolved": "https://registry.npmjs.org/@types/yargs-parser/-/yargs-parser-21.0.0.tgz",
       "integrity": "sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA=="
+    },
+    "@unimodules/core": {
+      "version": "7.1.2",
+      "resolved": "https://registry.npmjs.org/@unimodules/core/-/core-7.1.2.tgz",
+      "integrity": "sha512-lY+e2TAFuebD3vshHMIRqru3X4+k7Xkba4Wa7QsDBd+ex4c4N2dHAO61E2SrGD9+TRBD8w/o7mzK6ljbqRnbyg==",
+      "requires": {
+        "compare-versions": "^3.4.0"
+      }
     },
     "@urql/core": {
       "version": "2.3.6",
@@ -41913,6 +41945,15 @@
             "url-parse": "^1.5.9"
           }
         },
+        "expo-modules-core": {
+          "version": "0.11.8",
+          "resolved": "https://registry.npmjs.org/expo-modules-core/-/expo-modules-core-0.11.8.tgz",
+          "integrity": "sha512-goC2ghZFVaV6nXEbk+kz9oKnQmqW8fHVUCSPxC0QXhV0ay1dA9Ki6qqMPagkBJUPAz89NsNqW3bYR6DFXq7lvA==",
+          "requires": {
+            "compare-versions": "^3.4.0",
+            "invariant": "^2.2.4"
+          }
+        },
         "uuid": {
           "version": "3.4.0",
           "resolved": "https://registry.npmjs.org/uuid/-/uuid-3.4.0.tgz",
@@ -42712,6 +42753,11 @@
         "expo-json-utils": "~0.3.0"
       }
     },
+    "expo-modules": {
+      "version": "0.0.0",
+      "resolved": "https://registry.npmjs.org/expo-modules/-/expo-modules-0.0.0.tgz",
+      "integrity": "sha512-RsXPsVjxeLIr2AKE9YWIcVhuDvA446DaUP8J9yoQ2VA7DfcgNQdx2ZNpXfy3CI45AFJjtEqFKJ46Vnb3asM/OQ=="
+    },
     "expo-modules-autolinking": {
       "version": "0.10.3",
       "resolved": "https://registry.npmjs.org/expo-modules-autolinking/-/expo-modules-autolinking-0.10.3.tgz",
@@ -42795,9 +42841,9 @@
       }
     },
     "expo-modules-core": {
-      "version": "0.11.8",
-      "resolved": "https://registry.npmjs.org/expo-modules-core/-/expo-modules-core-0.11.8.tgz",
-      "integrity": "sha512-goC2ghZFVaV6nXEbk+kz9oKnQmqW8fHVUCSPxC0QXhV0ay1dA9Ki6qqMPagkBJUPAz89NsNqW3bYR6DFXq7lvA==",
+      "version": "0.11.9",
+      "resolved": "https://registry.npmjs.org/expo-modules-core/-/expo-modules-core-0.11.9.tgz",
+      "integrity": "sha512-6AlOE4KHN3/WWbY8hH7W6ceuIFj0qbk1N+UhmMhiCEUas3NvXA6wcH3xjO+8JZ+BRcIB9M4QEeX72j6vDDuExg==",
       "requires": {
         "compare-versions": "^3.4.0",
         "invariant": "^2.2.4"
@@ -43064,9 +43110,9 @@
       "integrity": "sha512-nY6GuvoS/U5XdhfBNmvXGRoGzIXywXpSZs2wdiP+FbS79P9UWyEqzgARrBTF+6pQxUVMs6/vdffxRpwhjwYPug=="
     },
     "expo-updates": {
-      "version": "0.14.6",
-      "resolved": "https://registry.npmjs.org/expo-updates/-/expo-updates-0.14.6.tgz",
-      "integrity": "sha512-JmE3nsbL8cUAV2slhIqqNIG+jEYCJJvPzSYcUBd15s0sg0xxRbasNaEfnSIrYtZMjhl/YNwMgQzUkU6C2NtXyg==",
+      "version": "0.14.7",
+      "resolved": "https://registry.npmjs.org/expo-updates/-/expo-updates-0.14.7.tgz",
+      "integrity": "sha512-xzRvsv45TfIYJ4arTMiorAci4LvUQvpBJx0llJcdCFLWGcoj59roi48ldtDTwkgQAGjDP/Oyysd3zTyvpwxjYg==",
       "requires": {
         "@expo/code-signing-certificates": "0.0.2",
         "@expo/config": "~7.0.1",
