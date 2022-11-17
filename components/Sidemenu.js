@@ -1,10 +1,11 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { View, Text, Switch } from 'react-native'
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer'
 import { FontAwesome5 } from '@expo/vector-icons';
 import { ThemeContext } from '../constants/context';
 import  styles  from './Sidemenu.styles';
 import Themes from '../constants/ThemeColors';
+import { set } from 'react-native-reanimated';
 
 const SideMenu = (props) => {
     const [isEnabled, setIsEnabled] = useState(false);
@@ -15,10 +16,17 @@ const SideMenu = (props) => {
         else
             setIsEnabled(true)
     }
-
+    
     const currentTheme = useContext (ThemeContext)
     const theme = currentTheme.state.theme
     const colors = Themes[theme]
+
+    if(theme != 'dark' && isEnabled && theme != undefined){
+        console.log("------------------------")
+        console.log(theme)
+        console.log("------------------------")
+        setIsEnabled(false)
+    }
 
     const handleThemeChange = ()  => {
         if (theme == 'dark')
