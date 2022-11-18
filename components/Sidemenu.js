@@ -4,6 +4,7 @@ import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawe
 import { FontAwesome5 } from '@expo/vector-icons';
 import { ThemeContext } from '../constants/context';
 import  styles  from './Sidemenu.styles';
+import Themes from '../constants/ThemeColors';
 
 const SideMenu = (props) => {
     const [isEnabled, setIsEnabled] = useState(false);
@@ -15,8 +16,9 @@ const SideMenu = (props) => {
             setIsEnabled(true)
     }
 
-    const currentTheme = useContext (ThemeContext);
-    const theme = currentTheme.state.theme;
+    const currentTheme = useContext (ThemeContext)
+    const theme = currentTheme.state.theme
+    const colors = Themes[theme]
 
     const handleThemeChange = ()  => {
         if (theme == 'dark')
@@ -28,9 +30,9 @@ const SideMenu = (props) => {
 
 
     return (
-        <View style = {theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue}>
+        <View style={[styles.container, {backgroundColor: colors.sideMenuBackground}] }>
             <DrawerContentScrollView {...props} >
-                <Text style={theme == 'light' ? styles.title_light : theme == 'dark' ? styles.title_dark : styles.title_light}>
+                <Text style={[styles.title, {color: colors.textColor}]}>
                     LEGO Mindstorms Brick Locator
                 </Text>
                 <DrawerItemList {...props} />
