@@ -1,51 +1,18 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-    container_light: {
+    container: {
       flex: 1,
-     // backgroundColor: '#14A0DB',
       alignItems: 'center',
       justifyContent: 'flex-start',
-      paddingTop: 0,
     },
 
-    container_dark: {
-      flex: 1,
-      backgroundColor: '#121212',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      paddingTop: 0,
-    },
-
-    container_blue: {
-      flex: 1,
-      backgroundColor: '#00368c', //'#14A0DB'
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      paddingTop: 0,
-    },
-    
-    text_light: {
-        fontSize: 40,
-        fontWeight: '420',
-       // color: 'white',
-        textAlign: 'center',
-    },
-
-    text_dark: {
+    text: {
       fontSize: 40,
       fontWeight: '420',
-      color: 'rgba(255, 255, 255, .9)',
       textAlign: 'center',
     },
 
-    text_blue: {
-      fontSize: 40,
-      fontWeight: '420',
-      color: 'rgba(255,255,255,1)',
-      textAlign: 'center',
-    },
-    
     button: {
         fontSize: 25,
         textAlign: 'center',
@@ -55,17 +22,49 @@ export default StyleSheet.create({
         borderRadius: 5,
     },
 
-    camera_window: {
-      flex: 1,
-      width: "120%",
-      height: "100%"
-    },
-
     highlighter: {
       flex: 1,
       borderRadius: 5,
       borderColor: 'rgba(0,255,0,1)',
       backgroundColor: 'rgba(0,255,0,1)',
+      zIndex: 9999,
+    },
+
+    indicator: {
+      flex: 1,
+      borderRadius: 5,
+      justifyContent: 'flex-start',
+      alignSelf: 'center',
+      borderColor: 'black',
+      backgroundColor: 'rgba(130,0,0,1)',
+      zIndex: 9999,
+    },
+
+    camera_window: {
+      flex: 1,
+      width: "100%",
+      height: "100%"
+    },
+
+    header: {
+      flex: .2,
+      width: "100%",
+      backgroundColor: 'rgba(0,255,0,.1)',
+      zIndex: 9999,
+    },
+
+    cameraBody: {
+      flex: 1,
+      width: "100%",
+      backgroundColor: 'rgba(0,0,255,.1)',
+      zIndex: 9999,
+    },
+
+    footer: {
+      flex: .2,
+      width: "100%",
+      backgroundColor: 'rgba(255,0,0,.1)',
+      zIndex: 9999,
     },
 });
   

@@ -3,7 +3,7 @@ export default ScannerScreen;
 
 import { Text, View, Pressable, TouchableOpacity, Alert } from 'react-native';
 import styles from './Scanner.styles';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import { Camera } from 'expo-camera';
 import { ThemeContext } from '../constants/context';
 import { useNavigation } from '@react-navigation/native';
@@ -36,6 +36,8 @@ function ScannerScreen() {
   let y = 0;
   let w = 0;
   let h = 0;
+
+  const [boundingBoxes, setBoundingBoxes] = useState([<highlighter />])
 
   const textureDims = { width: 1080, height: 1920 };
   const tensorDims = { width: textureDims.width/4, height: textureDims.height/4 };     
@@ -72,7 +74,6 @@ function ScannerScreen() {
   const DetectBrick = async (className) => { //To Implement
     setBrickDetected(true);
     loadNewBrick()
-    drawBoundingBoxes(x,y,w,h);
   }
 
   const loadcocoSSDModel = async () => {
@@ -92,21 +93,24 @@ function ScannerScreen() {
     }
 
     if(!prediction || prediction.length === 0) { return; }
-    
+
     //only attempt detection when confidence is higher than 20%
-    if(prediction[0].score > 0.5) {
+    for(let i = 0; i < prediction.length; i++) {
+      if(prediction[i].score > 0.5) {
 
-      x = prediction[0].bbox[0];
-      y = prediction[0].bbox[1];
-      w = prediction[0].bbox[2];
-      h = prediction[0].bbox[3];
+        x = prediction[i].bbox[0];
+        y = prediction[i].bbox[1];
+        w = prediction[i].bbox[2];
+        h = prediction[i].bbox[3];
 
-      cancelAnimationFrame(requestAnimationFrameId);
-      setPredictionFound(true);
+        cancelAnimationFrame(requestAnimationFrameId);
+        setPredictionFound(true);
 
-      await DetectBrick(prediction[0].className);
+        await DetectBrick(prediction[i].className);
 
-      drawBoundingBoxes(x,y,w,h);
+        console.log("Adding bounding box.")
+        setBoundingBoxes([...boundingBoxes,<Highlighter/>])
+      }
     }
   }
 
@@ -115,21 +119,11 @@ function ScannerScreen() {
   return;
   }
 
-  const drawBoundingBoxes = (x,y,w,h) => {
-    console.log("Drawing bounding boxes.")
-    return(
-      <View style={[styles.highlighter, {top: y-10,left: x-10,width: w*2,height: h*2, zIndex: 9999}]}>
-        <Text>???????????????</Text>
-      </View>
-    );
-  }
-
   const handleCameraStream = (imageAsTensors) => {
     const loop = async () => {
       if(!frameworkReady) {await delay();}
       const nextImageTensor = await imageAsTensors.next().value;
       await getPrediction(nextImageTensor);
-      drawBoundingBoxes(x,y,w,h);
       requestAnimationFrameId = requestAnimationFrame(loop);
       tf.dispose(imageAsTensors);
     };
@@ -142,23 +136,32 @@ function ScannerScreen() {
     setBrickDetected(false);
   }
 
-  const renderCameraView = (frameworkReady) => {
-    return <View flex={1}>
-        <TensorCamera
-          style={styles.camera_window}
-          type={Camera.Constants.Type.back}
-          ref={cameraRef}
-          zoom={0}
-          cameraTextureHeight={textureDims.height}
-          cameraTextureWidth={textureDims.width}
-          resizeHeight={tensorDims.height}
-          resizeWidth={tensorDims.width}
-          resizeDepth={3}
-          onReady={imageAsTensors => handleCameraStream(imageAsTensors)}
-          autorender={true} >
-          </TensorCamera>
-    </View>;
+  const renderCameraView = () => {
+    return <TensorCamera
+      style={styles.camera_window}
+      type={Camera.Constants.Type.back}
+      ref={cameraRef}
+      zoom={0}
+      cameraTextureHeight={textureDims.height}
+      cameraTextureWidth={textureDims.width}
+      resizeHeight={tensorDims.height}
+      resizeWidth={tensorDims.width}
+      resizeDepth={3}
+      onReady={imageAsTensors => handleCameraStream(imageAsTensors)}
+      autorender={true} >
+        <View style={styles.header}>
+          <Text style={styles.text}>Header</Text>
+        </View>
+        <View style={styles.cameraBody}>
+          <Text style={styles.text}>Body</Text>
+        </View>
+        <View style={styles.footer}>
+          <Text style={styles.text}>Footer</Text>
+          <DetectStatusIndicator></DetectStatusIndicator>
+        </View>
+      </TensorCamera>;
   }
+
 
   const awaitFrameworkReady = () => {
     if(frameworkReady) {
@@ -166,8 +169,32 @@ function ScannerScreen() {
     }
   }
 
+  const DetectStatusIndicator = () => {
+    return <View style={[
+      styles.indicator,
+      {
+        flex: 1,
+        bottom: 50,
+        width: 50,
+        height: 50,
+      }
+    ]} />
+  }
+
+  const Highlighter = (x,y,w,h) => {
+    return <View style={[
+      styles.highlighter,
+      {
+        top: y,
+        left: x,
+        width: w,
+        height: h,
+      }
+    ]} />
+  };
+
   return (
-      <View style={theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : styles.container_blue}>
+      <View style={styles.container}>
         {awaitFrameworkReady()}
       </View>
   );
