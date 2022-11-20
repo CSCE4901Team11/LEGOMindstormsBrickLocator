@@ -15,7 +15,7 @@ export default function GetPieces() {
             "method": "GET",
             "headers": {
                 "Accept": "application/json",
-                "Authorization": "apikey", // change value to actual api key
+                'Authorization: key ecb3a1672afe825d10cfdda63b689d0e' : 'https://rebrickable.com/api/v3/lego/colors/', // change value to actual api key
                 "Rebrickableapi-host": "https://rebrickable.com"
             }
         })
@@ -23,7 +23,7 @@ export default function GetPieces() {
         delete data.count
         delete data.next
         delete data.previous
-        setPieces(data)
+        setPieces(data) 
         setLoading(false)
     }
 
@@ -79,7 +79,7 @@ export default function GetPieces() {
                 keyExtractor={(item) => item.id}
                 ItemSeparatorComponent={listSeparator}
             />
-            {/* {console.log(pieces.results)} */}
+            {console.log(pieces.results)}
         </View>
     );
     }
