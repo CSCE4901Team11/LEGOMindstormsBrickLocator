@@ -1,0 +1,7 @@
+{
+    "root": "C:\\Users\\dewey\\Desktop\\VS\\Capstone\\LegoMindstormsBrickLocator\\LEGOMindstormsBrickLocator\\ios",
+    "node_env": "development",
+    "default_script": "app.js",
+    "apps": {},
+    "web": {}
+}
