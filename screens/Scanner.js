@@ -1,12 +1,10 @@
-export default ScannerScreen;
-
-
 import { Text, View, Pressable, TouchableOpacity, Alert } from 'react-native';
 import styles from './Scanner.styles';
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import { Camera } from 'expo-camera';
 import { ThemeContext } from '../constants/context';
 import { useNavigation } from '@react-navigation/native';
+import Themes from '../constants/ThemeColors';
 
 import * as cocoSSD from '@tensorflow-models/coco-ssd';
 import * as tf from '@tensorflow/tfjs';
@@ -29,6 +27,7 @@ function ScannerScreen() {
   const navigation = useNavigation();
   const currentTheme = useContext (ThemeContext);
   const theme = currentTheme.state.theme;
+  const colors = Themes[theme];
 
   let requestAnimationFrameId = 0;
 
@@ -40,7 +39,7 @@ function ScannerScreen() {
   const [boundingBoxes, setBoundingBoxes] = useState([<highlighter />])
 
   const textureDims = { width: 1080, height: 1920 };
-  const tensorDims = { width: textureDims.width/4, height: textureDims.height/4 };     
+  const tensorDims = { width: 512, height: 512 };     
 
   useEffect(() => {
     if(!frameworkReady) {
@@ -110,8 +109,10 @@ function ScannerScreen() {
 
         console.log("Adding bounding box.")
         setBoundingBoxes([...boundingBoxes,<Highlighter/>])
+        console.log('Tensor count: ' + tf.memory().numTensors);
       }
     }
+    tf.dispose(prediction)
   }
 
   const delay = async () => {
@@ -125,6 +126,7 @@ function ScannerScreen() {
       const nextImageTensor = await imageAsTensors.next().value;
       await getPrediction(nextImageTensor);
       requestAnimationFrameId = requestAnimationFrame(loop);
+      tf.dispose(nextImageTensor);
       tf.dispose(imageAsTensors);
     };
     if(!predictionFound) loop();
@@ -169,6 +171,7 @@ function ScannerScreen() {
     }
   }
 
+ 
   const DetectStatusIndicator = () => {
     return <View style={[
       styles.indicator,
@@ -199,3 +202,5 @@ function ScannerScreen() {
       </View>
   );
 }
+
+export default ScannerScreen;1

@@ -1,39 +1,19 @@
 import { StyleSheet } from "react-native";
 
 export default styles = StyleSheet.create({
-    container_light: {
+    container: {
         flex: 1,
         backgroundColor: 'rgba(255, 255, 255, .9)',
         // alignItems: 'center',
         // justifyContent: 'center',
     },
 
-    container_dark: {
-        flex: 1,
-        backgroundColor: '#121212',
-        // alignItems: 'center',
-        // justifyContent: 'center',
-    },
-
-    container_blue: {
-        flex: 1,
-        backgroundColor: '#89cff0'
-    },
-
-    title_light: {
+    title: {
         padding: 15,
         fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 2,
         color: 'rgba(0,0,0,0.8)',
-    },
-
-    title_dark: {
-        padding: 15,
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginBottom: 2,
-        color: 'rgba(255, 255, 255, .9)',
     },
 
     switch_container: {
