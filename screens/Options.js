@@ -7,32 +7,10 @@ import Themes from '../constants/ThemeColors';
 import styles from './Options.styles';
 
 const OptionsScreen = ({ navigation }) => {
- // const [modalVisible, setModalVisible] = useState(false);
-
- const [isModalVisible, setModalVisible] = useState(false);
-
+  
+  const [isModalVisible, setModalVisible] = useState(false);
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
-  };
-
-  const currentTheme = useContext (ThemeContext);
-  const theme = currentTheme.state.theme;
-  const colors = Themes[theme]
-
-  const blueThemeChange = ()  => {
-    currentTheme.dispatch({ type: "BLUEMODE" })
-  };
-
-  const redThemeChange = ()  => {
-    currentTheme.dispatch({ type: "REDMODE" })
-  };
-
-  const purpleThemeChange = ()  => {
-    currentTheme.dispatch({ type: "PURPLEMODE" })
-  };
-
-  const yellowThemeChange = ()  => {
-    currentTheme.dispatch({ type: "YELLOWMODE" })
   };
 
   const clearUserData = async () => {
@@ -46,9 +24,23 @@ const OptionsScreen = ({ navigation }) => {
     }
     console.log('user data cleared')
   }
+    const ConfirmationAlert = () =>
+    Alert.alert(
+      "Are your sure?",
+      "Are you sure you want to clear user data?",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed"),
+        },
+        {text: "Yes", onPress: (clearUserData)}
+      ]
+    );
+
+  
 
     return (
-      <View style={[styles.container, {backgroundColor: colors.background}] }>
+      <View style={[styles.container,] }>
         <View style={styles.insideContainer}>
           <View style={styles.headerRow}>
           <Text style={styles.headerText}>Options</Text>  
@@ -56,51 +48,31 @@ const OptionsScreen = ({ navigation }) => {
           <View style={styles.button}>
           <Button
             color="#01050d"
-            title='Clear User Data'
-            onPress={clearUserData}
-          />
-          </View>
-          
-           <View style={styles.button}>
-          <Button
-            color="#01050d"
-            title='Blue Mode'
-            onPress={ blueThemeChange }
+            title={"Clear User Data"}
+            onPress={ConfirmationAlert}
           />
           </View>
 
-          <View style={styles.button}>
+         <View style={styles.button}>
           <Button
-            color="#01050d"
-            title='Red Mode'
-            onPress={ redThemeChange }
-          />
-          </View>
-
-          <View style={styles.button}>
-          <Button
-            color="#01050d"
-            title='Purple Mode'
-            onPress={ purpleThemeChange }
-          />
-          </View>
-
-          <View style={styles.button}>
-          <Button
-            color="#01050d"
-            title='Yellow Mode'
-            onPress={ yellowThemeChange }
-          />
+              title='Themes'
+              color="#01050d"
+              onPress={() => navigation. navigate ('Themes')}
+            />
           </View>
           
         </View>
         <View style={styles.space}>
+
         <View>
       <Button title="About Us" onPress={toggleModal} color="black" />
 
       <Modal isVisible={isModalVisible}>
         <View style={{ margin: 0 }}>
-          <Text style={{backgroundColor: "white", borderRadius: 20, padding: 35, alignItems: "center", justifyContent: 'space-evenly', shadowOffset: { width: 0, height: 2}, shadowOpacity: 0.25, shadowRadius: 4,elevation: 5}}>The LEGO® Mindstorms® kits are LEGO® kits that help users ages 10 
+          <Text style={{backgroundColor: "white", borderRadius: 20, padding: 35, alignItems: "center", 
+          justifyContent: 'space-evenly', shadowOffset: { width: 0, height: 2}, shadowOpacity: 0.25, 
+          shadowRadius: 4,elevation: 5}}>
+          The LEGO® Mindstorms® kits are LEGO® kits that help users ages 10 
           and up learn how to build and program robots. These kits come with come with many different pieces and it can be hard 
           for users to differentiate these pieces. The purpose of this project is to create an application that can help users 
           identify and locate any piece in the LEGO® Education Spike™ kits when using the provided organization tray. Creating this 
@@ -110,9 +82,11 @@ const OptionsScreen = ({ navigation }) => {
         </View>
       </Modal>
     </View>
+
         <View style={styles.headerTwoText}>
           <Button
               title='Privacy policy'
+              color="#01050d"
               onPress={() => navigation. navigate ('PrivacyPolicy')}
             />
           </View>
