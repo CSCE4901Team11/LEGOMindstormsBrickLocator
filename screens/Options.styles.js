@@ -33,20 +33,21 @@ export default styles = StyleSheet.create({
     },
 
     button: {
-      fontSize: 10,
-      textAlign: 'center',
-      margin: 12,
+      margin: 15,
       color: 'rgba(0,0,0,0.8)',
       backgroundColor: 'rgba(189,195,199, .9)',
       borderRadius: 5,
-      padding: 10,
-
-      centeredView: {
-      flex: 1,
+      padding: 15,
       justifyContent: "center",
       alignItems: "center",
       marginTop: 22
-    },
+  },
+
+  buttonText: {
+    textAlign: 'center',
+    padding: 10,
+    fontSize: 20,
+  },
 
     modalView: {
       margin: 20,
@@ -67,19 +68,18 @@ export default styles = StyleSheet.create({
       elevation: 5
     },
     
-    button2: {
-      borderRadius: 20,
-      padding: 10,
-      elevation: 2
-    },
+
     buttonClose: {
       backgroundColor: 'rgba(189,195,199, .9)',
-      textAlign: "center"
+      textAlign: "center",
+      alignItems: "center",
+      padding: 10,
+      fontSize: 15,
     },
+
     modalText: {
       textAlign: "center",
       margin: 0,
     }
-  },
 
 });

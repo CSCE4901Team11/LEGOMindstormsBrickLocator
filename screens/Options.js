@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useContext, useState } from 'react';
-import { View, Text, Button, StyleSheet, Alert, Pressable} from 'react-native';
+import { View, Text, Button, StyleSheet, Alert, Pressable, TouchableOpacity} from 'react-native';
 import Modal from "react-native-modal";
 import { ThemeContext } from '../constants/context';
 import Themes from '../constants/ThemeColors';
@@ -45,27 +45,29 @@ const OptionsScreen = ({ navigation }) => {
           <View style={styles.headerRow}>
           <Text style={styles.headerText}>Options</Text>  
           </View>
-          <View style={styles.button}>
-          <Button
-            color="#01050d"
-            title={"Clear User Data"}
-            onPress={ConfirmationAlert}
-          />
-          </View>
+          
 
-         <View style={styles.button}>
-          <Button
-              title='Themes'
-              color="#01050d"
-              onPress={() => navigation. navigate ('Themes')}
-            />
-          </View>
+          <TouchableOpacity onPress={ConfirmationAlert} style={styles.button}>
+        <Text style={styles.buttonText}>Clear User Data</Text>
+      </TouchableOpacity>
+
+    
+
+    
+
+
+        <TouchableOpacity onPress={() => navigation. navigate ('Themes')} style={styles.button}>
+        <Text style={styles.buttonText}>Themes</Text>
+      </TouchableOpacity>
           
         </View>
         <View style={styles.space}>
 
         <View>
-      <Button title="About Us" onPress={toggleModal} color="black" />
+
+     <TouchableOpacity onPress={toggleModal}>
+        <Text style={styles.buttonText}>About Us</Text>
+      </TouchableOpacity>
 
       <Modal isVisible={isModalVisible}>
         <View style={{ margin: 0 }}>
@@ -78,17 +80,20 @@ const OptionsScreen = ({ navigation }) => {
           identify and locate any piece in the LEGO® Education Spike™ kits when using the provided organization tray. Creating this 
           application will allow for easier completion of Spike™ robots as well as improve the accessibility of the LEGO® Education 
           Spike™ kits for users who are visually impaired.</Text>
-          <Button title="Close" onPress={toggleModal} color="white"/>
+
+          <TouchableOpacity onPress={toggleModal}>
+        <Text style={styles.buttonClose}>Close</Text>
+      </TouchableOpacity>
         </View>
       </Modal>
     </View>
 
         <View style={styles.headerTwoText}>
-          <Button
-              title='Privacy policy'
-              color="#01050d"
-              onPress={() => navigation. navigate ('PrivacyPolicy')}
-            />
+
+      <TouchableOpacity onPress={() => navigation. navigate ('PrivacyPolicy')} >
+        <Text style={styles.buttonText}>Privacy Policy</Text>
+      </TouchableOpacity>
+      
           </View>
           </View>
          </View>
