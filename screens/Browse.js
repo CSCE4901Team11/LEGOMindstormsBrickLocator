@@ -13,6 +13,21 @@ function BrowseScreen () {
     const currentTheme = useContext (ThemeContext)
     const theme = currentTheme.state.theme
     const colors = Themes[theme]
+    //const [filterText, setFilterText] = useState()
+    const [filteredData, setFilteredData] = useState(() => (pieces.Parts))
+
+    const setData = () => {
+        setFilteredData(pieces.Parts)
+    }
+    
+    const filterData = (text) => {
+        const regex = new RegExp(text, "i")
+        var data = (pieces.Parts).filter((item) => {
+            return regex.test(item.Official_Name)
+        })
+        //console.log(data)
+        setFilteredData(data)
+    }
 
     const listSeparator = () => {
         return <View style={styles.listSeparator} />;
@@ -53,11 +68,11 @@ function BrowseScreen () {
         <View style={[styles.container, {backgroundColor: colors.background}] }>
          <SearchBar
             placeholder="Search here"
-            onPress={() => alert("onPress")}
-            onChangeText={(text) => console.log(text)}
+            onClearPress={() => setData()}
+            onChangeText={(text) => {filterData(text), console.log(text)}} 
          />
          <FlatList style={styles.list}
-                data={pieces.Parts}
+                data={filteredData}
                 renderItem={renderItem}
                 keyExtractor={(item) => item.ID}
                 ItemSeparatorComponent={listSeparator}
