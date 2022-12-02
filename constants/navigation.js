@@ -18,7 +18,7 @@ export default function Navigation () {
     return (
         <NavigationContainer>
             <Drawer.Navigator drawerContent={props => <SideMenu {...props} />}
-                initialRouteName = "Scanner" 
+                initialRouteName = "Browse" 
                 screenOptions = {theme == 'light' ? {
                     headerTransparent: true,
                     headerTitleStyle: {opacity: 0},
