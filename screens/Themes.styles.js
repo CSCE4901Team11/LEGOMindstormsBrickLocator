@@ -2,79 +2,38 @@ import { StyleSheet } from "react-native";
 
 
 export default styles = StyleSheet.create({
-    container_light: {
+
+    button:{
+      margin: 15,
+      backgroundColor: 'rgba(189,195,199, .9)',
+      borderRadius: 10,
+      padding: 10,
+      justifyContent: "center",
+      alignItems: "center",
+      marginTop: 22
+    },
+
+    buttonText: {
+    textAlign: 'center',
+    alignItems: "center",
+    padding: 10,
+    fontSize: 20,
+    },
+
+
+    headerText: {
+      fontWeight: 'bold',
+      fontSize: 35,
+      marginTop: 30,
+      paddingVertical: 13,
+      textAlign: "center",
+      padding: 4,
+    },
+
+    container: {
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
     },
 
-    container_dark: {
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center',
-        backgroundColor: 'rgba(18, 18, 18, .9)',
-    },
-
-    container_blue: {
-        flex: 1,
-        alignItems: 'center', 
-        justifyContent: 'center',
-        backgroundColor: 'rgba(33, 171, 205, .9)',
-    },
-
-    container_red: {
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center',
-        backgroundColor: 'rgba(200, 45, 56, .9)',
-    },
-
-    container_purple: {
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center',
-        backgroundColor: 'rgba(130, 7, 197, .9)',
-    },
-
-    container_yellow: {
-        flex: 1,
-        alignItems: 'center', 
-        justifyContent: 'center',
-        backgroundColor: 'rgba(222, 189, 69, .9)',
-    },
-
-    text_light: {
-        color: 'rgba(0,0,0,0.8)',
-        fontSize: 20,
-    },
-
-    text_dark: {
-        color: 'rgba(255, 255, 255, .9)',
-        fontSize: 15,
-        fontWeight: 'bold',
-    },
-
-    text_blue: {
-        color: 'rgba(20, 20, 102, .9)',
-        fontSize: 15,
-        fontWeight: 'bold',
-    },
-
-    text_red: {
-        color: 'rgba(255, 255, 255, .9)',
-        fontSize: 15,
-        fontWeight: 'bold',
-    },
-
-    text_purple: {
-        color: 'rgba(255, 255, 255, .9)',
-        fontSize: 15,
-        fontWeight: 'bold',
-    },
-
-    text_yellow: {
-        color: 'rgba(29, 29, 29, .9)',
-        fontSize: 15,
-        fontWeight: 'bold',
-    },
 });
