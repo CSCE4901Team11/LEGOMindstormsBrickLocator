@@ -27,6 +27,10 @@ function ThemesScreen () {
     currentTheme.dispatch({ type: "YELLOWMODE" })
   };
 
+  const lightThemeChange = ()  => {
+    currentTheme.dispatch({ type: "LIGHTMODE" })
+  };
+
 
     return (
          <View style={[styles.itemContainer, {backgroundColor: colors.backgroundColor} ]} >
@@ -48,6 +52,14 @@ function ThemesScreen () {
 
         <TouchableOpacity onPress={yellowThemeChange} style={styles.button}>
           <Text style={styles.buttonText}>Yellow Mode</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={lightThemeChange} style={styles.button}>
+          <Text style={styles.buttonText}>Light Mode</Text>
+        </TouchableOpacity>
+
+         <TouchableOpacity onPress={lightThemeChange} style={styles.button}>
+          <Text style={styles.buttonText}>Dark Mode</Text>
         </TouchableOpacity>
 
       </View>
