@@ -53,9 +53,6 @@ const OptionsScreen = ({ navigation }) => {
 
     
 
-    
-
-
         <TouchableOpacity onPress={() => navigation. navigate ('Themes')} style={styles.button}>
         <Text style={styles.buttonText}>Themes</Text>
       </TouchableOpacity>
@@ -82,7 +79,7 @@ const OptionsScreen = ({ navigation }) => {
           Spike™ kits for users who are visually impaired.</Text>
 
           <TouchableOpacity onPress={toggleModal}>
-        <Text style={styles.buttonClose}>Close</Text>
+        <Text style={styles.buttonClose} color="#e8e4e3">Close</Text>
       </TouchableOpacity>
         </View>
       </Modal>
