@@ -23,7 +23,24 @@ function BrowseScreen () {
     const filterData = (text) => {
         const regex = new RegExp(text, "i")
         var data = (pieces.Parts).filter((item) => {
-            return regex.test(item.Official_Name)
+            //return regex.test(item.Official_Name)
+            if(regex.test(item.Official_Name) == false){
+                if(regex.test(item.Color) == false){
+                    if(regex.test(item.Sheet_Element_ID) == false){
+                        if(regex.test(item.Main_Part_ID) == false){
+                            return false
+                        }else{
+                            return regex.test(item.Main_Part_ID)
+                        }
+                    }else{
+                        return regex.test(item.Sheet_Element_ID)
+                    }
+                }else{
+                    regex.test(item.Color)
+                }
+            }else{
+                return regex.test(item.Official_Name)
+            }
         })
         //console.log(data)
         setFilteredData(data)
