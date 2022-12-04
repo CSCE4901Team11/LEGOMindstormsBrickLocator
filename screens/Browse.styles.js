@@ -51,7 +51,7 @@ export default styles = StyleSheet.create({
       },
       itemInfoContainer: {
           flex: 1,
-          width: "80%",
+          width: "60%", //needs adjustment due to margin coverage
           alignContent: "center",
           flexWrap: 'wrap',
           flexDirection: 'column',
