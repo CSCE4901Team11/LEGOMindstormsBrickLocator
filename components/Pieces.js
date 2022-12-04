@@ -11,11 +11,11 @@ export default function GetPieces() {
     const [loading, setLoading] = useState(true)
 
     const apiCall = async () => {
-       const resp =  await fetch("https://rebrickable.com/api/v3/lego/sets/45678-1/parts/?page_size=115&inc_color_details=0", {
+       const resp =  await fetch("https://rebrickable.com/api/v3/lego/sets/45544-1/parts/?page_size=115&inc_color_details=0", {
             "method": "GET",
             "headers": {
                 "Accept": "application/json",
-                'Authorization: key ecb3a1672afe825d10cfdda63b689d0e' : 'https://rebrickable.com/api/v3/lego/colors/', // change value to actual api key
+                "Authorization": "apikey",
                 "Rebrickableapi-host": "https://rebrickable.com"
             }
         })

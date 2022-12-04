@@ -30,8 +30,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.dkoelzer01.LEGOProject",
-      "runtimeVersion": "1.0.0"
+      "package": "android.apk"
     },
     "web": {
       "favicon": "./assets/favicon.png"

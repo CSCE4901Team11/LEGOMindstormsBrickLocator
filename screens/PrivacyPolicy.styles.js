@@ -42,4 +42,20 @@ export default styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
     },
+
+    header:{
+        fontSize: 20,
+        fontWeight: "bold",
+        marginBottom: 30,
+    },
+
+    body: {
+        fontSize: 15,
+        marginBottom: 20,
+    },
+
+     lastbody: {
+        fontSize: 15,
+        marginBottom: 100,
+    },
 });
