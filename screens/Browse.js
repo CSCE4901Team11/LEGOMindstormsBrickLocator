@@ -24,8 +24,11 @@ function BrowseScreen () {
         const regex = new RegExp(text, "i")
         var data = (pieces.Parts).filter((item) => {
             //return regex.test(item.Official_Name)
-            if(regex.test(item.Official_Name) == false){
+            console.log(regex.test(item.Official_Name))
+            if(!(regex.test(item.Official_Name))){
+                console.log("official item check false")
                 if(regex.test(item.Color) == false){
+                    console.log("color check false")
                     if(regex.test(item.Sheet_Element_ID) == false){
                         if(regex.test(item.Main_Part_ID) == false){
                             return false
