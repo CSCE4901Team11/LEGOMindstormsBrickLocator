@@ -24,13 +24,13 @@ function BrowseScreen () {
         const regex = new RegExp(text, "i")
         var data = (pieces.Parts).filter((item) => {
             //return regex.test(item.Official_Name)
-            console.log(regex.test(item.Official_Name))
+            //console.log(regex.test(item.Official_Name))
             if(!(regex.test(item.Official_Name))){
-                console.log("official item check false")
-                if(regex.test(item.Color) == false){
-                    console.log("color check false")
-                    if(regex.test(item.Sheet_Element_ID) == false){
-                        if(regex.test(item.Main_Part_ID) == false){
+                //console.log("official item check false")
+                if(!(regex.test(item.Color))){
+                    //console.log("color check false")
+                    if(!(regex.test(item.Sheet_Element_ID))){
+                        if(!(regex.test(item.Main_Part_ID))){
                             return false
                         }else{
                             return regex.test(item.Main_Part_ID)
@@ -39,7 +39,7 @@ function BrowseScreen () {
                         return regex.test(item.Sheet_Element_ID)
                     }
                 }else{
-                    regex.test(item.Color)
+                    return regex.test(item.Color)
                 }
             }else{
                 return regex.test(item.Official_Name)
