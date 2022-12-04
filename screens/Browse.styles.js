@@ -6,7 +6,7 @@ export default styles = StyleSheet.create({
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
-        marginTop: 50,
+        marginTop: 75,
     },
       title: {
         fontSize: 35,
