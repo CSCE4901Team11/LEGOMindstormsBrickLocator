@@ -4,16 +4,13 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     container: {
       flex: 1,
-      //backgroundColor: colors.background,
       alignItems: 'center',
       justifyContent: 'flex-start',
-      paddingTop: 150,
     },
 
     text: {
       fontSize: 40,
       fontWeight: '420',
-     // color: colors.textColor,
       textAlign: 'center',
     },
 
@@ -71,4 +68,3 @@ export default StyleSheet.create({
       zIndex: 9999,
     },
 });
-  
