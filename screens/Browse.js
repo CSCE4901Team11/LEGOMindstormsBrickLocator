@@ -65,7 +65,7 @@ function BrowseScreen () {
     }
 
     return (
-        <View style={[styles.container, {backgroundColor: colors.background}] }>
+        <View style={[styles.container, {backgroundColor: colors.backgroundColor}] }>
          <SearchBar
             placeholder="Search here"
             onClearPress={() => setData()}
