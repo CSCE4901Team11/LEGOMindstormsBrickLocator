@@ -78,7 +78,7 @@ function ScannerScreen() {
 
   const loadcocoSSDModel = async () => {
     console.log('Start loading model');
-    const model = await cocoSSD.load();r
+    const model = await cocoSSD.load();
     console.log(`model loaded`);
     return model;
   }
