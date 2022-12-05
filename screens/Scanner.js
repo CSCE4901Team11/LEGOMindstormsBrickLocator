@@ -24,7 +24,7 @@ function ScannerScreen() {
   const [cocoSSDModel, setcocoSSDModel] = useState(null); //Replace with custom model
   const [frameworkReady, setFrameworkReady] = useState(false);
 
-const navigation = useNavigation();
+  const navigation = useNavigation();
 
   const currentTheme = useContext (ThemeContext);
   const theme = currentTheme.state.theme;
@@ -78,7 +78,7 @@ const navigation = useNavigation();
 
   const loadcocoSSDModel = async () => {
     console.log('Start loading model');
-    const model = await cocoSSD.load();
+    const model = await cocoSSD.load();r
     console.log(`model loaded`);
     return model;
   }

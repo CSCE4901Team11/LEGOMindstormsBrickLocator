@@ -1,6 +1,3 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "./context";
-
 const Themes = {
     light: {
       background: 'rgba(253, 255, 252, .9)',

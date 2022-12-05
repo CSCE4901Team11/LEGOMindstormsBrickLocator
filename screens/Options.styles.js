@@ -2,9 +2,9 @@ import { StyleSheet } from "react-native";
 
 export default styles = StyleSheet.create({
     container: {
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center',
+      flex: 1, 
+      alignItems: 'center', 
+      justifyContent: 'center',
     },
 
     insideContainer: {
@@ -41,13 +41,13 @@ export default styles = StyleSheet.create({
       justifyContent: "center",
       alignItems: "center",
       marginTop: 22
-  },
+    },
 
-  buttonText: {
-    textAlign: 'center',
-    padding: 10,
-    fontSize: 20,
-  },
+    buttonText: {
+      textAlign: 'center',
+      padding: 10,
+      fontSize: 20,
+    },
 
     modalView: {
       margin: 20,
@@ -68,7 +68,6 @@ export default styles = StyleSheet.create({
       elevation: 5
     },
     
-
     buttonClose: {
       backgroundColor: 'rgba(189,195,199, .9)',
       textAlign: "center",
@@ -80,6 +79,5 @@ export default styles = StyleSheet.create({
     modalText: {
       textAlign: "center",
       margin: 0,
-    }
-
+    },
 });

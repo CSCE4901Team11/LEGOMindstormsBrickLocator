@@ -68,7 +68,7 @@ function BrowseScreen () {
     const renderItem = ({ item }) => {
         
         return (
-            <View style={[styles.itemContainer, {backgroundColor: colors.backgroundColor} ]}>
+            <View style={[styles.itemContainer,  ]}>
                 <Image style = {styles.image} source={{uri: item.Image}} />
                 <View style={styles.itemInfoContainer}>
                     <Text style = {[styles.itemTitle, {color: colors.textColor}]}>{item.Official_Name}</Text>

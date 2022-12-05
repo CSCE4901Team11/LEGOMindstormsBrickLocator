@@ -24,20 +24,11 @@ export default styles = StyleSheet.create({
         marginLeft: 2
     },
 
-    switch_text_light: {
+    switch_text: {
         marginLeft: 10,
         marginRight: 15,
         fontSize: 17,
         fontWeight: 'bold',
-        color: 'rgba(0,0,0,0.8)',
-    },
-
-    switch_text_dark: {
-        marginLeft: 10,
-        marginRight: 15,
-        fontSize: 17,
-        fontWeight: 'bold',
-        color: 'rgba(255, 255, 255, .9)',
     },
 });
 

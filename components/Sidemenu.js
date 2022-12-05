@@ -5,7 +5,6 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { ThemeContext } from '../constants/context';
 import  styles  from './Sidemenu.styles';
 import Themes from '../constants/ThemeColors';
-import { set } from 'react-native-reanimated';
 
 const SideMenu = (props) => {
     const [isEnabled, setIsEnabled] = useState(false);
@@ -22,9 +21,6 @@ const SideMenu = (props) => {
     const colors = Themes[theme]
 
     if(theme != 'dark' && isEnabled && theme != undefined){
-        console.log("------------------------")
-        console.log(theme)
-        console.log("------------------------")
         setIsEnabled(false)
     }
 
@@ -48,7 +44,7 @@ const SideMenu = (props) => {
             </DrawerContentScrollView>
             <View style = {styles.switch_container}>
                 <FontAwesome5 name="cat" size={24} color={theme == 'dark' ? 'rgba(255, 255, 255, .9)' : 'rgba(0,0,0,0.8)'} />
-                <Text style={theme == 'light' ? styles.switch_text_light : theme == 'dark' ? styles.switch_text_dark : styles.switch_text_light}>
+                <Text style={[styles.switch_text, {color: colors.textColor}]}>
                     Dark Mode
                 </Text>
                 <Switch 

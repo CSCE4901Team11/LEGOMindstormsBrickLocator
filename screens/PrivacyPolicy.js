@@ -21,13 +21,13 @@ function PrivacyPolicy () {
     return (
       <View style={[styles.container, {backgroundColor: colors.background}] }>
           <View style={{paddingVertical: 20, textAlign: 'center', fontSize: 20,}}>
-          <Text style={{fontWeight: 'bold', fontSize: 27, marginTop: 130, paddingVertical: 10, textAlign: "center",padding: 4,}}>Privacy Policy</Text>  
+          <Text style={{fontWeight: 'bold', fontSize: 27, marginTop: 130, paddingVertical: 10, textAlign: "center",padding: 4, color: colors.textColor}}>Privacy Policy</Text>  
           </View>
          
         <SafeAreaView>
           <ScrollView style={{marginHorizontal: 20, flexGrow: 1, paddingBottom: 300 }} >
-            <Text style={styles.header}>Privacy Policy</Text>
-             <Text style={styles.body}>
+            <Text style={[styles.header, {color: colors.textColor}]}>Privacy Policy</Text>
+             <Text style={[styles.body, {color: colors.textColor}]}>
                   Team 11 built the LEGO® Mindstorms® Brick Locator  app as
                   a Free app. This SERVICE is provided by
                   Team 11 at no cost and is intended for use as
@@ -49,8 +49,8 @@ function PrivacyPolicy () {
 
               </Text>
 
-            <Text style={styles.header}>Information Collection and Use</Text>
-            <Text style={styles.body}>
+            <Text style={[styles.header, {color: colors.textColor}]}>Information Collection and Use</Text>
+            <Text style={[styles.body, {color: colors.textColor}]}>
                   For a better experience, while using our Service, I
                   may require you to provide us with certain personally
                   identifiable information. The information that
@@ -78,9 +78,9 @@ function PrivacyPolicy () {
 
             </Text>
 
-            <Text style={styles.header}>Cookies</Text>
+            <Text style={[styles.header, {color: colors.textColor}]}>Cookies</Text>
 
-            <Text style={styles.body}>
+            <Text style={[styles.body, {color: colors.textColor}]}>
               Cookies are files with a small amount of data that are
               commonly used as anonymous unique identifiers. These are sent
               to your browser from the websites that you visit and are
@@ -96,9 +96,9 @@ function PrivacyPolicy () {
 
             </Text>
               
-            <Text style={styles.header}>Service Providers</Text>
+            <Text style={[styles.header, {color: colors.textColor}]}>Service Providers</Text>
 
-            <Text style={styles.body}>
+            <Text style={[styles.body, {color: colors.textColor}]}>
               I may employ third-party companies and
               individuals due to the following reasons:
 
@@ -115,9 +115,9 @@ function PrivacyPolicy () {
 
             </Text>
 
-            <Text style={styles.header}>Security</Text>
+            <Text style={[styles.header, {color: colors.textColor}]}>Security</Text>
 
-            <Text style={styles.body}>
+            <Text style={[styles.body, {color: colors.textColor}]}>
               I value your trust in providing us your
               Personal Information, thus we are striving to use commercially
               acceptable means of protecting it. But remember that no method
@@ -126,9 +126,9 @@ function PrivacyPolicy () {
               
             </Text>
 
-            <Text style={styles.header}>Links to Other Sites</Text>
+            <Text style={[styles.header, {color: colors.textColor}]}>Links to Other Sites</Text>
 
-            <Text style={styles.body}>
+            <Text style={[styles.body, {color: colors.textColor}]}>
               This Service may contain links to other sites. If you click on
               a third-party link, you will be directed to that site. Note
               that these external sites are not operated by me.
@@ -140,9 +140,9 @@ function PrivacyPolicy () {
 
             </Text>
 
-            <Text style={styles.header}>Children’s Privacy</Text>      
+            <Text style={[styles.header, {color: colors.textColor}]}>Children’s Privacy</Text>      
 
-            <Text style={styles.body}>
+            <Text style={[styles.body, {color: colors.textColor}]}>
               These Services do not address anyone under the age of 13.
               I do not knowingly collect personally
               identifiable information from children under 13 years of age. In the case
@@ -155,9 +155,9 @@ function PrivacyPolicy () {
 
             </Text>
 
-            <Text style={styles.header}>Changes to This Privacy Policy</Text>
+            <Text style={[styles.header, {color: colors.textColor}]}>Changes to This Privacy Policy</Text>
 
-            <Text style={styles.body}>
+            <Text style={[styles.body, {color: colors.textColor}]}>
               I may update our Privacy Policy from
               time to time. Thus, you are advised to review this page
               periodically for any changes. I will
@@ -167,9 +167,9 @@ function PrivacyPolicy () {
               This policy is effective as of 2022-11-13
             </Text>
               
-            <Text style={styles.header}>Contact Us</Text>
+            <Text style={[styles.header, {color: colors.textColor}]}>Contact Us</Text>
             
-            <Text style={styles.lastbody}>
+            <Text style={[styles.lastbody, {color: colors.textColor}]}>
                If you have any questions or suggestions about my
               Privacy Policy, do not hesitate to contact me at MindstormsBrickLocator@gmail.com.
             </Text>

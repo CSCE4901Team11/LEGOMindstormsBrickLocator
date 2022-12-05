@@ -8,55 +8,63 @@ export default styles = StyleSheet.create({
         justifyContent: 'center',
         marginTop: 85,
     },
-      title: {
+
+    title: {
         fontSize: 35,
-        
-      },
-      button: {
+    },
+
+    button: {
         padding: 10,
         marginVertical: 15,
         backgroundColor: 'rgba(6, 69, 173, .9)',
         //width: 100,
         alignItems: 'center'
-      },
-      buttonText: {
+    },
+
+    buttonText: {
         color: 'rgba(255, 255, 255, .9)'
-      },
-      itemContainer: {
-          //padding: 10,
-          flex: 1,
-          alignItems: 'flex-start',
-          display: 'flex',
-          //flexDirection: 'row',
-          // dimension: 100,
-          
-      },
-      itemTitle: {
-          fontSize: 20,
-          fontWeight: 'bold',
-      },
-      text: {
-          fontSize: 18,
-          flexWrap: 'wrap',
-      },
-      listSeparator: { 
-          height: 1, 
-          backgroundColor: "grey",
-          marginHorizontal:10
-      },
-      image: {
-          width: 80,
-          height: 80,
-          margin: 5,
-      },
-      itemInfoContainer: {
-          flex: 1,
-          width: "60%", //needs adjustment due to margin coverage
-          alignContent: "center",
-          flexWrap: 'wrap',
-          flexDirection: 'column',
-      },
-      list: {
-          flex: 1,
-      },
+    },
+
+    itemContainer: {
+        //padding: 10,
+        flex: 1,
+        alignItems: 'flex-start',
+        display: 'flex',
+        width: '100%'
+        //flexDirection: 'row',
+        // dimension: 100,  
+    },
+
+    itemTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
+
+    text: {
+        fontSize: 18,
+        flexWrap: 'wrap',
+    },
+
+    listSeparator: { 
+        height: 1, 
+        backgroundColor: "grey",
+        marginHorizontal:10
+    },
+
+    image: {
+        width: 80,
+        height: 80,
+        margin: 5,
+    },
+
+    itemInfoContainer: {
+        flex: 1,
+        // alignContent: "center",
+        flexWrap: 'wrap',
+        flexDirection: 'column',
+    },
+
+    list: {
+        flex: 1,
+    },
 });
