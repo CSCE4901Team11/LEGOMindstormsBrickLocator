@@ -3,15 +3,9 @@ import { Text, View, TouchableHighlight, FlatList, Image, TouchableOpacity } fro
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import SearchBar from 'react-native-dynamic-search-bar';
-import React, { useState, useContext } from 'react';
-import { Text, View, TouchableHighlight, FlatList, Image, TouchableOpacity } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useNavigation } from '@react-navigation/native';
-import SearchBar from 'react-native-dynamic-search-bar';
 import { ThemeContext } from '../constants/context';
 import styles from './Browse.styles';
 import Themes from '../constants/ThemeColors';
-import pieces from '../constants/MasterPartList.json';
 import pieces from '../constants/MasterPartList.json';
 
 function BrowseScreen () {
