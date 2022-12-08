@@ -15,12 +15,12 @@ export default StyleSheet.create({
     },
 
     button: {
-        fontSize: 25,
-        textAlign: 'center',
-        margin: 7,
-        color: 'rgba(255, 255, 255, .9)',
-        backgroundColor: 'rgba(73, 31, 189, .9)',
-        borderRadius: 5,
+      fontSize: 25,
+      textAlign: 'center',
+      margin: 7,
+      color: 'rgba(255, 255, 255, .9)',
+      backgroundColor: 'rgba(73, 31, 189, .9)',
+      borderRadius: 5,
     },
 
     highlighter: {
@@ -68,4 +68,3 @@ export default StyleSheet.create({
       zIndex: 9999,
     },
 });
-  

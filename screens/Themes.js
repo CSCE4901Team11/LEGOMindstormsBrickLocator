@@ -37,8 +37,8 @@ function ThemesScreen () {
 
 
     return (
-         <View style={[styles.itemContainer, {backgroundColor: colors.backgroundColor} ]} >
-         <Text style={styles.headerText}>Themes</Text>  
+         <View style={[styles.itemContainer, {backgroundColor: colors.background} ]} >
+         <Text style={[styles.headerText, {color: colors.textColor}]}>Themes</Text>  
 
          <View>
         <TouchableOpacity onPress={blueThemeChange} style={styles.button}>

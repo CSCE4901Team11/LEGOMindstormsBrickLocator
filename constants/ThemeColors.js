@@ -1,6 +1,3 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "./context";
-
 const Themes = {
     light: {
       background: 'rgba(253, 255, 252, .9)',
@@ -21,9 +18,9 @@ const Themes = {
     },
 
     red: {
-      background: 'rgba(161, 7, 2, .9)',
+      background: 'rgba(120, 46, 43, .9)',
       textColor: 'rgba(255, 255, 255, .9)',
-      sideMenuBackground: 'rgba(200, 45, 56, 0.9)',
+      sideMenuBackground: 'rgba(75, 29, 27, 0.9)',
     },
 
     purple: {
@@ -33,9 +30,9 @@ const Themes = {
     },
 
     yellow: {
-      background: 'rgba(198, 166, 50, .9)',
-      textColor: 'rgba(29, 29, 29, .8)',
-      sideMenuBackground: 'rgba(222, 189, 69, 0.9)',
+      background: 'rgba(198, 168, 60, .9)',
+      textColor: 'rgba(12, 12, 12, .8)',
+      sideMenuBackground: 'rgba(215, 185, 76, 0.9)',
     },
 }
 

@@ -25,6 +25,7 @@ function ScannerScreen() {
   const [frameworkReady, setFrameworkReady] = useState(false);
 
   const navigation = useNavigation();
+
   const currentTheme = useContext (ThemeContext);
   const theme = currentTheme.state.theme;
   const colors = Themes[theme];
@@ -197,9 +198,9 @@ function ScannerScreen() {
   };
 
   return (
-      <View style={styles.container}>
-        {awaitFrameworkReady()}
-      </View>
+    <View style={[styles.container, {backgroundColor: colors.background}] }>
+      {awaitFrameworkReady()}
+    </View>
   );
 }
 
