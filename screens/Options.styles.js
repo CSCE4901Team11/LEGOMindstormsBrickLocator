@@ -34,13 +34,27 @@ export default styles = StyleSheet.create({
 
     button: {
       margin: 15,
+      margin: 15,
       color: 'rgba(0,0,0,0.8)',
       backgroundColor: 'rgba(189,195,199, .9)',
       borderRadius: 5,
       padding: 15,
+      padding: 15,
       justifyContent: "center",
       alignItems: "center",
       marginTop: 22
+    },
+
+  buttonText: {
+    textAlign: 'center',
+    padding: 10,
+    fontSize: 20,
+  },
+
+    buttonText: {
+      textAlign: 'center',
+      padding: 10,
+      fontSize: 20,
     },
 
     buttonText: {
@@ -72,9 +86,13 @@ export default styles = StyleSheet.create({
       backgroundColor: 'rgba(189,195,199, .9)',
       textAlign: "center",
       alignItems: "center",
+      textAlign: "center",
+      alignItems: "center",
       padding: 10,
       fontSize: 15,
+      fontSize: 15,
     },
+
 
     modalText: {
       textAlign: "center",
