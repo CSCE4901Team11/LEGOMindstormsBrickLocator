@@ -23,9 +23,6 @@ function BrowseScreen () {
     const filterData = (text) => {
         const regex = new RegExp(text, "i")
         var data = (pieces.Parts).filter((item) => {
-<<<<<<< HEAD
-            return regex.test(item.Official_Name)
-=======
             //return regex.test(item.Official_Name)
             //console.log(regex.test(item.Official_Name))
             if(!(regex.test(item.Official_Name))){
@@ -47,7 +44,6 @@ function BrowseScreen () {
             }else{
                 return regex.test(item.Official_Name)
             }
->>>>>>> main
         })
         //console.log(data)
         setFilteredData(data)
@@ -89,7 +85,7 @@ function BrowseScreen () {
     }
 
     return (
-        <View style={[styles.container, {backgroundColor: colors.backgroundColor}] }>
+        <View style={[styles.container, {backgroundColor: colors.background}] }>
          <SearchBar
             placeholder="Search here"
             onClearPress={() => setData()}
