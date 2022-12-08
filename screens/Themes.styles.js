@@ -1,6 +1,5 @@
 import { StyleSheet } from "react-native";
 
-
 export default styles = StyleSheet.create({
 
     button:{
@@ -14,12 +13,11 @@ export default styles = StyleSheet.create({
     },
 
     buttonText: {
-    textAlign: 'center',
-    alignItems: "center",
-    padding: 10,
-    fontSize: 20,
+      textAlign: 'center',
+      alignItems: "center",
+      padding: 10,
+      fontSize: 20,
     },
-
 
     headerText: {
       fontWeight: 'bold',
@@ -31,9 +29,8 @@ export default styles = StyleSheet.create({
     },
 
     container: {
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center',
+      flex: 1, 
+      alignItems: 'center', 
+      justifyContent: 'center',
     },
-
 });

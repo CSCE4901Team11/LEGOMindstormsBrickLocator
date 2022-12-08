@@ -7,6 +7,10 @@ import Themes from '../constants/ThemeColors';
 import styles from './Options.styles';
 
 const OptionsScreen = ({ navigation }) => {
+
+  const currentTheme = useContext (ThemeContext);
+  const theme = currentTheme.state.theme;
+  const colors = Themes[theme]
   
   const [isModalVisible, setModalVisible] = useState(false);
   const toggleModal = () => {
@@ -40,10 +44,10 @@ const OptionsScreen = ({ navigation }) => {
   
 
     return (
-      <View style={[styles.container,] }>
+      <View style={[styles.container, {backgroundColor: colors.background} ]}>
         <View style={styles.insideContainer}>
           <View style={styles.headerRow}>
-          <Text style={styles.headerText}>Options</Text>  
+          <Text style={[styles.headerText, {color: colors.textColor}]}>Options</Text>  
           </View>
           
 
@@ -63,7 +67,7 @@ const OptionsScreen = ({ navigation }) => {
         <View>
 
      <TouchableOpacity onPress={toggleModal}>
-        <Text style={styles.buttonText}>About Us</Text>
+        <Text style={[styles.buttonText, {color: colors.textColor}]}>About Us</Text>
       </TouchableOpacity>
 
       <Modal isVisible={isModalVisible}>
@@ -88,7 +92,7 @@ const OptionsScreen = ({ navigation }) => {
         <View style={styles.headerTwoText}>
 
       <TouchableOpacity onPress={() => navigation. navigate ('PrivacyPolicy')} >
-        <Text style={styles.buttonText}>Privacy Policy</Text>
+        <Text style={[styles.buttonText,{color: colors.textColor}]}>Privacy Policy</Text>
       </TouchableOpacity>
       
           </View>

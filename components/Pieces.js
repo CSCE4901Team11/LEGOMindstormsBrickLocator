@@ -23,7 +23,7 @@ export default function GetPieces() {
         delete data.count
         delete data.next
         delete data.previous
-        setPieces(data)
+        setPieces(data) 
         setLoading(false)
     }
 
@@ -48,7 +48,6 @@ export default function GetPieces() {
     const colors = Themes[theme]
 
     const renderItem = ({ item }) => {
-        
         return (
             <View style={[styles.itemContainer, {backgroundColor: colors.backgroundColor} ]}>
                 <Image style = {styles.image} source={{uri: item.part.part_img_url}} />
@@ -80,7 +79,7 @@ export default function GetPieces() {
                 keyExtractor={(item) => item.id}
                 ItemSeparatorComponent={listSeparator}
             />
-            {/* {console.log(pieces.results)} */}
+            {console.log(pieces.results)}
         </View>
     );
     }
