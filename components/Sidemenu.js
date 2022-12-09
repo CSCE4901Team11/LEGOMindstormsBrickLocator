@@ -5,6 +5,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { ThemeContext } from '../constants/context';
 import  styles  from './Sidemenu.styles';
 import Themes from '../constants/ThemeColors';
+import { set } from 'react-native-reanimated';
 
 const SideMenu = (props) => {
     const [isEnabled, setIsEnabled] = useState(false);

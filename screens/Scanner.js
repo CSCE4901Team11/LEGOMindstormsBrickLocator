@@ -9,6 +9,8 @@ import Themes from '../constants/ThemeColors';
 import * as cocoSSD from '@tensorflow-models/coco-ssd';
 import * as tf from '@tensorflow/tfjs';
 import * as tfrn from '@tensorflow/tfjs-react-native'
+//import * as tfn from '@tensorflow/tfjs-node'
+
 
 const TensorCamera = tfrn.cameraWithTensors(Camera);
 
@@ -79,6 +81,7 @@ function ScannerScreen() {
   const loadcocoSSDModel = async () => {
     console.log('Start loading model');
     const model = await cocoSSD.load();
+    //const model = await tf.loadLayersModel('file://jsmodel/model.json');
     console.log(`model loaded`);
     return model;
   }
