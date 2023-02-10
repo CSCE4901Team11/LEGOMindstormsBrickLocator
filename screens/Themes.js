@@ -38,31 +38,37 @@ function ThemesScreen () {
 
     return (
          <View style={[styles.itemContainer, {backgroundColor: colors.background} ]} >
-         <Text style={[styles.headerText, {color: colors.textColor}]}>Themes</Text>  
+         <Text accessibilityRole="header" style={[styles.headerText, {color: colors.textColor}]}>Themes</Text>  
 
          <View>
-        <TouchableOpacity onPress={blueThemeChange} style={styles.button}>
+        <TouchableOpacity onPress={blueThemeChange} style={styles.button} accessibilityLabel="Blue Mode"
+  accessibilityRole="Button">
           <Text style={styles.buttonText}>Blue Mode</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={redThemeChange} style={styles.button}>
+        <TouchableOpacity onPress={redThemeChange} style={styles.button} accessibilityLabel="Red Mode"
+  accessibilityRole="Button">
           <Text style={styles.buttonText}>Red Mode</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={purpleThemeChange} style={styles.button}>
+        <TouchableOpacity onPress={purpleThemeChange} style={styles.button} accessibilityLabel="Purple Mode"
+  accessibilityRole="Button">
           <Text style={styles.buttonText}>Purple Mode</Text>
         </TouchableOpacity>
 
 
-        <TouchableOpacity onPress={yellowThemeChange} style={styles.button}>
+        <TouchableOpacity onPress={yellowThemeChange} style={styles.button} accessibilityLabel="Yellow Mode"
+  accessibilityRole="Button">
           <Text style={styles.buttonText}>Yellow Mode</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={lightThemeChange} style={styles.button}>
+        <TouchableOpacity onPress={lightThemeChange} style={styles.button} accessibilityLabel="Light Mode"
+  accessibilityRole="Button">
           <Text style={styles.buttonText}>Light Mode</Text>
         </TouchableOpacity>
 
-         <TouchableOpacity onPress={darkThemeChange} style={styles.button}>
+         <TouchableOpacity onPress={darkThemeChange} style={styles.button} 
+         accessibilityLabel="Dark Mode" accessibilityRole="Button">
           <Text style={styles.buttonText}>Dark Mode</Text>
         </TouchableOpacity>
 
