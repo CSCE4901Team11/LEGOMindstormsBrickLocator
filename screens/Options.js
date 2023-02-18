@@ -57,7 +57,7 @@ const OptionsScreen = ({ navigation }) => {
 
     
 
-        <TouchableOpacity accessible={true} accessibilityLabel="Button" accessibilityRole="Themes" onPress={() => navigation. navigate ('Themes')} style={styles.button}>
+        <TouchableOpacity accessible={true} accessibilityLabel="Themes" accessibilityRole="Button" onPress={() => navigation. navigate ('Themes')} style={styles.button}>
         <Text style={styles.buttonText}>Themes</Text>
       </TouchableOpacity>
           
