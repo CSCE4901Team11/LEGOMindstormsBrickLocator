@@ -38,7 +38,7 @@ function ThemesScreen () {
 
     return (
          <View style={[styles.itemContainer, {backgroundColor: colors.background} ]} >
-         <Text accessible={true} accessibilityRole="header" style={[styles.headerText, {color: colors.textColor}]}>Themes</Text>  
+         <Text style={[styles.headerText, {color: colors.textColor}]}>Themes</Text>  
 
          <View>
         <TouchableOpacity onPress={blueThemeChange} style={styles.button} accessible={true} accessibilityLabel="Blue Mode"
