@@ -47,17 +47,17 @@ const OptionsScreen = ({ navigation }) => {
       <View style={[styles.container, {backgroundColor: colors.background} ]}>
         <View style={styles.insideContainer}>
           <View style={styles.headerRow}>
-          <Text style={[styles.headerText, {color: colors.textColor}]}>Options</Text>  
+          <Text accessible={true} accessibilityLabel="header" style={[styles.headerText, {color: colors.textColor}]}>Options</Text>  
           </View>
           
 
-          <TouchableOpacity onPress={ConfirmationAlert} style={styles.button}>
+          <TouchableOpacity accessible={true} accessibilityLabel="Clear UserData" accessibilityRole="Alert" onPress={ConfirmationAlert} style={styles.button}>
         <Text style={styles.buttonText}>Clear User Data</Text>
       </TouchableOpacity>
 
     
 
-        <TouchableOpacity onPress={() => navigation. navigate ('Themes')} style={styles.button}>
+        <TouchableOpacity accessible={true} accessibilityLabel="Themes" accessibilityRole="Button" onPress={() => navigation. navigate ('Themes')} style={styles.button}>
         <Text style={styles.buttonText}>Themes</Text>
       </TouchableOpacity>
           
@@ -66,7 +66,7 @@ const OptionsScreen = ({ navigation }) => {
 
         <View>
 
-     <TouchableOpacity onPress={toggleModal}>
+     <TouchableOpacity accessible={true} accessibilityLabel="About Us" accessibilityRole="none" onPress={toggleModal}>
         <Text style={[styles.buttonText, {color: colors.textColor}]}>About Us</Text>
       </TouchableOpacity>
 
@@ -91,7 +91,7 @@ const OptionsScreen = ({ navigation }) => {
 
         <View style={styles.headerTwoText}>
 
-      <TouchableOpacity onPress={() => navigation. navigate ('PrivacyPolicy')} >
+      <TouchableOpacity accessible={true} accessibilityLabel="Privacy Policy" accessibilityRole="Button" onPress={() => navigation. navigate ('PrivacyPolicy')} >
         <Text style={[styles.buttonText,{color: colors.textColor}]}>Privacy Policy</Text>
       </TouchableOpacity>
       
