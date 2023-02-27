@@ -51,7 +51,7 @@ const OptionsScreen = ({ navigation }) => {
           </View>
           
 
-          <TouchableOpacity accessible={true} accessibilityLabel="Clear UserData" accessibilityRole="Alert" onPress={ConfirmationAlert} style={styles.button}>
+          <TouchableOpacity accessible={true} accessibilityLabel="Clear UserData" accessibilityRole="Button" onPress={ConfirmationAlert} style={styles.button}>
         <Text style={styles.buttonText}>Clear User Data</Text>
       </TouchableOpacity>
 
