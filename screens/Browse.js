@@ -31,7 +31,7 @@ function BrowseScreen () {
                     //console.log("color check false")
                     if(!(regex.test(item.Sheet_Element_ID))){
                         if(!(regex.test(item.Main_Part_ID))){
-                            if(!(regex.test(item.Updated_Part_ID))){ //FIX THIS LORI
+                            if(!(regex.test(item.Updated_Element_ID))){ //This term is pulled from the MasterSheet file
                                 return false
                             }else{
                                 return regex.test(item.Main_Part_ID)
