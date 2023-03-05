@@ -35,9 +35,9 @@ const SideMenu = (props) => {
 
 
     return (
-        <View style={[styles.container, {backgroundColor: colors.sideMenuBackground}] }>
+        <View accessible={true} accessibilityLabel="Sidebar Navigation Menu" accessibilityRole="header" style={[styles.container, {backgroundColor: colors.sideMenuBackground}] }>
             <DrawerContentScrollView {...props} >
-                <Text accessible={true} accessibilityLabel="LEGO Mindstorms Brick Locator" accessibilityRole="header" style={[styles.title, {color: colors.textColor}]}>
+                <Text accessible={true} accessibilityLabel="App name" accessibilityRole="none" style={[styles.title, {color: colors.textColor}]}>
                     LEGO Mindstorms Brick Locator
                 </Text>
                 <DrawerItemList {...props} />
@@ -45,7 +45,7 @@ const SideMenu = (props) => {
             </DrawerContentScrollView>
             <View style = {styles.switch_container}>
                 <FontAwesome5 name="cat" size={24} color={theme == 'dark' ? 'rgba(255, 255, 255, .9)' : 'rgba(0,0,0,0.8)'} />
-                <Text accessible={true} accessibilityLabel="Dark Mode" accessibilityRole="Switch" style={[styles.switch_text, {color: colors.textColor}]}>
+            <Text accessible={true} accessibilityLabel="Dark Mode" accessibilityRole="switch" style={[styles.switch_text, {color: colors.textColor}]}>
                     Dark Mode
                 </Text>
                 <Switch 
