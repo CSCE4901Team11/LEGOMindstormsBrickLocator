@@ -65,7 +65,6 @@ const OptionsScreen = ({ navigation }) => {
         <View style={styles.space}>
 
         <View>
-
      <TouchableOpacity accessible={true} accessibilityLabel="About Us" accessibilityRole="header" onPress={toggleModal}>
         <Text style={[styles.buttonText, {color: colors.textColor}]}>About Us</Text>
       </TouchableOpacity>

@@ -22,7 +22,7 @@ function PrivacyPolicy () {
       <View style={[styles.container, {backgroundColor: colors.background}] }>
           <View style={{paddingVertical: 20, textAlign: 'center', fontSize: 20,}}>
           <Text accessible={true} accessibilityLabel="Privacy Policy"accessibilityRole="header" style={{fontWeight: 'bold', fontSize: 27, marginTop: 130, paddingVertical: 10, textAlign: "center",padding: 4, color: colors.textColor}}>Privacy Policy</Text>  
-          </View>
+
          
         <SafeAreaView>
           <ScrollView style={{marginHorizontal: 20, flexGrow: 1, paddingBottom: 300 }} >
