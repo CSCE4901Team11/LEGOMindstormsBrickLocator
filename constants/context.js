@@ -27,7 +27,16 @@ function ThemeProvider (props) {
     return <ThemeContext.Provider value = {{state: state, dispatch: dispatch}}>{props.children}</ThemeContext.Provider>
 }
 
+// function useThemeColors () {
+//     const currentTheme = useContext (ThemeContext);
+//     const theme = currentTheme.state.theme;
+//     return {
+//         colors: Colors[theme]
+//     }
+// }
+
 export {
     ThemeContext,
     ThemeProvider
+    // useThemeColors
 }

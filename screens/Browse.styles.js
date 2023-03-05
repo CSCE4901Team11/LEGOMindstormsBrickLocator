@@ -2,69 +2,87 @@ import { StyleSheet } from "react-native";
 
 
 export default styles = StyleSheet.create({
-    container: {
+   
+    container_light: {
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
-        marginTop: 85,
+        marginTop: 100,
     },
 
-    title: {
-        fontSize: 35,
+    container_dark: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rgba(18, 18, 18, .9)',
+        marginTop: 100,
     },
 
-    button: {
-        padding: 10,
-        marginVertical: 15,
-        backgroundColor: 'rgba(6, 69, 173, .9)',
-        //width: 100,
-        alignItems: 'center'
-    },
-
-    buttonText: {
-        color: 'rgba(255, 255, 255, .9)'
-    },
-
-    itemContainer: {
-        //padding: 10,
+    container_blue: {
         flex: 1,
-        alignItems: 'flex-start',
-        display: 'flex',
-        width: '100%'
-        //flexDirection: 'row',
-        // dimension: 100,  
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rgba(33, 171, 205, .9)',
+        marginTop: 100,
     },
 
-    itemTitle: {
+    container_red: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rgba(200, 45, 56, .9)',
+        marginTop: 100,
+    },
+
+    container_purple: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rgba(130, 7, 197, .9)',
+        marginTop: 100,
+    },
+
+    container_yellow: {
+        flex: 1,
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rgba(222, 189, 69, .9)',
+        marginTop: 100,
+    },
+
+    text_light: {
+        color: 'rgba(0,0,0,0.8)',
         fontSize: 20,
+    },
+
+    text_dark: {
+        color: 'rgba(255, 255, 255, .9)',
+        fontSize: 15,
         fontWeight: 'bold',
     },
 
-    text: {
-        fontSize: 18,
-        flexWrap: 'wrap',
+    text_blue: {
+        color: 'rgba(20, 20, 102, .9)',
+        fontSize: 15,
+        fontWeight: 'bold',
     },
 
-    listSeparator: { 
-        height: 1, 
-        backgroundColor: "grey",
-        marginHorizontal:10
+    text_red: {
+        color: 'rgba(255, 255, 255, .9)',
+        fontSize: 15,
+        fontWeight: 'bold',
     },
 
-    image: {
-        width: 80,
-        height: 80,
-        margin: 5,
+    text_purple: {
+        color: 'rgba(255, 255, 255, .9)',
+        fontSize: 15,
+        fontWeight: 'bold',
     },
 
-    itemInfoContainer: {
-        flex: 1,
-        // alignContent: "center",
-        flexWrap: 'wrap',
-        flexDirection: 'column',
+    text_yellow: {
+        color: 'rgba(29, 29, 29, .9)',
+        fontSize: 15,
+        fontWeight: 'bold',
     },
 
-    list: {
-        flex: 1,
-    },
 });

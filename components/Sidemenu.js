@@ -1,11 +1,9 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import { View, Text, Switch } from 'react-native'
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer'
 import { FontAwesome5 } from '@expo/vector-icons';
 import { ThemeContext } from '../constants/context';
 import  styles  from './Sidemenu.styles';
-import Themes from '../constants/ThemeColors';
-import { set } from 'react-native-reanimated';
 
 const SideMenu = (props) => {
     const [isEnabled, setIsEnabled] = useState(false);
@@ -16,14 +14,9 @@ const SideMenu = (props) => {
         else
             setIsEnabled(true)
     }
-    
-    const currentTheme = useContext (ThemeContext)
-    const theme = currentTheme.state.theme
-    const colors = Themes[theme]
 
-    if(theme != 'dark' && isEnabled && theme != undefined){
-        setIsEnabled(false)
-    }
+    const currentTheme = useContext (ThemeContext);
+    const theme = currentTheme.state.theme;
 
     const handleThemeChange = ()  => {
         if (theme == 'dark')
@@ -35,9 +28,9 @@ const SideMenu = (props) => {
 
 
     return (
-        <View accessible={true} accessibilityLabel="Sidebar Navigation Menu" accessibilityRole="header" style={[styles.container, {backgroundColor: colors.sideMenuBackground}] }>
+        <View style = {theme == 'light' ? styles.container_light : theme == 'dark' ? styles.container_dark : theme == 'blue' ? styles.container_blue : theme == 'red' ? styles.container_red : theme == 'purple' ? styles.container_purple : theme == 'yellow' ? styles.container_yellow : styles.container_light }>
             <DrawerContentScrollView {...props} >
-                <Text accessible={true} accessibilityLabel="App name" accessibilityRole="none" style={[styles.title, {color: colors.textColor}]}>
+                <Text style={theme == 'light' ? styles.title_light : theme == 'dark' ? styles.title_dark : styles.title_light}>
                     LEGO Mindstorms Brick Locator
                 </Text>
                 <DrawerItemList {...props} />
@@ -45,7 +38,7 @@ const SideMenu = (props) => {
             </DrawerContentScrollView>
             <View style = {styles.switch_container}>
                 <FontAwesome5 name="cat" size={24} color={theme == 'dark' ? 'rgba(255, 255, 255, .9)' : 'rgba(0,0,0,0.8)'} />
-            <Text accessible={true} accessibilityLabel="Dark Mode" accessibilityRole="switch" style={[styles.switch_text, {color: colors.textColor}]}>
+                <Text style={theme == 'light' ? styles.switch_text_light : theme == 'dark' ? styles.switch_text_dark : styles.switch_text_light}>
                     Dark Mode
                 </Text>
                 <Switch 

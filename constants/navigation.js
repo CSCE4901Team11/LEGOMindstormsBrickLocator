@@ -7,29 +7,44 @@ import SideMenu from '../components/Sidemenu';
 import { FontAwesome5 } from '@expo/vector-icons'; 
 import { ThemeContext } from '../constants/context';
 import OptionsNav from './optionsnavigation';
-import Themes from './ThemeColors';
-
 const Drawer = createDrawerNavigator();
 
 export default function Navigation () {
 
     const currentTheme = useContext (ThemeContext);
     const theme = currentTheme.state.theme;
-    const colors = Themes[theme] 
+
 
     return (
         <NavigationContainer>
             <Drawer.Navigator drawerContent={props => <SideMenu {...props} />}
-                initialRouteName = "Browse" 
-                screenOptions = { {
+                initialRouteName = "Scanner" 
+                screenOptions = {theme == 'light' ? {
                     headerTransparent: true,
                     headerTitleStyle: {opacity: 0},
-                    headerTintColor: colors.textColor,
+                    headerTintColor: 'rgba(0,0,0,0.8)',
                     drawerLabelStyle: {marginLeft: -15},
                     drawerActiveBackgroundColor: '#b7c6fb',
                     drawerActiveTintColor: 'rgba(0,0,0,0.8)',
                     drawerInactiveTintColor: '#636e72'
+                    }: theme == 'dark' ? {
+                    headerTransparent: true,
+                    headerTitleStyle: {opacity: 0},
+                    headerTintColor: '#fff',
+                    drawerLabelStyle: {marginLeft: -15},
+                    drawerActiveBackgroundColor: '#b7c6fb',
+                    drawerActiveTintColor: 'rgba(0,0,0,0.8)',
+                    drawerInactiveTintColor: '#b2bec3'
+                    } : {
+                    headerTransparent: true,
+                    headerTitleStyle: {opacity: 0},
+                    headerTintColor: 'rgba(0,0,0,0.8)',
+                    drawerLabelStyle: {marginLeft: -15},
+                    drawerActiveBackgroundColor: '#b7c6fb',
+                    drawerActiveTintColor: 'rgba(0,0,0,0.8)',
+                    drawerInactiveTintColor: '#333349'
                     }
+
                 }
                 >
                 <Drawer.Screen
