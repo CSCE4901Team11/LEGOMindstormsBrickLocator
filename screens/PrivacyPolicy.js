@@ -180,6 +180,7 @@ function PrivacyPolicy () {
           </ScrollView>
         </SafeAreaView>
       </View> 
+      </View> 
     );
   }
 

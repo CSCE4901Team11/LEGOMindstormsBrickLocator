@@ -35,7 +35,7 @@ const SideMenu = (props) => {
 
 
     return (
-        <View accessible={true} accessibilityLabel="Sidebar Navigation Menu" accessibilityRole="header" style={[styles.container, {backgroundColor: colors.sideMenuBackground}] }>
+        <View style={[styles.container, {backgroundColor: colors.sideMenuBackground}] }>
             <DrawerContentScrollView {...props} >
                 <Text accessible={true} accessibilityLabel="App name" accessibilityRole="none" style={[styles.title, {color: colors.textColor}]}>
                     LEGO Mindstorms Brick Locator

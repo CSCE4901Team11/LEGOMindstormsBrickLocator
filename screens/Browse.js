@@ -72,7 +72,7 @@ function BrowseScreen () {
     const renderItem = ({ item }) => {
         
         return (
-            <View accessible={true} accessibilityLabel= "Individual Search Result Data" accessibilityRole = "none" style={[styles.itemContainer, {backgroundColor: colors.backgroundColor} ]}>
+            <View style={[styles.itemContainer, {backgroundColor: colors.backgroundColor} ]}>
                 <Image accessible={true} accessibilityLabel= "Image of lego piece" accessibilityRole = "image" style = {styles.image} source={{uri: item.Image}} />
                 <View style={styles.itemInfoContainer} >
                     <Text style = {[styles.itemTitle, {color: colors.textColor}]}>{item.Official_Name}</Text>
@@ -99,9 +99,6 @@ function BrowseScreen () {
             onChangeText={(text) => {filterData(text), console.log(text)}} 
          />
          <FlatList style={styles.list}
-                accessibilityLabel="Search Results"
-                accessible={true}
-                accessibilityRole = "none"
                 data={filteredData}
                 renderItem={renderItem}
                 keyExtractor={(item) => item.ID}
