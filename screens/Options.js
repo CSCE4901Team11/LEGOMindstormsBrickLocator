@@ -47,11 +47,13 @@ const OptionsScreen = ({ navigation }) => {
       <View style={[styles.container, {backgroundColor: colors.background} ]}>
         <View style={styles.insideContainer}>
           <View style={styles.headerRow}>
-          <Text accessible={true} accessibilityLabel="header" style={[styles.headerText, {color: colors.textColor}]}>Options</Text>  
+
+          <Text accessible={true} accessibilityLabel="Options" accessibilityRole="header" style={[styles.headerText, {color: colors.textColor}]}>Options</Text>  
           </View>
           
 
-          <TouchableOpacity accessible={true} accessibilityLabel="Clear UserData" accessibilityRole="Alert" onPress={ConfirmationAlert} style={styles.button}>
+          <TouchableOpacity accessible={true} accessibilityLabel="Clear UserData" accessibilityRole="Button" onPress={ConfirmationAlert} style={styles.button}>
+
         <Text style={styles.buttonText}>Clear User Data</Text>
       </TouchableOpacity>
 
@@ -66,7 +68,8 @@ const OptionsScreen = ({ navigation }) => {
 
         <View>
 
-     <TouchableOpacity accessible={true} accessibilityLabel="About Us" accessibilityRole="none" onPress={toggleModal}>
+     <TouchableOpacity accessible={true} accessibilityLabel="About Us" accessibilityRole="header" onPress={toggleModal}>
+
         <Text style={[styles.buttonText, {color: colors.textColor}]}>About Us</Text>
       </TouchableOpacity>
 

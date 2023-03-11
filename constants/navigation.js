@@ -18,7 +18,7 @@ export default function Navigation () {
     const colors = Themes[theme] 
 
     return (
-        <NavigationContainer>
+        <NavigationContainer accessible={true} accessibilityLabel="Navigation Bar" accessibilityRole="menubar">
             <Drawer.Navigator drawerContent={props => <SideMenu {...props} />}
                 initialRouteName = "Browse" 
                 screenOptions = { {

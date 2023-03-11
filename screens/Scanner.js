@@ -201,7 +201,7 @@ function ScannerScreen() {
   };
 
   return (
-    <View style={[styles.container, {backgroundColor: colors.background}] }>
+    <View accessible={true} accessibilityLabel="Lego Scanner" accessibilityRole="none"style={[styles.container, {backgroundColor: colors.background}] }>
       {awaitFrameworkReady()}
     </View>
   );
