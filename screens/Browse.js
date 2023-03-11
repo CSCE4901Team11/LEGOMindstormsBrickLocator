@@ -31,7 +31,11 @@ function BrowseScreen () {
                     //console.log("color check false")
                     if(!(regex.test(item.Sheet_Element_ID))){
                         if(!(regex.test(item.Main_Part_ID))){
-                            return false
+                            if(!(regex.test(item.Updated_Element_ID))){ //This term is pulled from the MasterSheet file
+                                return false
+                            }else{
+                                return regex.test(item.Main_Part_ID)
+                            }
                         }else{
                             return regex.test(item.Main_Part_ID)
                         }
@@ -69,17 +73,17 @@ function BrowseScreen () {
         
         return (
             <View style={[styles.itemContainer, {backgroundColor: colors.backgroundColor} ]}>
-                <Image style = {styles.image} source={{uri: item.Image}} />
-                <View style={styles.itemInfoContainer}>
+                <Image accessible={true} accessibilityLabel= "Image of lego piece" accessibilityRole = "image" style = {styles.image} source={{uri: item.Image}} />
+                <View style={styles.itemInfoContainer} >
                     <Text style = {[styles.itemTitle, {color: colors.textColor}]}>{item.Official_Name}</Text>
                     <Text style = {[styles.text, {color: colors.textColor}]}>Element ID/Design ID: {item.Sheet_Element_ID}/{item.Main_Part_ID}</Text>
                     <Text style = {[styles.text, {color: colors.textColor}]}>Color: {item.Color} </Text>
                 </View>
-                <TouchableOpacity onPress={() => SelectPiece(item.Official_Name) }>
-                <View style={styles.button}>
-                    <Text style={styles.buttonText}>Select Piece</Text>
-                </View>
-            </TouchableOpacity>
+                <TouchableOpacity accessible = {true} accessibilityLabel="Select piece" accessibilityRole= "button" onPress={() => SelectPiece(item.Official_Name) }>
+                    <View style={styles.button}>
+                        <Text style={styles.buttonText}>Select Piece</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         )
     }
@@ -87,6 +91,9 @@ function BrowseScreen () {
     return (
         <View style={[styles.container, {backgroundColor: colors.background}] }>
          <SearchBar
+            accessibilityLabel="Search Bar"
+            accessible={true}
+            accessibilityRole = "search"
             placeholder="Search here"
             onClearPress={() => setData()}
             onChangeText={(text) => {filterData(text), console.log(text)}} 
