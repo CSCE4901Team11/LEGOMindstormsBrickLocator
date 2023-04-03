@@ -22,7 +22,7 @@ export default styles = StyleSheet.create({
     },
 
     headerTwoText: {
-      paddingVertical: 10,
+      paddingVertical: 35,
       textAlign: 'center',
       fontSize: 20,
       color: 'black'
