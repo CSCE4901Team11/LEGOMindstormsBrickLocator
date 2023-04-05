@@ -36,8 +36,9 @@ export default styles = StyleSheet.create({
         flex: 1,
         alignItems: 'flex-start',
         display: 'flex',
-        width: '100%'
-        //flexDirection: 'row',
+        width: '100%',
+        // flexDirection: 'row',
+        // flexWrap: 'wrap',
         // dimension: 100,  
     },
 

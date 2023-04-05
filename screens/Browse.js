@@ -73,7 +73,7 @@ function BrowseScreen () {
         
         return (
             <View style={[styles.itemContainer, {backgroundColor: colors.backgroundColor} ]}>
-                <Image accessible={true} accessibilityLabel= "Image of lego piece" accessibilityRole = "image" style = {styles.image} source={{uri: item.Image}} />
+                <Image accessible={true} accessibilityLabel= {`image of ${item.Official_Name}`} accessibilityRole = "image" style = {styles.image} source={{uri: item.Image}} />
                 <View style={styles.itemInfoContainer} >
                     <Text style = {[styles.itemTitle, {color: colors.textColor}]}>{item.Official_Name}</Text>
                     <Text style = {[styles.text, {color: colors.textColor}]}>Element ID: {item.Sheet_Element_ID}</Text>
