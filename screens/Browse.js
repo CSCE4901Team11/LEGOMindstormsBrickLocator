@@ -73,18 +73,29 @@ function BrowseScreen () {
         
         return (
             <View style={[styles.itemContainer, {backgroundColor: colors.backgroundColor} ]}>
-                <Image accessible={true} accessibilityLabel= {`image of ${item.Official_Name}`} accessibilityRole = "image" style = {styles.image} source={{uri: item.Image}} />
-                <View style={styles.itemInfoContainer} >
-                    <Text style = {[styles.itemTitle, {color: colors.textColor}]}>{item.Official_Name}</Text>
-                    <Text style = {[styles.text, {color: colors.textColor}]}>Element ID: {item.Sheet_Element_ID}</Text>
-                    <Text style = {[styles.text, {color: colors.textColor}]}>Design ID: {item.Main_Part_ID}</Text>
-                    <Text style = {[styles.text, {color: colors.textColor}]}>Color: {item.Color} </Text>
-                </View>
-                <TouchableOpacity accessible = {true} accessibilityLabel="Select piece" accessibilityRole= "button" onPress={() => SelectPiece(item.Official_Name) }>
-                    <View style={styles.button}>
-                        <Text style={styles.buttonText}>Select Piece</Text>
+                <Text style = {[styles.itemTitle, {color: colors.textColor}]}>{item.Official_Name}</Text>
+
+
+                <View style={styles.imageAndInfo}>
+                    
+                    <Image accessible={true} accessibilityLabel= {`image of ${item.Official_Name}`} accessibilityRole = "image" style = {styles.image} source={{uri: item.Image}} />
+
+                
+                    <View style={styles.itemInfoContainer} >
+                        {/* <Text style = {[styles.itemTitle, {color: colors.textColor}]}>{item.Official_Name}</Text>  */}
+                        <Text style = {[styles.text, {color: colors.textColor}]}>Element ID: {item.Sheet_Element_ID}</Text>
+                        <Text style = {[styles.text, {color: colors.textColor}]}>Design ID: {item.Main_Part_ID}</Text>
+                        <Text style = {[styles.text, {color: colors.textColor}]}>Color: {item.Color} </Text>
                     </View>
-                </TouchableOpacity>
+                </View>
+
+                <View>
+                    <TouchableOpacity accessible = {true} accessibilityLabel="Select piece" accessibilityRole= "button" onPress={() => SelectPiece(item.Official_Name) }>
+                        <View style={styles.button}>
+                            <Text style={styles.buttonText}>Select Piece</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
             </View>
         )
     }

@@ -62,6 +62,7 @@ export default styles = StyleSheet.create({
         width: 80,
         height: 80,
         margin: 5,
+        paddingRight: 10,
     },
 
     itemInfoContainer: {
@@ -69,6 +70,14 @@ export default styles = StyleSheet.create({
         // alignContent: "center",
         flexWrap: 'wrap',
         flexDirection: 'column',
+        padding: 5,
+        marginLeft: 5,
+    },
+
+    imageAndInfo: {
+        flex: 1,
+        flexWrap: 'wrap',
+        flexDirection: 'row',
     },
 
     list: {
