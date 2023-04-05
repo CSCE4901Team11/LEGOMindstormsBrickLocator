@@ -20,7 +20,7 @@ function PrivacyPolicy () {
 
     return (
       <View style={[styles.container, {backgroundColor: colors.background}] }>
-          <View style={{paddingVertical: 20, textAlign: 'center', fontSize: 20,}}>
+          <View style={{paddingVertical: 40, textAlign: 'center', fontSize: 20,}}>
 
           <Text accessible={true} accessibilityLabel="Privacy Policy"accessibilityRole="header" style={{fontWeight: 'bold', fontSize: 27, marginTop: 130, paddingVertical: 10, textAlign: "center",padding: 4, color: colors.textColor}}>Privacy Policy</Text>  
 
@@ -28,6 +28,7 @@ function PrivacyPolicy () {
          
         <SafeAreaView>
           <ScrollView style={{marginHorizontal: 20, flexGrow: 1, paddingBottom: 300 }} >
+            <View style={{paddingBottom: 175}}>
             <Text style={[styles.header, {color: colors.textColor}]}>Privacy Policy</Text>
              <Text style={[styles.body, {color: colors.textColor}]}>
                   Team 11 built the LEGO® Mindstorms® Brick Locator  app as
@@ -178,7 +179,7 @@ function PrivacyPolicy () {
                If you have any questions or suggestions about my
               Privacy Policy, do not hesitate to contact me at MindstormsBrickLocator@gmail.com.
             </Text>
-
+            </View>
           </ScrollView>
         </SafeAreaView>
       </View> 
