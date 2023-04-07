@@ -22,14 +22,14 @@ export default styles = StyleSheet.create({
     button: {
         padding: 10,
         marginVertical: 15,
-        backgroundColor: 'rgba(6, 69, 173, .9)',
+        // backgroundColor: 'rgba(6, 69, 173, .9)',
         //width: 100,
         alignItems: 'center'
     },
 
-    buttonText: {
-        color: 'rgba(255, 255, 255, .9)'
-    },
+    // buttonText: {
+    //     color: 'rgba(255, 255, 255, .9)',
+    // },
 
     itemContainer: {
         //padding: 10,
