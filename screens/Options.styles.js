@@ -69,7 +69,7 @@ export default styles = StyleSheet.create({
     },
     
     buttonClose: {
-      backgroundColor: 'rgba(189,195,199, .9)',
+      // backgroundColor: 'rgba(189,195,199, .9)',
       textAlign: "center",
       alignItems: "center",
       textAlign: "center",
@@ -77,6 +77,7 @@ export default styles = StyleSheet.create({
       padding: 10,
       fontSize: 15,
       fontSize: 15,
+      borderRadius: 20,
     },
 
     modalText: {

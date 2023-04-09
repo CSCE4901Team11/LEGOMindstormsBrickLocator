@@ -73,37 +73,47 @@ function BrowseScreen () {
         
         return (
             <View style={[styles.itemContainer, {backgroundColor: colors.backgroundColor} ]}>
-                <Image accessible={true} accessibilityLabel= "Image of lego piece" accessibilityRole = "image" style = {styles.image} source={{uri: item.Image}} />
-                <View style={styles.itemInfoContainer} >
-                    <Text style = {[styles.itemTitle, {color: colors.textColor}]}>{item.Official_Name}</Text>
-                    <Text style = {[styles.text, {color: colors.textColor}]}>Element ID/Design ID: {item.Sheet_Element_ID}/{item.Main_Part_ID}</Text>
-                    <Text style = {[styles.text, {color: colors.textColor}]}>Color: {item.Color} </Text>
-                </View>
-                <TouchableOpacity accessible = {true} accessibilityLabel="Select piece" accessibilityRole= "button" onPress={() => SelectPiece(item.Official_Name) }>
-                    <View style={styles.button}>
-                        <Text style={styles.buttonText}>Select Piece</Text>
+                <Text style = {[styles.itemTitle, {color: colors.textColor}]}>{item.Official_Name}</Text>
+
+
+                <View style={styles.imageAndInfo}>  
+                    <Image accessible={true} accessibilityLabel= {`image of ${item.Official_Name}`} accessibilityRole = "image" style = {styles.image} source={{uri: item.Image}} />
+                    <View style={styles.itemInfoContainer} >
+                        <Text style = {[styles.text, {color: colors.textColor}]}>Element ID: {item.Sheet_Element_ID}</Text>
+                        <Text style = {[styles.text, {color: colors.textColor}]}>Design ID: {item.Main_Part_ID}</Text>
+                        <Text style = {[styles.text, {color: colors.textColor}]}>Color: {item.Color} </Text>
                     </View>
-                </TouchableOpacity>
+                </View>
+
+                <View>
+                    <TouchableOpacity accessible = {true} accessibilityLabel="Select piece" accessibilityRole= "button" onPress={() => SelectPiece(item.Official_Name) }>
+                        <View style={[styles.button, {backgroundColor: colors.buttonColor}]}>
+                            <Text style={{color: colors.buttonTextColor}}>Select Piece</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
             </View>
         )
     }
 
     return (
         <View style={[styles.container, {backgroundColor: colors.background}] }>
-         <SearchBar
-            accessibilityLabel="Search Bar"
-            accessible={true}
-            accessibilityRole = "search"
-            placeholder="Search here"
-            onClearPress={() => setData()}
-            onChangeText={(text) => {filterData(text), console.log(text)}} 
-         />
-         <FlatList style={styles.list}
-                data={filteredData}
-                renderItem={renderItem}
-                keyExtractor={(item) => item.ID}
-                ItemSeparatorComponent={listSeparator}
+            <View style={styles.listContainer }>
+            <SearchBar
+                accessibilityLabel="Search Bar"
+                accessible={true}
+                accessibilityRole = "search"
+                placeholder="Search here"
+                onClearPress={() => setData()}
+                onChangeText={(text) => {filterData(text), console.log(text)}} 
             />
+            <FlatList style={styles.list}
+                    data={filteredData}
+                    renderItem={renderItem}
+                    keyExtractor={(item) => item.ID}
+                    ItemSeparatorComponent={listSeparator}
+                />
+            </View>
         </View>
     );
 }

@@ -6,6 +6,12 @@ export default styles = StyleSheet.create({
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
+    },
+
+    listContainer: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center',
         marginTop: 85,
     },
 
@@ -16,22 +22,23 @@ export default styles = StyleSheet.create({
     button: {
         padding: 10,
         marginVertical: 15,
-        backgroundColor: 'rgba(6, 69, 173, .9)',
+        // backgroundColor: 'rgba(6, 69, 173, .9)',
         //width: 100,
         alignItems: 'center'
     },
 
-    buttonText: {
-        color: 'rgba(255, 255, 255, .9)'
-    },
+    // buttonText: {
+    //     color: 'rgba(255, 255, 255, .9)',
+    // },
 
     itemContainer: {
         //padding: 10,
         flex: 1,
         alignItems: 'flex-start',
         display: 'flex',
-        width: '100%'
-        //flexDirection: 'row',
+        width: '100%',
+        // flexDirection: 'row',
+        // flexWrap: 'wrap',
         // dimension: 100,  
     },
 
@@ -55,6 +62,7 @@ export default styles = StyleSheet.create({
         width: 80,
         height: 80,
         margin: 5,
+        paddingRight: 10,
     },
 
     itemInfoContainer: {
@@ -62,6 +70,14 @@ export default styles = StyleSheet.create({
         // alignContent: "center",
         flexWrap: 'wrap',
         flexDirection: 'column',
+        padding: 5,
+        marginLeft: 5,
+    },
+
+    imageAndInfo: {
+        flex: 1,
+        flexWrap: 'wrap',
+        flexDirection: 'row',
     },
 
     list: {

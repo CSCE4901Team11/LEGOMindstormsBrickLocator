@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 export default function OptionsNav () {
 
     return (
-        <Stack.Navigator initialRouteName="OptionsScreen" screenOptions={{headerShown: false}}>
+        <Stack.Navigator initialRouteName="OptionsScreen" screenOptions={{headerTransparent: true, title: ''}} >
             <Stack.Screen
              name = "OptionsScreen"
              component = {OptionsScreen}
