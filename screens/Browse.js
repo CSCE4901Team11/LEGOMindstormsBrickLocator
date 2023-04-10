@@ -98,7 +98,7 @@ function BrowseScreen () {
 
     return (
         <View style={[styles.container, {backgroundColor: colors.background}] }>
-            <View style={styles.listContainer }>
+            <View style={styles.listContainer}>
             <SearchBar
                 accessibilityLabel="Search Bar"
                 accessible={true}

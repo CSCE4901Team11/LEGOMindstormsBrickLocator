@@ -9,14 +9,7 @@ export default styles = StyleSheet.create({
     },
 
     listContainer: {
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center',
-    },
-
-    listContainer: {
-        flex: 1, 
-        alignItems: 'center', 
+        flex: 1,  
         justifyContent: 'center',
         marginTop: 85,
     },
@@ -54,7 +47,7 @@ export default styles = StyleSheet.create({
     },
 
     text: {
-        fontSize: 19,
+        fontSize: 19, // Text still wraps weird
         flexWrap: 'wrap',
     },
 
@@ -88,5 +81,6 @@ export default styles = StyleSheet.create({
 
     list: {
         flex: 1,
+        
     },
 });
