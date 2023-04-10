@@ -32,7 +32,7 @@ export default styles = StyleSheet.create({
     // },
 
     itemContainer: {
-        //padding: 10,
+        paddingTop: 6,
         flex: 1,
         alignItems: 'flex-start',
         display: 'flex',
@@ -43,12 +43,12 @@ export default styles = StyleSheet.create({
     },
 
     itemTitle: {
-        fontSize: 20,
+        fontSize: 23,
         fontWeight: 'bold',
     },
 
     text: {
-        fontSize: 18,
+        fontSize: 19,
         flexWrap: 'wrap',
     },
 
@@ -62,7 +62,7 @@ export default styles = StyleSheet.create({
         width: 80,
         height: 80,
         margin: 5,
-        paddingRight: 10,
+        // paddingRight: 10,
     },
 
     itemInfoContainer: {
@@ -70,7 +70,7 @@ export default styles = StyleSheet.create({
         // alignContent: "center",
         flexWrap: 'wrap',
         flexDirection: 'column',
-        padding: 5,
+        padding: 4,
         marginLeft: 5,
     },
 
