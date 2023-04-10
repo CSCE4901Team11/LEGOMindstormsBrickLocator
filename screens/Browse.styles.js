@@ -12,6 +12,12 @@ export default styles = StyleSheet.create({
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center',
+    },
+
+    listContainer: {
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center',
         marginTop: 85,
     },
 
