@@ -22,14 +22,17 @@ const Themes = {
     },
 
     blue: {
-      background: 'rgba(0, 54, 140, .9)',
+      // background: 'rgba(0, 54, 140, .9)',
+      // background: 'rgba(4, 61, 97, 1)', //dark blue
+      background: 'rgba(27,40,56,255)', // steam blue
       textColor: 'rgba(255,255,255,1)',
-      sideMenuBackground: 'rgba(137, 207, 240, 0.9)',
+      // sideMenuBackground: 'rgba(137, 207, 240, 0.9)',
+      sideMenuBackground: 'rgba(4, 61, 97, 1)',
       sideMenuHighlight: 'rgba(183, 198, 251, 1)',
       sideMenuTextColorInactive: 'rgba(99, 110, 114, 1)',
       sideMenuTextColorActive: 'rgba(0,0,0,0.8)',
-      buttonColor: 'rgba(254, 179, 83, 1)',
-      buttonTextColor: 'rgba(255, 255, 255, .9)',
+      buttonColor: 'rgba(137, 207, 240, 0.9)',
+      buttonTextColor: 'rgba(0, 0, 0, .8)',
     },
 
     red: {
@@ -47,14 +50,20 @@ const Themes = {
       // background: 'rgba(91, 5, 138, .9)', eggplant
       // background: 'rgba(42, 45, 84, 1)', turns out this is blue
       // background: 'rgba(74, 79, 125, 1)', also still blue somehow
-      background: 'rgba(115, 92, 142, 1)',
+      // background: 'rgba(115, 92, 142, 1)',
+      // background: 'rgba(110, 85, 185, 1)',
+      // background: 'rgba(95, 69, 166, 1)',
+      background: 'rgba(41, 36, 101, 255)',
       textColor: 'rgba(255, 255, 255, .9)',
       // sideMenuBackground: 'rgba(130, 7, 197, 0.9)', violent
-      sideMenuBackground: 'rgba(115, 92, 142, 1)',
+      // sideMenuBackground: 'rgba(115, 92, 142, 1)',
+      // sideMenuBackground: 'rgba(86, 82, 143, 1)',
+      sideMenuBackground: 'rgba(128, 125, 187, 1)',
       sideMenuHighlight: 'rgba(183, 198, 251, 1)',
-      sideMenuTextColorInactive: 'rgba(99, 110, 114, 1)',
+      sideMenuTextColorInactive: 'rgba(240, 240, 236, .9)', 
       sideMenuTextColorActive: 'rgba(0,0,0,0.8)',
-      buttonColor: 'rgba(6, 69, 173, .9)',
+      // buttonColor: 'rgba(95, 69, 166, 1)',
+      buttonColor: 'rgba(110, 85, 185, .9)',
       buttonTextColor: 'rgba(255, 255, 255, .9)',
     },
 
