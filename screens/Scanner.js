@@ -80,8 +80,9 @@ function ScannerScreen() {
 
   const loadcocoSSDModel = async () => {
     console.log('Start loading model');
-    const model = await cocoSSD.load();
-    //const model = await tf.loadLayersModel('file://jsmodel/model.json');
+    // const model = await cocoSSD.load();
+    const model = await tf.loadGraphModel('https://storage.googleapis.com/mindstormsjsmodel/CoreJSModel/model.json'); // no large error but model doesnt seem to load
+    // const model = await tf.loadLayersModel('https://storage.googleapis.com/mindstormsjsmodel/CoreJSModel/model.json'); // request entity too large
     console.log(`model loaded`);
     return model;
   }
@@ -90,7 +91,7 @@ function ScannerScreen() {
     if(!tensor) { return; }
 
     //topk set to 1
-    const prediction = await cocoSSDModel.detect(tensor);
+    const prediction = await cocoSSDModel.detect(tensor); // is undefined
     if(prediction != 'undefined' || prediction != '[]') {
       console.log(`prediction: ${JSON.stringify(prediction)}`);
     }
