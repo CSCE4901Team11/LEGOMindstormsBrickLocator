@@ -23,6 +23,7 @@ export default function Navigation () {
                 initialRouteName = "Browse" 
                 screenOptions = { {
                     headerTransparent: true,
+                    headerTintColor: colors.sideMenuIconColor,
                     headerTitle: "",
                     drawerLabelStyle: {marginLeft: -15},
                     drawerActiveBackgroundColor: colors.sideMenuHighlight, // changes highlight color
