@@ -1,4 +1,4 @@
-import { Text, View, Pressable, TouchableOpacity, Alert } from 'react-native';
+import { Text, View, Pressable, TouchableOpacity, Alert, Platform } from 'react-native';
 import styles from './Scanner.styles';
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import { Camera } from 'expo-camera';
@@ -9,7 +9,7 @@ import Themes from '../constants/ThemeColors';
 import * as cocoSSD from '@tensorflow-models/coco-ssd';
 import * as tf from '@tensorflow/tfjs';
 import * as tfrn from '@tensorflow/tfjs-react-native'
-//import * as tfn from '@tensorflow/tfjs-node'
+// import * as tfn from '@tensorflow/tfjs-node'
 
 
 const TensorCamera = tfrn.cameraWithTensors(Camera);
@@ -41,8 +41,20 @@ function ScannerScreen() {
 
   const [boundingBoxes, setBoundingBoxes] = useState([<highlighter />])
 
-  const textureDims = { width: 1080, height: 1920 };
-  const tensorDims = { width: 512, height: 512 };     
+  let textureDims;
+  if (Platform.OS === 'ios') { 
+    textureDims = {
+      width: 1080, 
+      height: 1920
+    };
+  }
+  else {
+    textureDims = {
+      width: 1600, 
+      height: 1200
+    };
+  }
+  const tensorDims = { width: 640, height: 640 };     
 
   useEffect(() => {
     if(!frameworkReady) {
@@ -81,17 +93,20 @@ function ScannerScreen() {
   const loadcocoSSDModel = async () => {
     console.log('Start loading model');
     // const model = await cocoSSD.load();
-    const model = await tf.loadGraphModel('https://storage.googleapis.com/mindstormsjsmodel/CoreJSModel/model.json'); // no large error but model doesnt seem to load
-    // const model = await tf.loadLayersModel('https://storage.googleapis.com/mindstormsjsmodel/CoreJSModel/model.json'); // request entity too large
+    const model = await tf.loadGraphModel('https://storage.googleapis.com/mindstormsjsmodel/CoreJSModel/model.json'); 
+    // const model = await tf.loadGraphModel('file://jsmodel/model.json'); 
     console.log(`model loaded`);
+    // const inputs = tf.zeros([1, 640, 640, 3])
+    // const newmodel = await model.execute(inputs)
     return model;
   }
 
   const getPrediction = async(tensor) => {
     if(!tensor) { return; }
-
     //topk set to 1
-    const prediction = await cocoSSDModel.detect(tensor); // is undefined
+    // const axis = 0
+    // tf.expandDims(tensor, axis)
+    const prediction = await cocoSSDModel.predict(tensor); // is undefined, only shows when it crashes
     if(prediction != 'undefined' || prediction != '[]') {
       console.log(`prediction: ${JSON.stringify(prediction)}`);
     }
@@ -128,8 +143,10 @@ function ScannerScreen() {
   const handleCameraStream = (imageAsTensors) => {
     const loop = async () => {
       if(!frameworkReady) {await delay();}
+      // tf.expandDims(imageAsTensors)
       const nextImageTensor = await imageAsTensors.next().value;
       await getPrediction(nextImageTensor);
+      
       requestAnimationFrameId = requestAnimationFrame(loop);
       tf.dispose(nextImageTensor);
       tf.dispose(imageAsTensors);
