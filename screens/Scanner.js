@@ -20,6 +20,7 @@ function ScannerScreen() {
   const [predictionFound, setPredictionFound] = useState(false);
   const [hasPermission, setHasPermission] = useState(false);
   const [brickDetected, setBrickDetected] = useState(false);
+  const [predictions, setPredictions] = useState()
 
   const cameraRef = useRef(null);
 
@@ -113,8 +114,9 @@ function ScannerScreen() {
   
     // const prediction = await cocoSSDModel.predict(tensor, {batchSize: 1}) ; // it doesnt lik ethis method idk why
     const prediction = await cocoSSDModel.executeAsync(tensor) // works  but camera goes black when model loads and the app is so laggy you cant tell it works. changing model does nothing to fix this
-    console.log(`prediction: ${JSON.stringify(prediction)}`);
-    return prediction.dataSync()
+     console.log(`prediction: ${JSON.stringify(prediction)}`);
+    // console.log(prediction.dataSync()) // says data sync isnt a function but it is. needed to get readable data instead of raw tensor
+    // return prediction
     // if(prediction != 'undefined' || prediction != '[]') {
     //   console.log(`prediction: ${JSON.stringify(prediction)}`);
     // }
@@ -140,7 +142,7 @@ function ScannerScreen() {
     //     console.log('Tensor count: ' + tf.memory().numTensors);
     //   }
     // }
-    // tf.dispose(prediction)
+    // tf.dispose(prediction) // it crashes before loading the camera if i put this back in. might conflict with the dispose in the camera section
   }
 
   const delay = async () => {
@@ -159,16 +161,17 @@ function ScannerScreen() {
         const nextImageTensor = await imageAsTensors.next().value;
   
         if (cocoSSDModel){
-          const reshapedTensor = nextImageTensor.expandDims(axis=0)
-          const results = await getPrediction(reshapedTensor);
+          const reshapedTensor = nextImageTensor.expandDims(axis=0) // chamges shape to be 4d tensor. app errors saying it cant find this variable for whatever reason
+          const results = await getPrediction(reshapedTensor); //actually does the prediction part
           setPredictionFound(true)
+          setPredictions(results)
         }
         tf.dispose(reshapedTensor);
         tf.dispose(imageAsTensors);
       }
       frameCount += 1
       frameCount = frameCount % everyNframes
-      requestAnimationFrameId = requestAnimationFrame(loop);
+      requestAnimationFrameId = requestAnimationFrame(loop); // all of this did not fix the camera issue
     };
     if(!predictionFound) loop();
   }
@@ -244,4 +247,4 @@ function ScannerScreen() {
   );
 }
 
-export default ScannerScreen;1
+export default ScannerScreen;
