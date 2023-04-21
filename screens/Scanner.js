@@ -32,7 +32,8 @@ function ScannerScreen() {
   const theme = currentTheme.state.theme;
   const colors = Themes[theme];
 
-  let requestAnimationFrameId = 0;
+  let frameCount = 0;
+  let everyNframes = 1;
 
   let x = 0;
   let y = 0;
@@ -54,7 +55,14 @@ function ScannerScreen() {
       height: 1200
     };
   }
-  const tensorDims = { width: 640, height: 640 };     
+
+  const tensorDims = { 
+    width: 640, 
+    height: 640 
+  }; 
+
+  let requestAnimationFrameId = 0;
+
 
   useEffect(() => {
     if(!frameworkReady) {
@@ -96,43 +104,43 @@ function ScannerScreen() {
     const model = await tf.loadGraphModel('https://storage.googleapis.com/mindstormsjsmodel/CoreJSModel/model.json'); 
     // const model = await tf.loadGraphModel('file://jsmodel/model.json'); 
     console.log(`model loaded`);
-    // const inputs = tf.zeros([1, 640, 640, 3])
-    // const newmodel = await model.execute(inputs)
     return model;
   }
 
   const getPrediction = async(tensor) => {
     if(!tensor) { return; }
     //topk set to 1
-    // const axis = 0
-    // tf.expandDims(tensor, axis)
-    const prediction = await cocoSSDModel.predict(tensor); // is undefined, only shows when it crashes
-    if(prediction != 'undefined' || prediction != '[]') {
-      console.log(`prediction: ${JSON.stringify(prediction)}`);
-    }
+  
+    // const prediction = await cocoSSDModel.predict(tensor, {batchSize: 1}) ; // it doesnt lik ethis method idk why
+    const prediction = await cocoSSDModel.executeAsync(tensor) // works  but camera goes black when model loads and the app is so laggy you cant tell it works. changing model does nothing to fix this
+    console.log(`prediction: ${JSON.stringify(prediction)}`);
+    return prediction.dataSync()
+    // if(prediction != 'undefined' || prediction != '[]') {
+    //   console.log(`prediction: ${JSON.stringify(prediction)}`);
+    // }
 
-    if(!prediction || prediction.length === 0) { return; }
+    // if(!prediction || prediction.length === 0) { return; }
 
-    //only attempt detection when confidence is higher than 20%
-    for(let i = 0; i < prediction.length; i++) {
-      if(prediction[i].score > 0.5) {
+    // //only attempt detection when confidence is higher than 20%
+    // for(let i = 0; i < prediction.length; i++) {
+    //   if(prediction[i].score > 0.5) {
 
-        x = prediction[i].bbox[0];
-        y = prediction[i].bbox[1];
-        w = prediction[i].bbox[2];
-        h = prediction[i].bbox[3];
+    //     x = prediction[i].bbox[0];
+    //     y = prediction[i].bbox[1];
+    //     w = prediction[i].bbox[2];
+    //     h = prediction[i].bbox[3];
 
-        cancelAnimationFrame(requestAnimationFrameId);
-        setPredictionFound(true);
+    //     cancelAnimationFrame(requestAnimationFrameId);
+    //     setPredictionFound(true);
 
-        await DetectBrick(prediction[i].className);
+    //     await DetectBrick(prediction[i].className);
 
-        console.log("Adding bounding box.")
-        setBoundingBoxes([...boundingBoxes,<Highlighter/>])
-        console.log('Tensor count: ' + tf.memory().numTensors);
-      }
-    }
-    tf.dispose(prediction)
+    //     console.log("Adding bounding box.")
+    //     setBoundingBoxes([...boundingBoxes,<Highlighter/>])
+    //     console.log('Tensor count: ' + tf.memory().numTensors);
+    //   }
+    // }
+    // tf.dispose(prediction)
   }
 
   const delay = async () => {
@@ -141,15 +149,26 @@ function ScannerScreen() {
   }
 
   const handleCameraStream = (imageAsTensors) => {
+    if (!imageAsTensors){
+      console.log("no tensors")
+    }
     const loop = async () => {
       if(!frameworkReady) {await delay();}
       // tf.expandDims(imageAsTensors)
-      const nextImageTensor = await imageAsTensors.next().value;
-      await getPrediction(nextImageTensor);
-      
+      if (frameCount % everyNframes === 0){
+        const nextImageTensor = await imageAsTensors.next().value;
+  
+        if (cocoSSDModel){
+          const reshapedTensor = nextImageTensor.expandDims(axis=0)
+          const results = await getPrediction(reshapedTensor);
+          setPredictionFound(true)
+        }
+        tf.dispose(reshapedTensor);
+        tf.dispose(imageAsTensors);
+      }
+      frameCount += 1
+      frameCount = frameCount % everyNframes
       requestAnimationFrameId = requestAnimationFrame(loop);
-      tf.dispose(nextImageTensor);
-      tf.dispose(imageAsTensors);
     };
     if(!predictionFound) loop();
   }

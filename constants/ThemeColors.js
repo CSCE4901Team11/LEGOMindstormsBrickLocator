@@ -45,7 +45,7 @@ const Themes = {
       sideMenuHighlight: 'rgba(183, 198, 251, 1)',
       sideMenuTextColorInactive: 'rgba(99, 110, 114, 1)',
       sideMenuTextColorActive: 'rgba(0,0,0,0.8)',
-      sideMenuIconColor: 'rgba(0,0,0,0.8)',
+      sideMenuIconColor: 'rgba(255, 255, 255, .9)',
       buttonColor: 'rgba(254, 179, 83, 1)',
       buttonTextColor: 'rgba(255, 255, 255, .9)',
     },
