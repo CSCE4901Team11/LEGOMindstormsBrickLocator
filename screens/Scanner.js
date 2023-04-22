@@ -34,7 +34,7 @@ function ScannerScreen() {
   const colors = Themes[theme];
 
   let frameCount = 0;
-  let everyNframes = 1;
+  let everyNframes = 1; //how often it predicts. changing to decimal get one prediction and stops but doesnt freeze camera
 
   let x = 0;
   let y = 0;
@@ -103,6 +103,7 @@ function ScannerScreen() {
     console.log('Start loading model');
     // const model = await cocoSSD.load();
     const model = await tf.loadGraphModel('https://storage.googleapis.com/mindstormsjsmodel/CoreJSModel/model.json'); 
+    // const model = await tflite.loadTFLiteModel('https://storage.googleapis.com/mindstormsjsmodel/TfliteModel/mobilenet_coreset.tflite') // the tfjs tflite api is so incredibly broken
     // const model = await tf.loadGraphModel('file://jsmodel/model.json'); 
     console.log(`model loaded`);
     return model;
@@ -156,17 +157,17 @@ function ScannerScreen() {
     }
     const loop = async () => {
       if(!frameworkReady) {await delay();}
-      // tf.expandDims(imageAsTensors)
+      
       if (frameCount % everyNframes === 0){
         const nextImageTensor = await imageAsTensors.next().value;
   
         if (cocoSSDModel){
-          const reshapedTensor = nextImageTensor.expandDims(axis=0) // chamges shape to be 4d tensor. app errors saying it cant find this variable for whatever reason
-          const results = await getPrediction(reshapedTensor); //actually does the prediction part
+          const reshapedTensor = nextImageTensor.expandDims() // chamges shape to be 4d tensor. gets first few tensors? then crashes saying it cant find the variable avoided by not putting things in variables
+          const results = await getPrediction(nextImageTensor.expandDims()); //actually does the prediction part
           setPredictionFound(true)
           setPredictions(results)
         }
-        tf.dispose(reshapedTensor);
+        tf.dispose(nextImageTensor);
         tf.dispose(imageAsTensors);
       }
       frameCount += 1
