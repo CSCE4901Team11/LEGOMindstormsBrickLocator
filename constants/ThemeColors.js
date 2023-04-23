@@ -26,27 +26,40 @@ const Themes = {
     blue: {
       // background: 'rgba(0, 54, 140, .9)',
       // background: 'rgba(4, 61, 97, 1)', //dark blue
-      background: 'rgba(27,40,56,255)', // steam blue
+      // background: 'rgba(27,40,56,255)', // steam blue
+      background: 'rgba(19, 33, 78, .97)',
       textColor: 'rgba(255,255,255,1)',
       // sideMenuBackground: 'rgba(137, 207, 240, 0.9)',
-      sideMenuBackground: 'rgba(4, 61, 97, 1)',
+      // sideMenuBackground: 'rgba(4, 61, 97, 1)',
+      sideMenuBackground: 'rgba(50, 66, 120, 1)',
       sideMenuHighlight: 'rgba(183, 198, 251, 1)',
       sideMenuTextColorInactive: 'rgba(99, 110, 114, 1)',
       sideMenuTextColorActive: 'rgba(0,0,0,0.8)',
       sideMenuIconColor: 'rgba(255, 255, 255, .9)',
-      buttonColor: 'rgba(137, 207, 240, 0.9)',
-      buttonTextColor: 'rgba(0, 0, 0, .8)',
+      // buttonColor: 'rgba(137, 207, 240, 0.9)',
+      // buttonColor: 'rgba(90, 142, 168, 1)', 
+      // buttonColor: 'rgba(95, 149, 177, 1)', 
+      // buttonColor: 'rgba(42, 197, 209, .9)',
+      buttonColor: 'rgba(70, 85, 134, 1)',
+      // buttonColor: 'rgba(108, 121, 134, 1)',
+      // buttonColor: 'rgba(9, 166, 179, 1)',
+      // buttonTextColor: 'rgba(0, 0, 0, .9)',
+      buttonTextColor: 'rgba(255, 255, 255, .9)',
     },
 
     red: {
-      background: 'rgba(120, 46, 43, .9)',
+      // background: 'rgba(120, 46, 43, .9)',
+      // background: 'rgba(90, 24, 21, .9)', 
+      // background: 'rgba(209, 16, 19, 1)', //lego red should never be used as a background color
+      background: 'rgba(57, 5, 4, .95)',
       textColor: 'rgba(255, 255, 255, .9)',
-      sideMenuBackground: 'rgba(75, 29, 27, 0.9)',
+      sideMenuBackground: 'rgba(120, 46, 43, .9)',
       sideMenuHighlight: 'rgba(183, 198, 251, 1)',
       sideMenuTextColorInactive: 'rgba(99, 110, 114, 1)',
       sideMenuTextColorActive: 'rgba(0,0,0,0.8)',
       sideMenuIconColor: 'rgba(255, 255, 255, .9)',
-      buttonColor: 'rgba(254, 179, 83, 1)',
+      // buttonColor: 'rgba(127, 45, 43, 1)',
+      buttonColor: 'rgba(161, 69, 67, .9)',
       buttonTextColor: 'rgba(255, 255, 255, .9)',
     },
 
@@ -88,6 +101,7 @@ const Themes = {
       sideMenuIconColor: 'rgba(0,0,0,0.8)',
       buttonColor: 'rgba(197, 129, 88, 1)',
       buttonTextColor: 'rgba(255, 255, 255, .9)',
+      // buttonTextColor: 'rgba(0, 0, 0, .9)',
     },
 }
 

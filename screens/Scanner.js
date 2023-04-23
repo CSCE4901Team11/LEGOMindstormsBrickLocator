@@ -104,7 +104,7 @@ function ScannerScreen() {
     // const model = await cocoSSD.load();
     const model = await tf.loadGraphModel('https://storage.googleapis.com/mindstormsjsmodel/CoreJSModel/model.json'); 
     // const model = await tflite.loadTFLiteModel('https://storage.googleapis.com/mindstormsjsmodel/TfliteModel/mobilenet_coreset.tflite') // the tfjs tflite api is so incredibly broken
-    // const model = await tf.loadGraphModel('file://jsmodel/model.json'); 
+    // const model = await tf.loadGraphModel('file://jsmodel/model.json'); // tfjs node maybe doesnt exist?
     console.log(`model loaded`);
     return model;
   }
@@ -133,7 +133,7 @@ function ScannerScreen() {
     //     w = prediction[i].bbox[2];
     //     h = prediction[i].bbox[3];
 
-    //     cancelAnimationFrame(requestAnimationFrameId);
+        cancelAnimationFrame(requestAnimationFrameId);
     //     setPredictionFound(true);
 
     //     await DetectBrick(prediction[i].className);
