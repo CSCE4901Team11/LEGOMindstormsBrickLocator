@@ -7,8 +7,10 @@ const Themes = {
       sideMenuTextColorInactive: 'rgba(99, 110, 114, 1)',
       sideMenuTextColorActive: 'rgba(0,0,0,0.8)',
       sideMenuIconColor: 'rgba(0,0,0,0.8)',
+      catColor: 'rgba(0,0,0,0.8)',
       buttonColor:  'rgba(6, 69, 173, .9)',
       buttonTextColor: 'rgba(255, 255, 255, .9)',
+      trackOffColor: 'rgba(118, 117, 119, 1)',
     },
 
     dark: {
@@ -16,11 +18,15 @@ const Themes = {
       textColor: 'rgba(255, 255, 255, .9)',
       sideMenuBackground: 'rgba(18, 18, 18, 0.9)',
       sideMenuHighlight: 'rgba(183, 198, 251, 1)',
-      sideMenuTextColorInactive: 'rgba(99, 110, 114, 1)',
+      // sideMenuTextColorInactive: 'rgba(99, 110, 114, 1)',
+      // sideMenuTextColorInactive: 'rgba(128, 136, 139, 1)',
+      sideMenuTextColorInactive: 'rgba(171, 175, 176, 1)',
       sideMenuTextColorActive: 'rgba(0,0,0,0.8)',
       sideMenuIconColor: 'rgba(255, 255, 255, .9)',
+      catColor: 'rgba(255, 255, 255, .9)',
       buttonColor:  'rgba(6, 69, 173, .9)',
       buttonTextColor: 'rgba(255, 255, 255, .9)',
+      trackOffColor: 'rgba(118, 117, 119, 1)',
     },
 
     blue: {
@@ -33,9 +39,11 @@ const Themes = {
       // sideMenuBackground: 'rgba(4, 61, 97, 1)',
       sideMenuBackground: 'rgba(50, 66, 120, 1)',
       sideMenuHighlight: 'rgba(183, 198, 251, 1)',
-      sideMenuTextColorInactive: 'rgba(99, 110, 114, 1)',
+      // sideMenuHighlight: 'rgba(164, 176, 214, 1)',
+      sideMenuTextColorInactive: 'rgba(189, 192, 193, .95)',
       sideMenuTextColorActive: 'rgba(0,0,0,0.8)',
       sideMenuIconColor: 'rgba(255, 255, 255, .9)',
+      catColor: 'rgba(255, 255, 255, .9)',
       // buttonColor: 'rgba(137, 207, 240, 0.9)',
       // buttonColor: 'rgba(90, 142, 168, 1)', 
       // buttonColor: 'rgba(95, 149, 177, 1)', 
@@ -45,6 +53,8 @@ const Themes = {
       // buttonColor: 'rgba(9, 166, 179, 1)',
       // buttonTextColor: 'rgba(0, 0, 0, .9)',
       buttonTextColor: 'rgba(255, 255, 255, .9)',
+      trackOffColor: 'rgba(118, 117, 119, 1)',
+      trackOffColor: 'rgba(10, 19, 50, 1)',
     },
 
     red: {
@@ -52,15 +62,19 @@ const Themes = {
       // background: 'rgba(90, 24, 21, .9)', 
       // background: 'rgba(209, 16, 19, 1)', //lego red should never be used as a background color
       background: 'rgba(57, 5, 4, .95)',
-      textColor: 'rgba(255, 255, 255, .9)',
+      textColor: 'rgba(255, 255, 255, .95)',
       sideMenuBackground: 'rgba(120, 46, 43, .9)',
-      sideMenuHighlight: 'rgba(183, 198, 251, 1)',
-      sideMenuTextColorInactive: 'rgba(99, 110, 114, 1)',
+      // sideMenuHighlight: 'rgba(188, 115, 111, 1)',
+      sideMenuHighlight: 'rgba(225, 161, 158, .9)',
+      // sideMenuTextColorInactive: 'rgba(200, 202, 208, .9)',
+      sideMenuTextColorInactive: 'rgba(214, 214, 214, .9)',
       sideMenuTextColorActive: 'rgba(0,0,0,0.8)',
       sideMenuIconColor: 'rgba(255, 255, 255, .9)',
+      catColor: 'rgba(255, 255, 255, .9)',
       // buttonColor: 'rgba(127, 45, 43, 1)',
       buttonColor: 'rgba(161, 69, 67, .9)',
-      buttonTextColor: 'rgba(255, 255, 255, .9)',
+      buttonTextColor: 'rgba(255, 255, 255, .95)',
+      trackOffColor: 'rgba(73, 16, 13, 1)',
     },
 
     purple: {
@@ -75,14 +89,17 @@ const Themes = {
       // sideMenuBackground: 'rgba(130, 7, 197, 0.9)', violent
       // sideMenuBackground: 'rgba(115, 92, 142, 1)',
       // sideMenuBackground: 'rgba(86, 82, 143, 1)',
-      sideMenuBackground: 'rgba(128, 125, 187, 1)',
+      // sideMenuBackground: 'rgba(128, 125, 187, 1)',
+      sideMenuBackground: 'rgba(123, 118, 183, 1)',
       sideMenuHighlight: 'rgba(183, 198, 251, 1)',
       sideMenuTextColorInactive: 'rgba(240, 240, 236, .9)', 
       sideMenuTextColorActive: 'rgba(0,0,0,0.8)',
       sideMenuIconColor: 'rgba(255, 255, 255, .9)',
+      catColor: 'rgba(255, 255, 255, .9)',
       // buttonColor: 'rgba(95, 69, 166, 1)',
       buttonColor: 'rgba(110, 85, 185, .9)',
       buttonTextColor: 'rgba(255, 255, 255, .9)',
+      trackOffColor: 'rgba(74, 69, 141, 1)',
     },
 
     yellow: {
@@ -94,14 +111,18 @@ const Themes = {
       textColor: 'rgba(12, 12, 12, .8)',
       // sideMenuBackground: 'rgba(252,251,225,1)', //light but somehow very aggressive yellow
       // sideMenuBackground: 'rgba(252,194,151,255)', //light orange
-      sideMenuBackground: 'rgba(253,240,215,255)',
-      sideMenuHighlight: 'rgba(183, 198, 251, 1)',
-      sideMenuTextColorInactive: 'rgba(99, 110, 114, 1)',
+      sideMenuBackground: 'rgba(253, 240, 215, 1)',
+      sideMenuHighlight: 'rgba(218, 198, 160, 1)',
+      // sideMenuTextColorInactive: 'rgba(99, 110, 114, 1)',
+      // sideMenuTextColorInactive: 'rgba(95, 105, 109, 1)',
+      sideMenuTextColorInactive: 'rgba(100, 111, 115, 1)',
       sideMenuTextColorActive: 'rgba(0,0,0,0.8)',
       sideMenuIconColor: 'rgba(0,0,0,0.8)',
+      catColor: 'rgba(0,0,0,0.8)',
       buttonColor: 'rgba(197, 129, 88, 1)',
       buttonTextColor: 'rgba(255, 255, 255, .9)',
       // buttonTextColor: 'rgba(0, 0, 0, .9)',
+      trackOffColor: 'rgba(154, 134, 95, 1)',
     },
 }
 
