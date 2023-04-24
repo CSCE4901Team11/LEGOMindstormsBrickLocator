@@ -34,7 +34,7 @@ function ScannerScreen() {
   const colors = Themes[theme];
 
   let frameCount = 0;
-  let everyNframes = 1; //how often it predicts. changing to decimal get one prediction and stops but doesnt freeze camera
+  let everyNframes = 1; //how often it predicts. changing to decimal get one prediction and stops but doesnt freeze camera. 
 
   let x = 0;
   let y = 0;
@@ -102,7 +102,8 @@ function ScannerScreen() {
   const loadcocoSSDModel = async () => {
     console.log('Start loading model');
     // const model = await cocoSSD.load();
-    const model = await tf.loadGraphModel('https://storage.googleapis.com/mindstormsjsmodel/CoreJSModel/model.json'); 
+    const model = await tf.loadGraphModel('https://storage.googleapis.com/mindstormsjsmodel/CoreJSModel/model.json'); //loads model, cannot make it any faster without other conversion method
+    // const model = await tf.loadGraphModel('https://storage.googleapis.com/mindstormsjsmodel/CompressedModel/model.json'); 
     // const model = await tflite.loadTFLiteModel('https://storage.googleapis.com/mindstormsjsmodel/TfliteModel/mobilenet_coreset.tflite') // the tfjs tflite api is so incredibly broken
     // const model = await tf.loadGraphModel('file://jsmodel/model.json'); // tfjs node maybe doesnt exist?
     console.log(`model loaded`);
@@ -158,20 +159,20 @@ function ScannerScreen() {
     const loop = async () => {
       if(!frameworkReady) {await delay();}
       
-      if (frameCount % everyNframes === 0){
+      // if (frameCount % everyNframes === 0){
         const nextImageTensor = await imageAsTensors.next().value;
   
         if (cocoSSDModel){
-          const reshapedTensor = nextImageTensor.expandDims() // chamges shape to be 4d tensor. gets first few tensors? then crashes saying it cant find the variable avoided by not putting things in variables
-          const results = await getPrediction(nextImageTensor.expandDims()); //actually does the prediction part
+          // const reshapedTensor = nextImageTensor.expandDims() // chamges shape to be 4d tensor. gets first few tensors? then crashes saying it cant find the variable avoided by not putting things in variables
+          const results = await getPrediction(nextImageTensor.expandDims()); //actually does the prediction part. still eventually crashes with undefined is not an object
           setPredictionFound(true)
           setPredictions(results)
         }
         tf.dispose(nextImageTensor);
         tf.dispose(imageAsTensors);
-      }
-      frameCount += 1
-      frameCount = frameCount % everyNframes
+      // }
+      // frameCount += 1
+      // frameCount = frameCount % everyNframes 
       requestAnimationFrameId = requestAnimationFrame(loop); // all of this did not fix the camera issue
     };
     if(!predictionFound) loop();
