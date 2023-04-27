@@ -47,19 +47,19 @@ function ScannerScreen() {
   if (Platform.OS === 'ios') { 
     textureDims = {
       width: 1080, 
-      height: 1920
+      height: 1920,
     };
   }
   else {
     textureDims = {
       width: 1600, 
-      height: 1200
+      height: 1200,
     };
   }
 
   const tensorDims = { 
-    width: 640, 
-    height: 640 
+    width: 224, 
+    height: 224 ,
   }; 
 
   let requestAnimationFrameId = 0;
@@ -102,10 +102,12 @@ function ScannerScreen() {
   const loadcocoSSDModel = async () => {
     console.log('Start loading model');
     // const model = await cocoSSD.load();
-    const model = await tf.loadGraphModel('https://storage.googleapis.com/mindstormsjsmodel/CoreJSModel/model.json'); //loads model, cannot make it any faster without other conversion method
+    // const model = await tf.loadGraphModel('https://storage.googleapis.com/mindstormsjsmodel/CoreJSModel/model.json'); //loads model, cannot make it any faster without other conversion method
     // const model = await tf.loadGraphModel('https://storage.googleapis.com/mindstormsjsmodel/CompressedModel/model.json'); 
     // const model = await tflite.loadTFLiteModel('https://storage.googleapis.com/mindstormsjsmodel/TfliteModel/mobilenet_coreset.tflite') // the tfjs tflite api is so incredibly broken
     // const model = await tf.loadGraphModel('file://jsmodel/model.json'); // tfjs node maybe doesnt exist?
+    const model = await tf. loadLayersModel('https://storage.googleapis.com/mindstormsjsmodel/TeachableMachine/model.json');
+
     console.log(`model loaded`);
     return model;
   }
@@ -114,9 +116,9 @@ function ScannerScreen() {
     if(!tensor) { return; }
     //topk set to 1
   
-    // const prediction = await cocoSSDModel.predict(tensor, {batchSize: 1}) ; // it doesnt lik ethis method idk why
-    const prediction = await cocoSSDModel.executeAsync(tensor) // works  but camera goes black when model loads and the app is so laggy you cant tell it works. changing model does nothing to fix this
-     console.log(`prediction: ${JSON.stringify(prediction)}`);
+    const prediction = await cocoSSDModel.predict(tensor) ; // it doesnt lik ethis method idk why
+    // const prediction = await cocoSSDModel.executeAsync(tensor) // works  but camera goes black when model loads and the app is so laggy you cant tell it works. changing model does nothing to fix this
+     console.log(`prediction: ${JSON.stringify(prediction.dataSync())}`);
     // console.log(prediction.dataSync()) // says data sync isnt a function but it is. needed to get readable data instead of raw tensor
     // return prediction
     // if(prediction != 'undefined' || prediction != '[]') {
@@ -165,6 +167,7 @@ function ScannerScreen() {
         if (cocoSSDModel){
           // const reshapedTensor = nextImageTensor.expandDims() // chamges shape to be 4d tensor. gets first few tensors? then crashes saying it cant find the variable avoided by not putting things in variables
           const results = await getPrediction(nextImageTensor.expandDims()); //actually does the prediction part. still eventually crashes with undefined is not an object
+          // const results = await getPrediction(nextImageTensor);
           setPredictionFound(true)
           setPredictions(results)
         }
