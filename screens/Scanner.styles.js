@@ -63,30 +63,6 @@ export default StyleSheet.create({
       flex: 1,
       width: "100%",
       height: "100%"
-<<<<<<< HEAD
-    },
-
-    header: {
-      flex: .2,
-      width: "100%",
-      backgroundColor: 'rgba(0,255,0,.1)',
-      zIndex: 9999,
-    },
-
-    cameraBody: {
-      flex: 1,
-      width: "100%",
-      backgroundColor: 'rgba(0,0,255,.1)',
-      zIndex: 9999,
-    },
-
-    footer: {
-      flex: .2,
-      width: "100%",
-      backgroundColor: 'rgba(255,0,0,.1)',
-      zIndex: 9999,
-=======
->>>>>>> emmie-abels-develop
     },
 
     header: {
