@@ -31,9 +31,8 @@ const TensorCamera = tfrn.cameraWithTensors(Camera);
 console.disableYellowBox = true;
 
 function ScannerScreen() {
-  const [predictionFound, setPredictionFound] = useState(false);
+  let predictionFound = false;
   const [hasPermission, setHasPermission] = useState(false);
-  const [brickDetected, setBrickDetected] = useState(false);
   const [predictions, setPredictions] = useState()
 
   const cameraRef = useRef(null);
@@ -106,12 +105,6 @@ function ScannerScreen() {
     };
   }, [requestAnimationFrameId]);
 
-
-  const DetectBrick = async (className) => { //To Implement
-    setBrickDetected(true);
-    loadNewBrick()
-  }
-
   const loadModel = async () => {
     console.log('Start loading model');
     const model = await tf.loadLayersModel('https://storage.googleapis.com/mindstormsjsmodel/TeachableMachine/model.json');
@@ -125,39 +118,23 @@ function ScannerScreen() {
     //topk set to 1
   
     const prediction = await model.predict(tensor) ;
-    const pieceID = tf.argMax(tf.softmax(prediction), 1);
-    const piece = tensorPartIDs[pieceID.dataSync()];
-    console.log(`pieceID: ${piece}`);
-    // const prediction = await model.executeAsync(tensor) // works  but camera goes black when model loads and the app is so laggy you cant tell it works. changing model does nothing to fix this
-    //console.log(`prediction: ${JSON.stringify(prediction.dataSync())}`);
-    // console.log(prediction.dataSync()) // says data sync isnt a function but it is. needed to get readable data instead of raw tensor
-    // return prediction
-    // if(prediction != 'undefined' || prediction != '[]') {
-    //   console.log(`prediction: ${JSON.stringify(prediction)}`);
-    // }
 
-    // if(!prediction || prediction.length === 0) { return; }
-
-    // //only attempt detection when confidence is higher than 20%
-    // for(let i = 0; i < prediction.length; i++) {
-    //   if(prediction[i].score > 0.5) {
-
-    //     x = prediction[i].bbox[0];
-    //     y = prediction[i].bbox[1];
-    //     w = prediction[i].bbox[2];
-    //     h = prediction[i].bbox[3];
+    //only attempt detection when confidence is higher than 50%
+    const curMax = tf.max(prediction).dataSync();
+      if(curMax > 0.5) {
+        const pieceID = tf.argMax(tf.softmax(prediction), 1);
+        const piece = tensorPartIDs[pieceID.dataSync()];
+        console.log(`pieceID: ${piece} @ ${curMax}`);
 
         cancelAnimationFrame(requestAnimationFrameId);
-    //     setPredictionFound(true);
-
-    //     await DetectBrick(prediction[i].className);
+        predictionFound = true;
 
     //     console.log("Adding bounding box.")
     //     setBoundingBoxes([...boundingBoxes,<Highlighter/>])
     //     console.log('Tensor count: ' + tf.memory().numTensors);
-    //   }
-    // }
-    // tf.dispose(prediction) // it crashes before loading the camera if i put this back in. might conflict with the dispose in the camera section
+
+    }
+    tf.dispose(prediction) // it crashes before loading the camera if i put this back in. might conflict with the dispose in the camera section
   }
 
   const delay = async () => {
@@ -179,7 +156,6 @@ function ScannerScreen() {
           // const reshapedTensor = nextImageTensor.expandDims() // chamges shape to be 4d tensor. gets first few tensors? then crashes saying it cant find the variable avoided by not putting things in variables
           const results = await getPrediction(nextImageTensor.expandDims()); //actually does the prediction part. still eventually crashes with undefined is not an object
           // const results = await getPrediction(nextImageTensor);
-          setPredictionFound(true)
           setPredictions(results)
         }
         tf.dispose(nextImageTensor);
@@ -190,12 +166,6 @@ function ScannerScreen() {
       requestAnimationFrameId = requestAnimationFrame(loop); // all of this did not fix the camera issue
     };
     if(!predictionFound) loop();
-  }
-
-  //Load selected brick
-  const loadNewBrick = () => {
-    setPredictionFound(false);
-    setBrickDetected(false);
   }
 
   const renderCameraView = () => {
@@ -211,37 +181,14 @@ function ScannerScreen() {
       resizeDepth={3}
       onReady={imageAsTensors => handleCameraStream(imageAsTensors)}
       autorender={true} >
-        <View style={styles.header}>
-          <Text style={styles.text}>Header</Text>
-        </View>
-        <View style={styles.cameraBody}>
-          <Text style={styles.text}>Body</Text>
-        </View>
-        <View style={styles.footer}>
-          <Text style={styles.text}>Footer</Text>
-          <DetectStatusIndicator></DetectStatusIndicator>
-        </View>
       </TensorCamera>;
   }
 
 
   const awaitFrameworkReady = () => {
     if(frameworkReady) {
-      return( brickDetected ? DetectBrick() : renderCameraView(frameworkReady) );
+      return( renderCameraView(frameworkReady) );
     }
-  }
-
- 
-  const DetectStatusIndicator = () => {
-    return <View style={[
-      styles.indicator,
-      {
-        flex: 1,
-        bottom: 50,
-        width: 50,
-        height: 50,
-      }
-    ]} />
   }
 
   /*const Highlighter = (x,y,w,h) => {
