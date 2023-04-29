@@ -8,6 +8,7 @@ import Themes from '../constants/ThemeColors';
 
 import * as tf from '@tensorflow/tfjs';
 import * as tfrn from '@tensorflow/tfjs-react-native'
+import pieces from '../constants/MasterPartList.json';
 
 const tensorPartIDs = [
   'C1','C2','C3','C4','C5','C6','C7','C8','C9','C10','C11','C12',
@@ -36,6 +37,8 @@ function ScannerScreen() {
   const [predictions, setPredictions] = useState()
 
   const cameraRef = useRef(null);
+
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
 
   const [model, setModel] = useState(null); //Replace with custom model
   const [frameworkReady, setFrameworkReady] = useState(false);
@@ -115,31 +118,62 @@ function ScannerScreen() {
 
   const getPrediction = async(tensor) => {
     if(!tensor) { return; }
-    //topk set to 1
   
     const prediction = await model.predict(tensor) ;
-
-    //only attempt detection when confidence is higher than 50%
     const curMax = tf.max(prediction).dataSync();
-      if(curMax > 0.5) {
-        const pieceID = tf.argMax(tf.softmax(prediction), 1);
-        const piece = tensorPartIDs[pieceID.dataSync()];
-        console.log(`pieceID: ${piece} @ ${curMax}`);
 
-        cancelAnimationFrame(requestAnimationFrameId);
-        predictionFound = true;
+    if(curMax > 0.80) { //only attempt detection when confidence is higher than 80%
+      const pieceID = tf.argMax(tf.softmax(prediction), 1);
+      const piece = tensorPartIDs[pieceID.dataSync()];
+      console.log(`pieceID: ${piece} @ ${curMax}`);
 
-    //     console.log("Adding bounding box.")
-    //     setBoundingBoxes([...boundingBoxes,<Highlighter/>])
-    //     console.log('Tensor count: ' + tf.memory().numTensors);
+      cancelAnimationFrame(requestAnimationFrameId);
+      predictionFound = true;
 
+      let partDetails = {
+        officialName: 'NULL',
+        mainPartID: -1,
+        sheetPartID: -1,
+        partColor: 'NULL'
+      };
+      
+      findPiece(piece,partDetails)
+      
+
+      Alert.alert(`Found Brick: ${piece}`, `
+      Official Name: ${partDetails.officialName}\n 
+      Main Part ID: ${partDetails.mainPartID}\n 
+      Sheet_Element_ID: ${partDetails.sheetPartID}\n 
+      Color: ${partDetails.partColor}`, [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {
+          text: 'Ok',
+          onPress: () => predictionFound = false,
+        }
+      ]);
+
+      //console.log("Adding bounding box.")
+      //setBoundingBoxes([...boundingBoxes,<Highlighter/>])
+      //console.log('Tensor count: ' + tf.memory().numTensors);
     }
     tf.dispose(prediction) // it crashes before loading the camera if i put this back in. might conflict with the dispose in the camera section
   }
 
-  const delay = async () => {
-    if(!frameworkReady) delay();
-  return;
+  const findPiece = (input,partDetails) => {
+    const regex = new RegExp(input, "i")
+    var data = (pieces.Parts).filter((item) => {
+      if(regex.test(item.ID)) {
+        partDetails.officialName = item.Official_Name;
+        partDetails.mainPartID = item.Main_Part_ID;
+        partDetails.sheetPartID = item.Sheet_Element_ID;
+        partDetails.partColor = item.Color;
+      }
+    }
+    );
   }
 
   const handleCameraStream = (imageAsTensors) => {
@@ -147,23 +181,21 @@ function ScannerScreen() {
       console.log("no tensors")
     }
     const loop = async () => {
-      if(!frameworkReady) {await delay();}
-      
-      // if (frameCount % everyNframes === 0){
+      if(!frameworkReady) {await sleep(100);}
+      if(!predictionFound) {
+       // if (frameCount % everyNframes === 0){
         const nextImageTensor = await imageAsTensors.next().value;
   
         if (model){
-          // const reshapedTensor = nextImageTensor.expandDims() // chamges shape to be 4d tensor. gets first few tensors? then crashes saying it cant find the variable avoided by not putting things in variables
-          const results = await getPrediction(nextImageTensor.expandDims()); //actually does the prediction part. still eventually crashes with undefined is not an object
-          // const results = await getPrediction(nextImageTensor);
-          setPredictions(results)
+          await getPrediction(nextImageTensor.expandDims()); //actually does the prediction part. still eventually crashes with undefined is not an object
         }
         tf.dispose(nextImageTensor);
         tf.dispose(imageAsTensors);
+      }
       // }
       // frameCount += 1
       // frameCount = frameCount % everyNframes 
-      requestAnimationFrameId = requestAnimationFrame(loop); // all of this did not fix the camera issue
+      requestAnimationFrameId = requestAnimationFrame(loop);
     };
     if(!predictionFound) loop();
   }
