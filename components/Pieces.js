@@ -11,11 +11,11 @@ export default function GetPieces() {
     const [loading, setLoading] = useState(true)
 
     const apiCall = async () => {
-       const resp =  await fetch("https://rebrickable.com/api/v3/lego/sets/45678-1/parts/?page_size=115&inc_color_details=0", {
+       const resp =  await fetch("https://rebrickable.com/api/v3/lego/sets/45544-1/parts/?page_size=115&inc_color_details=0", {
             "method": "GET",
             "headers": {
                 "Accept": "application/json",
-                "Authorization": "apikey", // change value to actual api key
+                "Authorization": "apikey",
                 "Rebrickableapi-host": "https://rebrickable.com"
             }
         })
@@ -23,7 +23,7 @@ export default function GetPieces() {
         delete data.count
         delete data.next
         delete data.previous
-        setPieces(data)
+        setPieces(data) 
         setLoading(false)
     }
 
@@ -48,7 +48,6 @@ export default function GetPieces() {
     const colors = Themes[theme]
 
     const renderItem = ({ item }) => {
-        
         return (
             <View style={[styles.itemContainer, {backgroundColor: colors.backgroundColor} ]}>
                 <Image style = {styles.image} source={{uri: item.part.part_img_url}} />
@@ -80,7 +79,7 @@ export default function GetPieces() {
                 keyExtractor={(item) => item.id}
                 ItemSeparatorComponent={listSeparator}
             />
-            {/* {console.log(pieces.results)} */}
+            {console.log(pieces.results)}
         </View>
     );
     }

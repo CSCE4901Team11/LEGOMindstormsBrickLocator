@@ -2,15 +2,14 @@ import { StyleSheet } from "react-native";
 
 export default styles = StyleSheet.create({
     container: {
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'center',
+      flex: 1, 
+      alignItems: 'center', 
+      justifyContent: 'center',
     },
 
     insideContainer: {
       flex: 1,
       padding: 10,
-      //backgroundColor: "#eaeaea"
     },
 
     headerText: {
@@ -20,19 +19,12 @@ export default styles = StyleSheet.create({
       paddingVertical: 13,
       textAlign: "center",
       padding: 4,
-      //flex: 1,
-      //padding: 10,
-      //borderBottomWidth: StyleSheet.hairlineWidth
     },
 
     headerTwoText: {
-    // fontWeight: 'bold',
-    // marginTop: 300,
-      paddingVertical: 10,
+      paddingVertical: 15,
       textAlign: 'center',
       fontSize: 20,
-    // margin: 10,
-    // padding: 15,
       color: 'black'
     },
 
@@ -40,38 +32,21 @@ export default styles = StyleSheet.create({
       padding: 45,
     },
 
-    headerRow: {
-      //borderBottomColor: "black",
-      //borderBottomWidth: StyleSheet.hairlineWidth,
-      //padding: 10,
-    },
-
     button: {
-      fontSize: 10,
-      textAlign: 'center',
-      margin: 12,
+      margin: 15,
       color: 'rgba(0,0,0,0.8)',
       backgroundColor: 'rgba(189,195,199, .9)',
       borderRadius: 5,
-      padding: 10,
-      /*
-      marginTop: 10,
-      borderWidth: 1,
-      borderColor: "#20232a",
-      borderRadius: 6,
-      backgroundColor: "#d2d4d9",
-      textAlign: "center",
-      fontSize: 30,
-      fontWeight: "bold"
-      paddingVertical: 8,
-      color: "#20232a",
-      */
-
-      centeredView: {
-      flex: 1,
+      padding: 15,
       justifyContent: "center",
       alignItems: "center",
       marginTop: 22
+    },
+
+    buttonText: {
+      textAlign: 'center',
+      padding: 10,
+      fontSize: 20,
     },
 
     modalView: {
@@ -92,38 +67,21 @@ export default styles = StyleSheet.create({
       shadowRadius: 4,
       elevation: 5
     },
-    /*
-    button: {
-      borderRadius: 20,
-      padding: 10,
-      elevation: 2
-    },
-    buttonOpen: {
-      backgroundColor: 'rgba(189,195,199, .9)',
-    },
+    
     buttonClose: {
-      backgroundColor: 'rgba(189,195,199, .9)',
-    },
-    textStyle: {
-      color: "black",
-      fontWeight: "bold",
-      textAlign: "center"
-    },
-    */
-    button2: {
-      borderRadius: 20,
+      // backgroundColor: 'rgba(189,195,199, .9)',
+      textAlign: "center",
+      alignItems: "center",
+      textAlign: "center",
+      alignItems: "center",
       padding: 10,
-      elevation: 2
+      fontSize: 15,
+      fontSize: 15,
+      borderRadius: 20,
     },
-    buttonClose: {
-      backgroundColor: 'rgba(189,195,199, .9)',
-      textAlign: "center"
-    },
+
     modalText: {
-    // marginBottom: 15,
       textAlign: "center",
       margin: 0,
-    }
-  },
-
+    },
 });
