@@ -62,11 +62,9 @@ function BrowseScreen () {
     }
 
     const renderItem = ({ item }) => {
-        
         return (
             <View style={[styles.itemContainer, {backgroundColor: colors.backgroundColor} ]}>
                 <Text style = {[styles.itemTitle, {color: colors.textColor}]}>{item.Official_Name}</Text>
-
 
                 <View style={styles.imageAndInfo}>  
                     <Image accessible={true} accessibilityLabel= {`image of ${item.Official_Name}`} accessibilityRole = "image" style = {styles.image} source={{uri: item.Image}} />
@@ -91,19 +89,19 @@ function BrowseScreen () {
     return (
         <View style={[styles.container, {backgroundColor: colors.background}] }>
             <View style={styles.listContainer}>
-            <SearchBar
-                accessibilityLabel="Search Bar"
-                accessible={true}
-                accessibilityRole = "search"
-                placeholder="Search here"
-                onClearPress={() => setData()}
-                onChangeText={(text) => {filterData(text), console.log(text)}} 
-            />
-            <FlatList style={styles.list}
+                <SearchBar
+                    accessibilityLabel="Search Bar"
+                    accessible={true}
+                    accessibilityRole = "search"
+                    placeholder="Search here"
+                    onClearPress={() => setData()}
+                    onChangeText={(text) => {filterData(text), console.log(text)}} 
+                />
+                <FlatList style={styles.list}
                     data={filteredData}
                     renderItem={renderItem}
                     keyExtractor={(item) => item.ID}
-                    ItemSeparatorComponent={listSeparator}
+                    itemSeparatorComponent={listSeparator}
                 />
             </View>
         </View>

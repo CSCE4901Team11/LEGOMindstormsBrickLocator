@@ -48,28 +48,8 @@ export default styles = StyleSheet.create({
       padding: 10,
       fontSize: 20,
     },
-
-    modalView: {
-      margin: 20,
-      backgroundColor: "white",
-      borderRadius: 20,
-      padding: 35,
-      alignItems: "center",
-      shadowColor: "#000",
-      flex: 1, 
-      alignItems: 'center', 
-      justifyContent: 'space-evenly',
-      shadowOffset: {
-        width: 0,
-        height: 2
-      },
-      shadowOpacity: 0.25,
-      shadowRadius: 4,
-      elevation: 5
-    },
     
     buttonClose: {
-      // backgroundColor: 'rgba(189,195,199, .9)',
       textAlign: "center",
       alignItems: "center",
       textAlign: "center",
@@ -81,7 +61,14 @@ export default styles = StyleSheet.create({
     },
 
     modalText: {
+      borderRadius: 20, 
+      padding: 35, 
+      alignItems: "center", 
+      justifyContent: 'space-evenly', 
+      shadowOffset: { width: 0, height: 2}, 
+      shadowOpacity: 0.25, 
+      shadowRadius: 4,
+      elevation: 5,
       textAlign: "center",
-      margin: 0,
     },
 });

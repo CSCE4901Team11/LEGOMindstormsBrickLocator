@@ -7,6 +7,15 @@ export default styles = StyleSheet.create({
         alignItems: 'center', 
         justifyContent: 'center',
     },
+
+    title:{
+        fontWeight: 'bold',
+        fontSize: 27, 
+        marginTop: 130, 
+        paddingVertical: 10, 
+        textAlign: "center",
+        padding: 4, 
+    },
   
     header:{
         fontSize: 20,
@@ -19,39 +28,7 @@ export default styles = StyleSheet.create({
         marginBottom: 20,
     },
 
-     lastbody: {
-        fontSize: 15,
-        marginBottom: 100,
-    },
-
-    header:{
-        fontSize: 20,
-        fontWeight: "bold",
-        marginBottom: 30,
-    },
-
-    body: {
-        fontSize: 15,
-        marginBottom: 20,
-    },
-
-     lastbody: {
-        fontSize: 15,
-        marginBottom: 100,
-    },
-
-    header:{
-        fontSize: 20,
-        fontWeight: "bold",
-        marginBottom: 30,
-    },
-
-    body: {
-        fontSize: 15,
-        marginBottom: 20,
-    },
-
-     lastbody: {
+    lastbody: {
         fontSize: 15,
         marginBottom: 100,
     },
