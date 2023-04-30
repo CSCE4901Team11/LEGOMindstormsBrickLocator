@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Text, View, TouchableHighlight, FlatList, Image, TouchableOpacity } from 'react-native';
+import { Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import SearchBar from 'react-native-dynamic-search-bar';
@@ -13,7 +13,6 @@ function BrowseScreen () {
     const currentTheme = useContext (ThemeContext)
     const theme = currentTheme.state.theme
     const colors = Themes[theme]
-    //const [filterText, setFilterText] = useState()
     const [filteredData, setFilteredData] = useState(() => (pieces.Parts))
 
     const setData = () => {
@@ -21,22 +20,23 @@ function BrowseScreen () {
     }
     
     const filterData = (text) => {
-        const regex = new RegExp(text, "i")
         var data = (pieces.Parts).filter((item) => {
-            if (regex.test(item.Official_Name)){
-                return regex.test(item.Official_Name)
+            if (item.Official_Name.includes(text)){
+                return item
             }
-            else if (regex.test(item.Sheet_Element_ID)){
-                return regex.test(item.Sheet_Element_ID)
+            else if (item.Sheet_Element_ID.includes(text)){
+                return item
             }
-            else if (regex.test(item.Updated_Element_ID)){
-                return regex.test(item.Updated_Element_ID)
+            else if (item.Updated_Element_ID){
+                if (item.Updated_Element_ID.includes(text)){
+                    return item
+                }
             }
-            else if (regex.test(item.Main_Part_ID)){
-                return regex.test(item.Main_Part_ID)
+            else if (item.Main_Part_ID.includes(text)){
+                return item
             }
-            else if (regex.test(item.Color)){
-                return regex.test(item.Color)
+            else if (item.Color.includes(text)){
+                return item
             }
             else{
                 return false
