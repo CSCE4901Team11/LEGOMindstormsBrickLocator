@@ -71,7 +71,6 @@ const Themes = {
     },
 
     yellow: {
-
       background: 'rgba(253,245,235,255)', 
       textColor: 'rgba(12, 12, 12, .8)',
       sideMenuBackground: 'rgba(253, 240, 215, 1)',

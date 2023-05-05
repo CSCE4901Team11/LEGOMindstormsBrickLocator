@@ -41,6 +41,24 @@ export default StyleSheet.create({
       zIndex: 9999,
     },
 
+    highlighter: {
+      flex: 1,
+      borderRadius: 5,
+      borderColor: 'rgba(0,255,0,1)',
+      backgroundColor: 'rgba(0,255,0,1)',
+      zIndex: 9999,
+    },
+
+    indicator: {
+      flex: 1,
+      borderRadius: 5,
+      justifyContent: 'flex-start',
+      alignSelf: 'center',
+      borderColor: 'black',
+      backgroundColor: 'rgba(130,0,0,1)',
+      zIndex: 9999,
+    },
+
     camera_window: {
       flex: 1,
       width: "100%",
