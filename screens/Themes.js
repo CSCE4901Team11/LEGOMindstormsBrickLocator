@@ -40,29 +40,30 @@ function ThemesScreen () {
       <View style={[styles.container, {backgroundColor: colors.background} ]} >
         <Text style={[styles.headerText, {color: colors.textColor}]}>Themes</Text>  
         <View>
-          <TouchableOpacity onPress={blueThemeChange} style={styles.button} accessible={true} accessibilityLabel="Blue Mode" accessibilityRole="Button"> 
-            <Text style={styles.buttonText}>Blue Mode</Text>
+          <TouchableOpacity onPress={lightThemeChange} style={styles.button} accessible={true} accessibilityLabel="Light Theme" accessibilityRole="Button">
+            <Text style={styles.buttonText}>Light</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={redThemeChange} style={styles.button} accessible={true} accessibilityLabel="Red Mode" accessibilityRole="Button">
-            <Text style={styles.buttonText}>Red Mode</Text>
+          <TouchableOpacity onPress={darkThemeChange} style={styles.button} accessible={true} accessibilityLabel="Dark Theme" accessibilityRole="Button">
+            <Text style={styles.buttonText}>Dark</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={purpleThemeChange} accessible={true} style={styles.button} accessibilityLabel="Purple Mode" accessibilityRole="Button">
-            <Text style={styles.buttonText}>Purple Mode</Text>
+          <TouchableOpacity onPress={blueThemeChange} style={styles.button} accessible={true} accessibilityLabel="Blue Theme" accessibilityRole="Button"> 
+            <Text style={styles.buttonText}>Blue</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={yellowThemeChange} style={styles.button} accessible={true} accessibilityLabel="Yellow Mode" accessibilityRole="Button">
-            <Text style={styles.buttonText}>Yellow Mode</Text>
+          <TouchableOpacity onPress={purpleThemeChange} accessible={true} style={styles.button} accessibilityLabel="Purple Theme" accessibilityRole="Button">
+            <Text style={styles.buttonText}>Purple</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={lightThemeChange} style={styles.button} accessible={true} accessibilityLabel="Light Mode" accessibilityRole="Button">
-            <Text style={styles.buttonText}>Light Mode</Text>
+          <TouchableOpacity onPress={redThemeChange} style={styles.button} accessible={true} accessibilityLabel="Red Theme" accessibilityRole="Button">
+            <Text style={styles.buttonText}>Red</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={darkThemeChange} style={styles.button} accessible={true} accessibilityLabel="Dark Mode" accessibilityRole="Button">
-            <Text style={styles.buttonText}>Dark Mode</Text>
+          <TouchableOpacity onPress={yellowThemeChange} style={styles.button} accessible={true} accessibilityLabel="Yellow Theme" accessibilityRole="Button">
+            <Text style={styles.buttonText}>Yellow</Text>
           </TouchableOpacity>
+
         </View>
       </View> 
     );

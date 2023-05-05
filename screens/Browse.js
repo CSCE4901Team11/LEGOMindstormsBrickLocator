@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Text, View, TouchableHighlight, FlatList, Image, TouchableOpacity } from 'react-native';
+import { Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import SearchBar from 'react-native-dynamic-search-bar';
@@ -13,7 +13,6 @@ function BrowseScreen () {
     const currentTheme = useContext (ThemeContext)
     const theme = currentTheme.state.theme
     const colors = Themes[theme]
-    //const [filterText, setFilterText] = useState()
     const [filteredData, setFilteredData] = useState(() => (pieces.Parts))
 
     const setData = () => {
@@ -21,35 +20,28 @@ function BrowseScreen () {
     }
     
     const filterData = (text) => {
-        const regex = new RegExp(text, "i")
         var data = (pieces.Parts).filter((item) => {
-            //return regex.test(item.Official_Name)
-            //console.log(regex.test(item.Official_Name))
-            if(!(regex.test(item.Official_Name))){
-                //console.log("official item check false")
-                if(!(regex.test(item.Color))){
-                    //console.log("color check false")
-                    if(!(regex.test(item.Sheet_Element_ID))){
-                        if(!(regex.test(item.Main_Part_ID))){
-                            if(!(regex.test(item.Updated_Element_ID))){ //This term is pulled from the MasterSheet file
-                                return false
-                            }else{
-                                return regex.test(item.Main_Part_ID)
-                            }
-                        }else{
-                            return regex.test(item.Main_Part_ID)
-                        }
-                    }else{
-                        return regex.test(item.Sheet_Element_ID)
-                    }
-                }else{
-                    return regex.test(item.Color)
+            if (item.Official_Name.includes(text)){
+                return item
+            }
+            else if (item.Sheet_Element_ID.includes(text)){
+                return item
+            }
+            else if (item.Updated_Element_ID){
+                if (item.Updated_Element_ID.includes(text)){
+                    return item
                 }
-            }else{
-                return regex.test(item.Official_Name)
+            }
+            else if (item.Main_Part_ID.includes(text)){
+                return item
+            }
+            else if (item.Color.includes(text)){
+                return item
+            }
+            else{
+                return false
             }
         })
-        //console.log(data)
         setFilteredData(data)
     }
 
@@ -70,11 +62,9 @@ function BrowseScreen () {
     }
 
     const renderItem = ({ item }) => {
-        
         return (
             <View style={[styles.itemContainer, {backgroundColor: colors.backgroundColor} ]}>
                 <Text style = {[styles.itemTitle, {color: colors.textColor}]}>{item.Official_Name}</Text>
-
 
                 <View style={styles.imageAndInfo}>  
                     <Image accessible={true} accessibilityLabel= {`image of ${item.Official_Name}`} accessibilityRole = "image" style = {styles.image} source={{uri: item.Image}} />
@@ -98,20 +88,20 @@ function BrowseScreen () {
 
     return (
         <View style={[styles.container, {backgroundColor: colors.background}] }>
-            <View style={styles.listContainer }>
-            <SearchBar
-                accessibilityLabel="Search Bar"
-                accessible={true}
-                accessibilityRole = "search"
-                placeholder="Search here"
-                onClearPress={() => setData()}
-                onChangeText={(text) => {filterData(text), console.log(text)}} 
-            />
-            <FlatList style={styles.list}
+            <View style={styles.listContainer}>
+                <SearchBar
+                    accessibilityLabel="Search Bar"
+                    accessible={true}
+                    accessibilityRole = "search"
+                    placeholder="Search here"
+                    onClearPress={() => setData()}
+                    onChangeText={(text) => {filterData(text), console.log(text)}} 
+                />
+                <FlatList style={styles.list}
                     data={filteredData}
                     renderItem={renderItem}
                     keyExtractor={(item) => item.ID}
-                    ItemSeparatorComponent={listSeparator}
+                    itemSeparatorComponent={listSeparator}
                 />
             </View>
         </View>

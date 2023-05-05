@@ -4,8 +4,6 @@ export default styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'rgba(255, 255, 255, .9)',
-        // alignItems: 'center',
-        // justifyContent: 'center',
     },
 
     title: {
@@ -13,7 +11,6 @@ export default styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 2,
-        color: 'rgba(0,0,0,0.8)',
     },
 
     switch_container: {

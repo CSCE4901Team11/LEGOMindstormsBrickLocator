@@ -9,8 +9,7 @@ export default styles = StyleSheet.create({
     },
 
     listContainer: {
-        flex: 1, 
-        alignItems: 'center', 
+        flex: 1,  
         justifyContent: 'center',
         marginTop: 85,
     },
@@ -22,55 +21,44 @@ export default styles = StyleSheet.create({
     button: {
         padding: 10,
         marginVertical: 15,
-        // backgroundColor: 'rgba(6, 69, 173, .9)',
-        //width: 100,
-        alignItems: 'center'
+        alignItems: 'center',
     },
 
-    // buttonText: {
-    //     color: 'rgba(255, 255, 255, .9)',
-    // },
-
     itemContainer: {
-        //padding: 10,
+        paddingTop: 6,
         flex: 1,
         alignItems: 'flex-start',
         display: 'flex',
         width: '100%',
-        // flexDirection: 'row',
-        // flexWrap: 'wrap',
-        // dimension: 100,  
     },
 
     itemTitle: {
-        fontSize: 20,
+        fontSize: 23,
         fontWeight: 'bold',
     },
 
     text: {
-        fontSize: 18,
+        fontSize: 19,
         flexWrap: 'wrap',
     },
 
     listSeparator: { 
         height: 1, 
         backgroundColor: "grey",
-        marginHorizontal:10
+        marginHorizontal:10,
     },
 
     image: {
         width: 80,
         height: 80,
         margin: 5,
-        paddingRight: 10,
     },
 
     itemInfoContainer: {
         flex: 1,
-        // alignContent: "center",
         flexWrap: 'wrap',
         flexDirection: 'column',
-        padding: 5,
+        padding: 4,
         marginLeft: 5,
     },
 
@@ -81,6 +69,6 @@ export default styles = StyleSheet.create({
     },
 
     list: {
-        flex: 1,
+        flex: 1,  
     },
 });

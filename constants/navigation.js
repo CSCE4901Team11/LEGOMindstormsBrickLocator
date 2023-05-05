@@ -23,12 +23,12 @@ export default function Navigation () {
                 initialRouteName = "Browse" 
                 screenOptions = { {
                     headerTransparent: true,
-                    headerTitleStyle: {opacity: 0},
-                    headerTintColor: colors.textColor,
+                    headerTintColor: colors.sideMenuIconColor,
+                    headerTitle: "",
                     drawerLabelStyle: {marginLeft: -15},
-                    drawerActiveBackgroundColor: '#b7c6fb',
-                    drawerActiveTintColor: 'rgba(0,0,0,0.8)',
-                    drawerInactiveTintColor: '#636e72'
+                    drawerActiveBackgroundColor: colors.sideMenuHighlight, // changes highlight color
+                    drawerActiveTintColor: colors.sideMenuTextColorActive, // changes text color of active tab
+                    drawerInactiveTintColor: colors.sideMenuTextColorInactive, //changes color of icons and words
                     }
                 }
                 >
