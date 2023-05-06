@@ -8,6 +8,12 @@ export default styles = StyleSheet.create({
         justifyContent: 'center',
     },
 
+    privacyPolicyWindow: {
+        paddingVertical: 40, 
+        textAlign: 'center', 
+        fontSize: 20,
+    },
+
     title:{
         fontWeight: 'bold',
         fontSize: 27, 

@@ -22,7 +22,7 @@
     "eas-cli": "0.49.0",
     "expo": "47.0.6",
     "expo-camera": "~13.0.0",
-    "expo-cli": "^6.3.7",
+    "expo-cli": "4.3.0",
     "expo-dev-client": "^2.2.1",
     "expo-device": "~5.0.0",
     "expo-gl": "~12.0.0",
@@ -60,6 +60,9 @@
     "@freakycoder/react-native-bounceable": "^1.0.3",
     "react-native-animated-spinkit": "^1.4.1",
     "react-native-dynamic-vector-icons": "WrathChaos/react-native-dynamic-vector-icons#expo"
+  },
+  "resolutions": {
+    "@expo/config-plugins": "4.1.5"
   },
   "private": true
 }
