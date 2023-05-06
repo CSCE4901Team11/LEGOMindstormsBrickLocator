@@ -3,7 +3,7 @@
     "name": "LEGOProject",
     "slug": "LEGOProject",
     "runtimeVersion": {
-      "policy": "appVersion"
+      "policy": "sdkVersion"
     },
     "version": "1.0.0",
     "orientation": "portrait",
